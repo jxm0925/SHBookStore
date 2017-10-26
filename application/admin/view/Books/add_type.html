@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Olive Enterprise">
+    <!-- END META -->
+    
+    <!-- BEGIN SHORTCUT ICON -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- END SHORTCUT ICON -->
+    <title>
+      Olive Admin - Flat & Responsive Bootstrap Admin Template
+    </title>
+    <!-- BEGIN STYLESHEET-->
+    <link href="__ADMIN_CSS__/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+    <link href="__ADMIN_CSS__/bootstrap-reset.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+    <link href="__ASSETS__/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME ICON CSS -->
+    <link href="__ADMIN_CSS__/style.css" rel="stylesheet"><!-- THEME BASIC CSS -->
+    <link href="__ADMIN_CSS__/pin_tags.css" rel="stylesheet">
+    <link href="__ADMIN_CSS__/style-responsive.css" rel="stylesheet"><!-- THEME RESPONSIVE CSS -->
+
+    <link rel="stylesheet" type="text/css" href="__STATIC__/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__LIB__/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/h-ui.admin/css/style.css" />
+<link rel="stylesheet" href="__LIB__/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <!--[if lt IE 9]>
+<script src="__ADMIN_JS__/html5shiv.js">
+</script>
+<script src="__ADMIN_JS__/respond.min.js">
+</script>
+<![endif]-->
+     <!-- END STYLESHEET-->
+  </head>
+  <body>
+    <!-- BEGIN SECTION -->
+    {include file="common/admin/head.html"}
+    <!-- END HEADER NAV -->
+        
+     <!-- START USER LOGIN DROPDOWN  -->
+
+      <!-- END HEADER -->
+         <!-- BEGIN SIDEBAR -->
+      {include file="common/admin/left.html"}
+      <!-- END SIDEBAR -->
+        <section id="main-content">
+      <!-- BEGIN WRAPPER  -->
+          <section class="wrapper site-min-height">
+              <table class="table">
+                <tr>
+                  <td width="200" class="va-t"><ul id="treeDemo" class="ztree"></ul></td>
+                  
+                  <td class="va-t"><iframe ID="testIframe" Name="testIframe" FRAMEBORDER=0 SCROLLING=AUTO width=100%  height=390px SRC="{:url('TypeAdd/typeShow')}"></iframe></td>
+                </tr>
+              </table>
+
+          </section>
+
+          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">开始演示模态框</button>
+      <!-- 模态框（Modal） -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+                  </div>
+                  <div class="modal-body">在这里添加一些文本</div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                      <button type="button" class="btn btn-primary">提交更改</button>
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal -->
+      </div>
+      <!-- END WRAPPER  -->
+        </section>
+        <!-- END MAIN CONTENT -->
+        <!-- BEGIN FOOTER -->
+        <footer class="site-footer">
+          <div class="text-center">
+            2013 &copy; Olive Admin by 
+            <a href="" target="_blank">
+              Olive Enterprise
+            </a>
+            .
+            <a href="http://www.mycodes.net" class="go-top">
+              <i class="fa fa-angle-up">
+              </i>
+            </a>
+          </div>
+        </footer>
+        <!-- END  FOOTER -->
+     </section>
+
+     <!-- 按钮触发模态框 -->
+      
+     <!-- END SECTION -->
+     <!-- BEGIN JS -->
+    <script src="__ADMIN_JS__/jquery.js" ></script><!-- BASIC JQUERY __LIB__. JS -->
+    <script src="__ADMIN_JS__/bootstrap.min.js" ></script><!-- BOOTSTRAP JS -->
+    <script src="__ADMIN_JS__/jquery.dcjqaccordion.2.7.js"></script><!-- ACCORDIN JS -->
+    <script src="__ADMIN_JS__/jquery.scrollTo.min.js" ></script><!-- SCROLLTO JS -->
+    <script src="__ADMIN_JS__/jquery.nicescroll.js" ></script><!-- NICESACROLL JS -->
+    <script src="__ADMIN_JS__/respond.min.js" ></script><!-- RESPOND JS -->
+    <script src="__ADMIN_JS__/common-scripts.js" ></script><!-- BASIC COMMON SCRIPT JS -->
+    <script type="text/javascript">
+     <!-- END JS -->
+     <!--footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__LIB__/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__LIB__/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__STATIC__/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__LIB__/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script> 
+<script type="text/javascript">
+var zNodes;
+  $.ajax({
+    url:"{:url('TypeAdd/getTypeAjax')}",
+    type:'get',
+    dataType:'json',
+    async:false,
+    success:function(data){
+      zNodes = data;
+    }
+  });
+
+var setting = {
+  view: {
+    dblClickExpand: false,
+    showLine: false,
+    selectedMulti: false
+  },
+  data: {
+    simpleData: {
+      enable:true,
+      idKey: "id",
+      pIdKey: "pid",
+      rootPId: ""
+    }
+  },
+  callback: {
+    beforeClick: function(treeId, treeNode) {
+
+      var zTree = $.fn.zTree.getZTreeObj("tree");
+
+      if (treeNode.isParent) {
+        alert(treeNode.id);
+        alert('下面有子节点，不可删除');
+        //  $('treeNode').mousedown(function(e){ 
+        //       if(3 == e.which){ 
+        //            alert('这是右键单击事件'); 
+        //       }else if(1 == e.which){ 
+        //                alert('这是左键单击事件'); 
+        //       } 
+        //  })
+        // alert(1);
+        // alert(2);
+        // zTree.expandNode(treeNode);
+        // return false;
+      } else {
+        demoIframe.attr("src",treeNode.file + ".html");
+        return true;
+      }
+    }
+  }
+};
+
+// var zNodes =[
+//   { id:1, pId:0, name:"一级分类", open:true},
+//   { id:11, pId:1, name:"二级分类"},
+//   { id:111, pId:11, name:"三级分类"},
+//   { id:112, pId:11, name:"三级分类"},
+//   { id:113, pId:11, name:"三级分类"},
+//   { id:114, pId:11, name:"三级分类"},
+//   { id:115, pId:11, name:"三级分类"},
+//   { id:12, pId:1, name:"二级分类 1-2"},
+//   { id:121, pId:12, name:"三级分类 1-2-1"},
+//   { id:122, pId:12, name:"三级分类 1-2-2"},
+// ];
+    
+var code;
+    
+function showCode(str) {
+  if (!code) code = $("#code");
+  code.empty();
+  code.append("<li>"+str+"</li>");
+}
+    
+$(document).ready(function(){
+  var t = $("#treeDemo");
+  t = $.fn.zTree.init(t, setting, zNodes);
+  demoIframe = $("#testIframe");
+  //demoIframe.on("load", loadReady);
+  var zTree = $.fn.zTree.getZTreeObj("tree");
+  //zTree.selectNode(zTree.getNodeByParam("id",'11'));
+});
+</script>
+  </body>
+</html>
+
+
+

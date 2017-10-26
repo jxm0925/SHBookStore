@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- BEGIN META -->
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="Olive Enterprise">
+    <!-- END META -->
+     
+      <!-- BEGIN SHORTCUT ICON -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- END SHORTCUT ICON -->
+      <title>Dynamic Table</title>
+    <!-- BEGIN STYLESHEET --> 
+      <link href="__ADMIN_CSS__/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+      <link href="__ADMIN_CSS__/bootstrap-reset.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+      <link href="__ASSETS__/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME ICON STYLESHEET -->
+      <link href="__ASSETS__/advanced-datatable/media/css/demo_page.css" rel="stylesheet"><!-- ADVANCED DATATABLE CSS -->
+      <link href="__ASSETS__/advanced-datatable/media/css/demo_table.css" rel="stylesheet"><!-- ADVANCED DATATABLE CSS -->
+      <link rel="stylesheet" href="__ASSETS__/data-tables/DT_bootstrap.css"><!-- DATATABLE CSS -->
+      <link href="__ADMIN_CSS__/style.css" rel="stylesheet"><!-- THEME BASIC CSS -->
+      <link href="__ADMIN_CSS__/style-responsive.css" rel="stylesheet"><!-- THEME BASIC RESPONSIVE  __ADMIN_CSS__ -->
+      <!--[if lt IE 9]>
+      <script src="__ADMIN_JS__/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <![endif]-->
+    <!-- END STYLESHEET --> 
+   </head>
+   <body>
+   <!-- BEGIN SECTION --> 
+    <!-- BEGIN HEADER --> 
+    {include file="common/admin/head.html"}
+    <!-- END HEADER NAV -->
+        
+     <!-- START USER LOGIN DROPDOWN  -->
+
+      <!-- END HEADER -->
+         <!-- BEGIN SIDEBAR -->
+      {include file="common/admin/left.html"}
+      <!-- END SIDEBAR -->
+      <!-- BEGIN MAIN CONTENT -->
+        
+         <!-- BEGIN MAIN CONTENT -->    
+         <section id="main-content">
+          <section class="wrapper site-min-height">
+            <!---->
+            <form action="index.php?m=admin&c=Essay&a=delete_essay" method="post" >
+              <div class="col-lg-12">
+                <section class="panel">
+                  <div class="ibox-content m-b-sm border-bottom">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="control-label" for="book_name">书籍名称</label>
+                                <input type="text" id="book_name" name="book_name" value="" placeholder="Book Name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="control-label" for="author_name">作者名称</label>
+                                <input type="text" id="author_name" name="author_name" value="" placeholder="Aauthor Name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="control-label" for="product">出版社</label>
+                                <input type="text" id="product" name="product" value="" placeholder="Product" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="control-label" for="status">状态</label>
+                                <select name="status" id="status" class="form-control">
+                                    <option value="1" selected="">充足</option>
+                                    <option value="0">缺货</option>
+                                    <option value="2">少量</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <!-- Split button -->
+                          <br />
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-info">查看分类</button>
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="caret"></span>
+                              <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">人文社科</a></li>
+                              <li><a href="#">文学艺术</a></li>
+                              <li><a href="#">卡通动漫</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">热点聚焦</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="col-lg-12">
+                <section class="panel">
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>书名</th>
+                            <th>示例图</th>
+                            <th>书记作者</th>
+                            <th>出版日期</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input type="checkbox" class="input-control" name="checkbox[]" value="29" /></td>
+                            <td>123</td>
+                            <td>心情随笔</td>
+                            <td>22</td>
+                            <td>2017-09-19</td>
+                            <td>
+                              <span class="label label-danger">缺货</span>
+                            </td>
+                            <td>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#changeModal">
+                              <i class="fa fa-pencil-square-o"></i>
+                            </button>
+                          </tr>
+                          <tr>
+                            <td><input type="checkbox" class="input-control" name="checkbox[]" value="30" /></td>
+                            <td>123</td>
+                            <td class="hidden-sm">哲理好文</td>
+                            <td class="hidden-sm">18</td>
+                            <td>2017-09-20</td>
+                            <td>
+                              <span class="label label-primary">充足</span>
+                             </td>
+                            <td>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#changeModal">
+                              <i class="fa fa-pencil-square-o"></i>
+                            </button> 
+                          </tr>
+                          <tr>
+                            <td><input type="checkbox" class="input-control" name="checkbox[]" value="30" /></td>
+                            <td>123</td>
+                            <td class="hidden-sm">哲理好文</td>
+                            <td class="hidden-sm">18</td>
+                            <td>2017-09-20</td>
+                            <td>
+                              <span class="label label-warning">少量</span>
+                             </td>
+                            <td>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#changeModal">
+                              <i class="fa fa-pencil-square-o"></i>
+                            </button> 
+                          </tr>
+                        </tbody>
+                        <br />
+                        <div class="col-sm-10">
+                          <button type="button" class="btn btn-primary" onclick="select()">
+                            全选
+                          </button>&emsp;
+                          <button type="button" class="btn btn-warning" onclick="reverse()">
+                            反选
+                          </button>&emsp;
+                          <button type="button" class="btn btn-danger" onclick="noselect()">
+                            不选
+                          </button>&emsp;
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                            全部删除
+                          </button>&emsp;
+                          <a href="{:url('Books/bookAdd')}">
+                            <button type="button" class="btn btn-info" data-toggle="" data-target="#myModal">
+                              添加书籍
+                            </button>&emsp;
+                          </a>
+                        </div>
+                      </table>
+                    </div>
+                  </form>
+                  <div class="col-sm-3 col-md-offset-9">
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li class="disabled"><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                  </div>
+              </section>
+                <div class="col-sm-4">
+                  <section class="panel">
+                    <header class="panel-heading">
+                      <span class="label label-primary">书籍类型分布图</span>
+                      <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                      </span>
+                    </header>
+                  <div class="panel-body">
+                    <div id="pie-chart-donut" class="pie-chart">
+                      <div id="pie-donutContainer" style="width: 100%;height:300px; text-align: left;">
+                      </div>
+                    </div>
+                  </div>
+                 </section>
+            </div>
+          </section>
+     <!-- END SECTION --> 
+     
+     <!-- BEGIN FOOTER --> 
+         <footer class="site-footer">
+            <div class="text-center">
+               2013 &copy; Olive Admin by <a href="" target="_blank">Olive Enterprise</a>.
+               <a href="http://www.mycodes.net" class="go-top">
+               <i class="fa fa-angle-up"></i>
+               </a>
+            </div>
+         </footer>
+     <!-- END FOOTER  --> 
+      </section>
+  <!-- 删除模态提示（Modal） -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">提示信息</h4>
+                  </div>
+                  <div class="modal-body">您确定要删除吗？</div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                      <button type="button" class="btn btn-danger">确认</button>
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal -->
+      </div>
+<!--图书信息模态框-->
+<div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <form action="" method="post">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" >图书信息</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table" style="margin-bottom:0px;">
+            <thead>
+              <tr> </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td wdith="20%">图书封面:</td>
+                <td width="80%"><img /></td>
+              </tr>
+              <tr>
+                <td wdith="20%">书名:</td>
+                <td width="80%"><input type="text" value="admin" class="form-control" name="bookname" maxlength="10" autocomplete="off" /></td>
+              </tr>
+              <tr>
+                <td wdith="20%">作者:</td>
+                <td width="80%"><input type="text" value="18538078281" class="form-control" name="author" maxlength="13" autocomplete="off" /></td>
+              </tr>
+              <tr>
+                <td wdith="20%">出版日期:</td>
+                <td width="80%"><input type="password" class="form-control" name="pub_date" maxlength="18" autocomplete="off" /></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr></tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="submit" class="btn btn-primary">提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+    <!-- BEGIN JS --> 
+    <script language="javascript" src="__ASSETS__/advanced-datatable/media/js/jquery.js"></script><!-- BASIC JQUERY JS  -->
+    <script src="__ADMIN_JS__/bootstrap.min.js" ></script><!-- BOOTSTRAP JS  -->
+    <script src="__ADMIN_JS__/jquery.dcjqaccordion.2.7.js"></script><!-- ACCORDING JS -->
+    <script src="__ADMIN_JS__/jquery.scrollTo.min.js" ></script><!-- SCROLLTO JS  -->
+    <script src="__ADMIN_JS__/jquery.nicescroll.js" > </script><!-- NICESCROLL JS  -->
+    <script src="__ADMIN_JS__/respond.min.js" ></script><!-- RESPOND JS  -->
+    <script src="__ASSETS__/flot/jquery.flot.js"></script><!-- FLOT JS  -->
+    <script src="__ASSETS__/flot/jquery.flot.tooltip.js"></script><!-- FLOT TOOLTIP JS  -->
+    <script src="__ASSETS__/flot/jquery.flot.resize.js"></script><!-- FLOT RESIZE  JS  -->
+    <script src="__ASSETS__/flot/jquery.flot.pie.resize.js"></script><!-- FLOT PIE CHART RESIZE JS  -->
+    <script src="__ADMIN_JS__/common-scripts.js" ></script><!-- BASIC COMMON JS  -->
+    <script src="__ADMIN_JS__/table_choose.js"></script>
+    <script src="__ADMIN_JS__/flot_chart.js"></script>
+    <script type="text/javascript">
+        var data = [{
+            label: "文艺书籍",
+            data: 40
+        }, {
+            label: "社会科学",
+            data: 10
+        }, {
+            label: "科教",
+            data: 20
+        }, {
+            label: "生活",
+            data: 30
+        }];
+        var options = {
+            series: {
+                pie: {
+                    show: true,
+                    innerRadius: 0.5 
+                }
+            },
+            legend: {
+                show: false
+            },
+            grid: {
+                hoverable: true,
+                clickable: true
+            },
+            colors: ["#869cb3", "#6dc5a3", "#778a9f","#0984a7"],
+            tooltip: true,
+            tooltipOpts: {
+                defaultTheme: false
+            }
+        };
+        $.plot($("#pie-chart-donut #pie-donutContainer"), data, options);
+
+    </script>
+   </body>
+</html>
+
+

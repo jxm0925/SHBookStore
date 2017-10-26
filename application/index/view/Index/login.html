@@ -1,0 +1,77 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>个人博客-老用户登陆</title>
+
+<link rel="stylesheet" href="__CSS__/login.css" />
+
+<body>
+<div class="login-container">
+    <h1>书籍是人类进步的阶梯</h1>
+    
+    <div class="connect">
+        <p>求学将以致用，读书先在虚心。 </p>
+    </div>
+    
+    <form action="{:url('/index/index/checkLogin')}" method="post" id="loginForm">
+        <div>
+            <input type="text" name="username" class="username" placeholder="用户名" autocomplete="off"/>
+        </div>
+        <div>
+            <input type="password" name="password" class="password" placeholder="密码" oncontextmenu="return false" onpaste="return false" />
+        </div>
+        <div id>
+            <input type="text" name="yzm" class="yzm" placeholder="验证码" autocomplete="off" id='yzm'/>
+            <label id="yzm-error" for="yzm"></label>
+        </div>
+        <br />
+        <div>
+            <img src="{:captcha_src()}" alt="captcha" onclick="this.src=this.src"/>
+        </div>
+        <button id="submit" type="submit">登 陆</button>
+    </form>
+
+    <a href="{:url('regist')}">
+        <button type="button" class="register-tis">还有没有账号？</button>
+    </a>
+</div>
+    <a href="{:url('index')}" >返回书城</a>
+<script src="__JS__/jquery.min.js"></script>
+<script src="__JS__/common.js"></script>
+<!--背景图片自动更换-->
+<script src="__JS__/supersized.3.2.7.min.js"></script>
+<script src="__JS__/supersized-init.js"></script>
+<!--表单验证-->
+<script src="__JS__/jquery.validate.min.js?var1.14.0"></script>
+
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#yzm').blur(function(){
+            var yzm = $('#yzm').val();
+            $.ajax({
+                type: "post",
+                data:{yzm:yzm},
+                url: "/index/Index/checkyzm",
+                dataType: "json",
+                success: function (data) {
+                    $('#yzm-error').addClass('error');
+                    $('#yzm-error').html(data.info);
+                    $('#yzm-error').show();  
+                    if(data.code==0)
+                    {
+                        $("#submit").attr({"disabled":"disabled"});
+                    }
+                    else
+                    {
+                        $("#submit").removeAttr("disabled");
+                    }     
+                },
+            });
+        });
+    });
+</script>

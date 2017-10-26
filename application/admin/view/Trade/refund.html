@@ -1,0 +1,940 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- BEGIN META --> 
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="Custom Theme">
+    <!-- END META -->
+     
+      <!-- BEGIN SHORTCUT ICON -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- END SHORTCUT ICON -->
+      <title>role</title>
+    
+    <!-- BEGIN STYLESHEET --> 
+      <link href="css/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+      <link href="css/bootstrap-reset.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+      <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME ICON STYLESHEET -->
+      <link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css"><!-- DATATABLE CSS -->
+      <link href="css/style.css" rel="stylesheet"><!-- THEME BASIC CSS -->
+      <link href="css/style-responsive.css" rel="stylesheet"><!-- THEME BASIC RESPONSIVE  CSS -->
+      <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <![endif]-->
+    <!-- END STYLESHEET --> 
+   </head>
+   <body>
+   <!-- BEGIN SECTION --> 
+      <section id="container" class="">
+      <!-- BEGIN HEADER --> 
+         <header class="header white-bg">
+         <!-- SIDEBAR TOGGLE BUTTON -->
+      <div class="sidebar-toggle-box">
+        <div  data-placement="right" class="fa fa-bars tooltips">
+        </div>
+      </div>
+        <!-- SIDEBAR TOGGLE BUTTON  END-->
+            <a href="index.html" class="logo">olive<span>admin</span></a>
+           <!-- START HEADER  NAV -->
+        
+        <nav class="nav notify-row" id="top_menu">
+          
+          <ul class="nav top-menu">
+            <!-- START NOTIFY TASK BAR -->
+            
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <i class="fa fa-tasks">
+                </i>
+                <span class="badge bg-success">
+                  6
+                </span>
+              </a>
+              
+              <ul class="dropdown-menu extended tasks-bar">
+                <li class="notify-arrow notify-arrow-blue">
+                </li>
+                <li>
+                  <p class="blue">
+                    You have 6 pending tasks
+                  </p>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="task-info">
+                      <div class="desc">
+                        Dashboard v1.3
+                      </div>
+                      <div class="percent">
+                        40%
+                      </div>
+                    </div>
+                    <div class="progress progress-striped">
+                      <div class="progress-bar progress-bar-success set-40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" >
+                        <span class="sr-only">
+                          40% Complete (success)
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="task-info">
+                      <div class="desc">
+                        Database Update
+                      </div>
+                      <div class="percent">
+                        60%
+                      </div>
+                    </div>
+                    <div class="progress progress-striped">
+                      <div class="progress-bar progress-bar-warning set-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" >
+                        <span class="sr-only">
+                          60% Complete (warning)
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="task-info">
+                      <div class="desc">
+                        Iphone Development
+                      </div>
+                      <div class="percent">
+                        87%
+                      </div>
+                    </div>
+                    <div class="progress progress-striped">
+                      <div class="progress-bar progress-bar-info set-87" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" >
+                        <span class="sr-only">
+                          87% Complete
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="task-info">
+                      <div class="desc">
+                        Mobile App
+                      </div>
+                      <div class="percent">
+                        33%
+                      </div>
+                    </div>
+                    <div class="progress progress-striped">
+                      <div class="progress-bar progress-bar-danger set-33" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" >
+                        <span class="sr-only">
+                          33% Complete (danger)
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="task-info">
+                      <div class="desc">
+                        Dashboard v1.3
+                      </div>
+                      <div class="percent">
+                        45%
+                      </div>
+                    </div>
+                    <div class="progress progress-striped active">
+                      <div class="progress-bar set-45" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" >
+                        <span class="sr-only">
+                          45% Complete
+                        </span>
+                      </div>
+                      
+                    </div>
+                  </a>
+                </li>
+                <li class="external">
+                  <a href="#">
+                    See All Tasks
+                  </a>
+                </li>
+              </ul>
+              
+            </li>
+            <!-- END NOTIFY TASK BAR -->
+            
+            <!-- START NOTIFY INBOX BAR -->
+            
+            <li id="header_inbox_bar" class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <i class="fa fa-envelope-o">
+                </i>
+                <span class="badge bg-important">
+                  5
+                </span>
+              </a>
+              <ul class="dropdown-menu extended inbox">
+                <li class="notify-arrow notify-arrow-blue">
+                </li>
+                <li>
+                  <p class="blue">
+                    You have 5 new messages
+                  </p>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="photo">
+                      <img alt="avatar" src="./img/avatar-mini.jpg">
+                    </span>
+                    <span class="subject">
+                      <span class="from">
+                        Chintan Pandya
+                      </span>
+                      <span class="time">
+                        Just now
+                      </span>
+                    </span>
+                    <span class="message">
+                      Hello, this is an example msg.
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="photo">
+                      <img alt="avatar" src="./img/avatar-mini2.jpg">
+                    </span>
+                    <span class="subject">
+                      <span class="from">
+                        Parth Jani
+                      </span>
+                      <span class="time">
+                        10 mins
+                      </span>
+                    </span>
+                    <span class="message">
+                      Hi, Bro how are you ?
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="photo">
+                      <img alt="avatar" src="./img/avatar-mini3.jpg">
+                    </span>
+                    <span class="subject">
+                      <span class="from">
+                        Jay Bardolia
+                      </span>
+                      <span class="time">
+                        3 hrs
+                      </span>
+                    </span>
+                    <span class="message">
+                      This is awesome dashboard.
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="photo">
+                      <img alt="avatar" src="./img/avatar-mini4.jpg">
+                    </span>
+                    <span class="subject">
+                      <span class="from">
+                        Pruthvi Bardolia
+                      </span>
+                      <span class="time">
+                        Just now
+                      </span>
+                    </span>
+                    <span class="message">
+                      Hello, this is metrolab
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    See all messages
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- END NOTIFY INBOX BAR -->
+            
+            <!-- START NOTIFY NOTIFICATION BAR -->
+            
+            <li id="header_notification_bar" class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <i class="fa fa-bell-o">
+                </i>
+                <span class="badge bg-warning">
+                  7
+                </span>
+              </a>
+              <ul class="dropdown-menu extended notification">
+                <li class="notify-arrow notify-arrow-blue">
+                </li>
+                <li>
+                  <p class="blue">
+                    You have 7 new notifications
+                  </p>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="label label-danger">
+                      <i class="fa fa-bolt">
+                      </i>
+                    </span>
+                    Server #3 overloaded.
+                    <span class="small italic">
+                      34 mins
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="label label-warning">
+                      <i class="fa fa-bell">
+                      </i>
+                    </span>
+                    Server #10 not respoding.
+                    <span class="small italic">
+                      1 Hours
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="label label-danger">
+                      <i class="fa fa-bolt">
+                      </i>
+                    </span>
+                    Database overloaded 24%.
+                    <span class="small italic">
+                      4 hrs
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="label label-success">
+                      <i class="fa fa-plus">
+                      </i>
+                    </span>
+                    New user registered.
+                    <span class="small italic">
+                      Just now
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="label label-primary">
+                      <i class="fa fa-bullhorn">
+                      </i>
+                    </span>
+                    Application error.
+                    <span class="small italic">
+                      10 mins
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    See all notifications
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- END NOTIFY NOTIFICATION BAR -->
+            
+          </ul>
+          
+          
+        </nav>
+        
+        <!-- END HEADER NAV -->
+        
+        
+        <!-- START USER LOGIN DROPDOWN  -->
+            <div class="top-nav ">
+               <ul class="nav pull-right top-menu">
+                  <li>
+                     <input type="text" class="form-control search" placeholder="Search">
+                  </li>
+                  <li class="dropdown">
+                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                     <img alt="" src="img/avatar1_small.jpg">
+                     <span class="username">Pruthvi</span>
+                     <b class="caret"></b>
+                     </a>
+                     <ul class="dropdown-menu extended logout">
+                        <li class="log-arrow-up"></li>
+                        <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
+                        <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+      <!-- END USER LOGIN DROPDOWN  -->
+         </header>
+     <!-- END HEADER --> 
+     
+     <!-- BEGIN SIDEBAR --> 
+      <aside>
+        <div id="sidebar" class="nav-collapse">
+          <ul class="sidebar-menu" id="nav-accordion">
+            <li >
+              <a href="index.html" class="active">
+                <i class="fa fa-dashboard">
+                </i>
+                <span>
+                  首页
+                </span>
+              </a>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-laptop">
+                </i>
+                <span>
+                  图书管理
+                </span>
+                <span class="label label-success span-sidebar">
+                  
+                </span>
+              </a>
+              <ul class="sub">
+                <li>
+                  <a href="book_list.html">
+                    图书列表
+                  </a>
+                </li>
+                <li>
+                  <a href="book_type.html">
+                    分类管理
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-book">
+                </i>
+                <span>
+                  图片管理
+                </span>
+                <span class="label label-info span-sidebar">
+                  
+                </span>
+              </a>
+              <ul class="sub">
+                <li>
+                  <a href="advertise.html">
+                    轮播图管理
+                  </a>
+                </li>
+              </ul>
+              <ul class="sub">
+                <li>
+                  <a href="picture.html">
+                    广告图管理
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;" class="active dcjq-parent">
+                <i class="fa fa-cogs">
+                </i>
+                <span>
+                  交易管理
+                </span>
+                <span class="label label-primary span-sidebar">
+                 
+                </span>
+              </a>
+              <ul class="sub">
+                <li>
+                  <a href="trade.html">
+                    交易信息
+                  </a>
+                </li>
+                <li>
+                  <a href="order.html">
+                    订单管理
+                  </a>
+                </li>
+                <li class="active">
+                  <a href="refund.html">
+                    退款管理
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-tasks">
+                </i>
+                <span>
+                  会员管理
+                </span>
+                <span class="label label-info span-sidebar">
+                  
+                </span>
+              </a>
+              <ul class="sub">
+                <li>
+                  <a href="member_list.html">
+                    会员列表
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    会员等级
+                  </a>
+                </li>
+                
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-th">
+                </i>
+                <span>
+                  系统管理
+                </span>
+                <span class="label label-inverse span-sidebar">          
+                </span>
+              </a>
+              <ul class="sub">
+                <li>
+                  <a href="#">
+                    通知列表
+                  </a>
+                </li>
+                <li>
+                  <a href="site_config.html">
+                    网站配置
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class=" fa fa-envelope">
+                </i>
+                <span>
+                  信息管理
+                </span>
+                <span class="label label-danger span-sidebar">
+                  
+                </span>
+              </a>
+            <ul class="sub">
+                <li>
+                  <a href="article_list.html">
+                    添加公告
+                  </a>
+                </li>
+                <li>
+                  <a href="article_recy.html">
+                    文章回收站
+                  </a>
+                </li>
+              </ul>
+              <ul class="sub">
+                <li>
+                  <a href="comment.html">
+                    评论列表
+                  </a>
+                </li>
+                <li>
+                  <a href="comment_recy.html">
+                    评论回收站
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class=" fa fa-bar-chart-o">
+                </i>
+                <span>
+                  管理员管理
+                </span>
+                <span class="label label-warning span-sidebar">
+                  
+                </span>
+              </a>
+              <ul class="sub">
+                <li>
+                  <a href="admin_list.html">
+                    管理员列表
+                  </a>
+                </li>
+                <li>
+                  <a href="role.html">
+                    职能列表
+                  </a>
+                </li>
+                <li>
+                  <a href="limit.html">
+                    权限列表
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </aside>
+     <!-- END SIDEBAR --> 
+     
+     <!-- BEGIN MAIN CONTENT --> 
+         <section id="main-content">
+        <!-- BEGIN WRAPPER  -->
+            <section class="wrapper site-min-height">
+               <section class="panel">
+                  <header class="panel-heading">
+                     <span class="label label-primary">退款管理</span>
+                     <span class="tools pull-right">
+                     <a href="javascript:;" class="fa fa-chevron-down"></a>                     
+                     </span>
+                  </header>
+                  <div class="panel-body">
+                     <div class="adv-table editable-table ">
+                        <div class="clearfix">
+                        <div class="border clearfix">
+                         <span class="l_f">
+                            <a href="javascript:ovid()" class="btn btn-success Order_form"><i class="fa fa-check-square-o"></i>&nbsp;已退款订单</a>
+                            <a href="javascript:ovid()" class="btn btn-warning Order_form"><i class="fa fa-close"></i>&nbsp;未退款订单</a>
+                            <a href="javascript:ovid()" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;批量删除</a>
+                           </span>
+                           <span class="r_f">共：<b>2334</b>笔</span>
+                       </div>
+                          
+                        </div>
+                        <br>
+                        <div class="btn-group" role="group"> 
+                          <a class="btn btn-default" onClick="select()">全选</a> 
+                          <a class="btn btn-default" onClick="reverse()">反选</a> 
+                          <a class="btn btn-default" onClick="noselect()">不选</a>
+                        </div>
+                        <div class="space15"></div>
+                          <table class="table table-bordered">
+                            <caption>会员列表</caption>
+                            <thead>
+                              <tr>
+                                <th></th>
+                                <th>订单号</th>
+                                <th>产品名</th>
+                                <th>交易金额</th>
+                                <th>交易时间</th>
+                                <th>退款金额</th>
+                                <th>退款数量</th>
+                                <th>状态</th>
+                                <th>说明</th>
+                                <th>操作</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><input type="checkbox" name="checkbox[]"></td>
+                                <td>xxxxx</td>
+                                <td>铁砂掌</td>
+                                <td>23.00</td>
+                                <td>1990-6-1</td>
+                                <td>12.00</td>
+                                <td>1</td>
+                                <td class="td-status">
+                                  已退款
+                                </td>
+                                <td>重复购买</td>
+                                <td>
+                                   <a onclick="Delivery_Refund(this,'10001')" href="javascript:;" title="退款" class="btn btn-xs btn-success">退款</a> 
+                                   <a title="退款订单详细" href="refund_detaile.html" class="btn btn-xs btn-info refund_detaile">详细</a> 
+                                   <a title="删除" href="javascript:;" onclick="Order_form_del(this,'1')" class="btn btn-xs btn-warning">删除</a>    
+                               </td>
+                               <!--
+                                <td>
+                                  <a title="编辑" onclick="member_edit()" href="javascript:;"  class="btn btn-xs btn-info" >
+                                    <i class="icon-edit bigger-120">编辑</i>
+                                  </a>
+                                  <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-warning" >
+                                    <i class="icon-trash  bigger-120">删除</i>
+                                  </a>
+                                </td>-->
+                              </tr>
+                          
+                              
+                            </tbody>
+                          </table>
+                          <div class="row"><div class="col-sm-6"><div class="dataTables_info" id="sample-table_info" role="status" aria-live="polite">第 1 到 2 条记录，共 2 条</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_bootstrap" id="sample-table_paginate"><ul class="pagination"><li class="prev disabled"><a href="#">上一页</a></li><li class="active"><a href="#">1</a></li><li class="next disabled"><a href="#">下一页</a></li></ul></div></div></div>
+                     </div>
+                  </div>
+               </section>
+            </section>
+      <!-- END WRAPPER  -->
+         </section>
+     <!-- END MAIN CONTENT --> 
+     <!-- BEGIN FOOTER --> 
+     <!-- END FOOTER --> 
+      </section>
+    <!-- END SECTION -->
+  <!--添加用户图层-->
+<div class="add_menber" id="add_menber_style" style="display:none">
+  
+    <ul class=" page-content">
+     <li>
+      <label class="label_name">用&nbsp;&nbsp;户 &nbsp;名：</label>
+      <span class="add_name">
+        <input value="" name="用户名" type="text"  class="text_add"/>
+      </span>
+      <div class="prompt r_f"></div>
+      </li>
+     <li><label class="label_name">真实姓名：</label><span class="add_name"><input name="真实姓名" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+     <li><label class="label_name">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label><span class="add_name">
+     <label><input name="form-field-radio" type="radio" checked="checked" class="ace"><span class="lbl">男</span></label>&nbsp;&nbsp;&nbsp;
+     <label><input name="form-field-radio" type="radio" class="ace"><span class="lbl">女</span></label>&nbsp;&nbsp;&nbsp;
+     <label><input name="form-field-radio" type="radio" class="ace"><span class="lbl">保密</span></label>
+     </span>
+     <div class="prompt r_f"></div>
+     </li>
+     <li><label class="label_name">固定电话：</label><span class="add_name"><input name="固定电话" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+     <li><label class="label_name">移动电话：</label><span class="add_name"><input name="移动电话" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+     
+     <li class="adderss"><label class="label_name">详细地址：</label><span class="add_name"><input name="家庭住址" type="text"  class="text_add" style=" width:350px"/></span><div class="prompt r_f"></div></li>
+     <li><label class="label_name">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态：</label><span class="add_name">
+     <label><input name="form-field-radio1" type="radio" checked="checked" class="ace"><span class="lbl">开启</span></label>&nbsp;&nbsp;&nbsp;
+     <label><input name="form-field-radio1"type="radio" class="ace"><span class="lbl">关闭</span></label></span><div class="prompt r_f"></div></li>
+    </ul>
+ </div>
+
+
+<script>
+ //订单列表
+jQuery(function($) {
+    var oTable1 = $('#sample-table').dataTable( {
+    "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+    "bStateSave": true,//状态保存
+    "aoColumnDefs": [
+      //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+      {"orderable":false,"aTargets":[0,2,3,4,5,6,8,9]}// 制定列不参与排序
+    ] } );
+                 //全选操作
+        $('table th input:checkbox').on('click' , function(){
+          var that = this;
+          $(this).closest('table').find('tr > td:first-child input:checkbox')
+          .each(function(){
+            this.checked = that.checked;
+            $(this).closest('tr').toggleClass('selected');
+          });
+            
+        });
+      });
+function Delivery_Refund(obj,id){
+      
+       layer.confirm('是否退款当前商品价格！',function(index){
+    $(obj).parents("tr").find(".td-manage").prepend('<a style=" display:none" class="btn btn-xs btn-success" onClick="member_stop(this,id)" href="javascript:;" title="已退款">退款</a>');
+    $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt  radius">已退款</span>');
+    $(obj).remove();
+    layer.msg('已退款!',{icon: 6,time:1000});
+      });  
+        
+      
+};
+//面包屑返回值
+var index = parent.layer.getFrameIndex(window.name);
+parent.layer.iframeAuto(index);
+$('.Refund_detailed').on('click', function(){
+  var cname = $(this).attr("title");
+  var chref = $(this).attr("href");
+  var cnames = parent.$('.Current_page').html();
+  var herf = parent.$("#iframe").attr("src");
+    parent.$('#parentIframe').html(cname);
+    parent.$('#iframe').attr("src",chref).ready();;
+  parent.$('#parentIframe').css("display","inline-block");
+  parent.$('.Current_page').attr({"name":herf,"href":"javascript:void(0)"}).css({"color":"#4c8fbd","cursor":"pointer"});
+  //parent.$('.Current_page').html("<a href='javascript:void(0)' name="+herf+" class='iframeurl'>" + cnames + "</a>");
+    parent.layer.close(index);
+  
+});
+</script>
+<script>
+jQuery(function($) {
+        var oTable1 = $('#sample-table').dataTable( {
+        "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+    "bStateSave": true,//状态保存
+    "aoColumnDefs": [
+      //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+      {"orderable":false,"aTargets":[0,8,9]}// 制定列不参与排序
+    ] } );
+        
+        
+        $('table th input:checkbox').on('click' , function(){
+          var that = this;
+          $(this).closest('table').find('tr > td:first-child input:checkbox')
+          .each(function(){
+            this.checked = that.checked;
+            $(this).closest('tr').toggleClass('selected');
+          });
+            
+        });
+      
+      
+        $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+        function tooltip_placement(context, source) {
+          var $source = $(source);
+          var $parent = $source.closest('table')
+          var off1 = $parent.offset();
+          var w1 = $parent.width();
+      
+          var off2 = $source.offset();
+          var w2 = $source.width();
+      
+          if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+          return 'left';
+        }
+      })
+/*用户-添加*/
+ $('#member_add').on('click', function(){
+    layer.open({
+        type: 1,
+        title: '添加用户',
+    maxmin: true, 
+    shadeClose: true, //点击遮罩关闭层
+        area : ['800px' , ''],
+        content:$('#add_menber_style'),
+    btn:['提交','取消'],
+    yes:function(index,layero){ 
+     var num=0;
+     var str="";
+     $(".add_menber input[type$='text']").each(function(n){
+          if($(this).val()=="")
+          {
+               
+         layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
+                title: '提示框',       
+        icon:0,               
+          }); 
+        num++;
+            return false;            
+          } 
+     });
+      if(num>0){  return false;}    
+          else{
+        layer.alert('添加成功！',{
+               title: '提示框',        
+      icon:1,   
+        });
+         layer.close(index);  
+      }                     
+    }
+    });
+});
+/*用户-查看*/
+function member_show(title,url,id,w,h){
+  layer_show(title,url+'#?='+id,w,h);
+}
+/*用户-停用*/
+function member_stop(obj,id){
+  layer.confirm('确认要停用吗？',function(index){
+    $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs " onClick="member_start(this,id)" href="javascript:;" title="启用"><i class="icon-ok bigger-120"></i></a>');
+    $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已停用</span>');
+    $(obj).remove();
+    layer.msg('已停用!',{icon: 5,time:1000});
+  });
+}
+
+/*用户-启用*/
+function member_start(obj,id){
+  layer.confirm('确认要启用吗？',function(index){
+    $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs btn-success" onClick="member_stop(this,id)" href="javascript:;" title="停用"><i class="icon-ok bigger-120"></i></a>');
+    $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已启用</span>');
+    $(obj).remove();
+    layer.msg('已启用!',{icon: 6,time:1000});
+  });
+}
+/*用户-编辑*/
+function member_edit(id){
+    layer.open({
+        type: 1,
+        title: '修改用户信息',
+    maxmin: true, 
+    shadeClose:false, //点击遮罩关闭层
+        area : ['800px' , ''],
+        content:$('#add_menber_style'),
+    btn:['提交','取消'],
+    yes:function(index,layero){ 
+     var num=0;
+     var str="";
+     $(".add_menber input[type$='text']").each(function(n){
+          if($(this).val()=="")
+          {
+               
+         layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
+                title: '提示框',       
+        icon:0,               
+          }); 
+        num++;
+            return false;            
+          } 
+     });
+      if(num>0){  return false;}    
+          else{
+        layer.alert('添加成功！',{
+               title: '提示框',        
+      icon:1,   
+        });
+         layer.close(index);  
+      }                     
+    }
+    });
+}
+
+/*用户-删除*/
+function member_del(obj,id){
+  layer.confirm('确认要删除吗？',function(index){
+    $(obj).parents("tr").remove();
+    layer.msg('已删除!',{icon:1,time:1000});
+  });
+}
+laydate({
+    elem: '#start',
+    event: 'focus' 
+});
+
+</script>
+<!-- BEGIN JS -->     
+    <script type="text/javascript" src="js/table_choose.js"></script><!--全选-->
+    <script src="js/jquery-1.8.3.min.js" ></script><!-- BASIC JS LIABRARY 1.8.3 -->
+    <script src="js/bootstrap.min.js" ></script><!-- BOOTSTRAP JS  -->
+    <script src="js/jquery.dcjqaccordion.2.7.js"></script><!-- ACCORDING JS -->
+    <script src="js/jquery.scrollTo.min.js" ></script><!-- SCROLLTO JS  -->
+    <script src="js/jquery.nicescroll.js" > </script><!-- NICESCROLL JS  -->
+    <script src="assets/data-tables/jquery.dataTables.js"></script><!-- DATATABLE JS  -->
+    <script src="assets/data-tables/DT_bootstrap.js"></script><!-- DATATABLE JS  -->
+    <script src="js/respond.min.js" ></script><!-- RESPOND JS  -->
+    <script src="js/common-scripts.js" ></script><!-- BASIC COMMON JS  -->
+    <script src="js/editable-table.js" ></script><!-- EDITABLE TABLE JS  -->
+    <script src="assets/layer/layer.js" type="text/javascript" ></script>
+    <script src="assets/laydate/laydate.js" type="text/javascript"></script>
+      <script >
+       <!-- EDITABLE TABLE FUNCTION  -->
+         jQuery(document).ready(function() {
+             EditableTable.init();
+         });
+      </script>
+    <!-- END JS --> 
+   </body>
+</html>
+
+

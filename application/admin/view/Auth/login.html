@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Custom Theme">
+    <!-- END META -->
+    
+    <!-- BEGIN SHORTCUT ICON -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- END SHORTCUT ICON -->
+    <title>
+      Olive Admin - Flat & Responsive Bootstrap Admin Template
+    </title>
+    <!-- BEGIN STYLESHEET-->
+		<link href="__ADMIN_CSS__/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+		<link href="__ADMIN_CSS__/bootstrap-reset.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+		<link href="__ASSETS__/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME ICON CSS -->
+		<link href="__ADMIN_CSS__/style.css" rel="stylesheet"><!-- THEME BASIC CSS -->
+		<link href="__ADMIN_CSS__/style-responsive.css" rel="stylesheet"><!-- THEME RESPONSIVE CSS -->
+    <!--[if lt IE 9]>
+<script src="__ADMIN_JS__/html5shiv.js">
+</script>
+<script src="js/respond.min.js">
+</script>
+<![endif]-->
+     <!-- END STYLESHEET-->
+  </head>
+  <body class="login-screen">
+    <!-- BEGIN SECTION -->
+    <div class="container">
+      <form class="form-signin" method="post" action="{:url('admin/auth/dologin')}">
+        <h2 class="form-signin-heading">
+          登录页面
+        </h2>
+		<!-- LOGIN WRAPPER  -->
+        <div class="login-wrap">
+          <input type="text" class="form-control" placeholder="用户名" name="name">
+          <input type="password" class="form-control" placeholder="密码" name="pwd">
+          <input type="password" class="form-control" placeholder="验证码" name="ver">
+          <img src="{:captcha_src()}" alt="captcha" /><br />
+          <button class="btn btn-lg btn-login btn-block" type="submit" id="sub">
+            登录
+          </button>
+          <p>
+            or you can sign in via social network
+          </p>
+        </div>
+		<!-- END LOGIN WRAPPER -->
+		<!-- MODAL -->
+      </form>
+    </div>
+    <!-- END SECTION -->
+    <!-- BEGIN JS -->
+    <script src="__ADMIN_JS__/jquery.js" ></script><!-- BASIC JQUERY LIB. JS -->
+	  <script src="__ADMIN_JS__/bootstrap.min.js" ></script><!-- BOOTSTRAP JS -->
+    <script type="text/javascript" src="__ADMIN_JS__/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+
+    <!-- END JS -->
+  </body>
+</html>
+
