@@ -29,6 +29,15 @@ class Index extends Auth
 		$this->assign('list',$list);
 		return $this->fetch();
 	}
+	//用户操作
+	public function userOperate()
+	{
+		if(!empty($this->request->param('delId')))
+		{
+			$id = $this->request->param('delId');
+			return $this->user->delUser($id);
+		}
+	}
 	public function site_config()
 	{
 		return $this->fetch();

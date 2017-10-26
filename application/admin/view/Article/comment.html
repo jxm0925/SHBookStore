@@ -145,12 +145,17 @@
 </html>
 <script type="text/javascript">
     $('.del').click(function(){
+      var obj = $(this);
       var r =confirm('确定删除吗');
       if(r)
       {
-        $(this).parent().parent('.rows').remove();
         //console.log($(this).);
-        $.post("{:url('delComment')}",{cid:$(this).val()},function(data){},'json');
+        $.post("{:url('delComment')}",{cid:$(this).val()},function(data){
+          if(data)
+          {
+            obj.parent().parent().remove();
+          }
+        },'json');
        }
     });
 </script>

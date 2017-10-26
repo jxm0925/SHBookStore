@@ -149,7 +149,7 @@ return [
         '__FONT__'            => '/static/index/fonts',
         '__ADMIN_CSS__'       => '/static/admin/css',
         '__ADMIN_JS__'        => '/static/admin/js',
-        '__ADMIN_IMAGE__'     => '/static/admin/images',
+        '__ADMIN_IMAGE__'     => '/static/admin/img',
         '__ADMIN_PICTURE__'   => '/static/admin/picture',
         '__ADMIN_FONT__'      => '/static/admin/fonts',
         '__ASSETS__'          => '/static/admin/assets',

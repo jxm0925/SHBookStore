@@ -99,7 +99,7 @@
                               {if !empty($list)}
                               {foreach $list as $v}
                               <tr>
-                                <td><input type="checkbox" name="checkbox[]"></td>
+                                <td><input type="checkbox" name="checkbox[]" class="userID" value="{$v.user_id}"></td>
                                 <td>{$v.user_id}</td>
                                 <td>{$v.username}</td>
                                 <td>{$v.sex}</td>
@@ -107,12 +107,11 @@
                                 <td>{$v.create_time}</td>
                                 <td>黄铜</td>
                                 <td>
-                                  <a class="btn btn-xs btn-warning" >
-                                    <i class="fa fa-times bigger-120">禁用</i>
-                                  </a>
-                                  <a class="btn btn-xs btn-danger" >
-                                    <i class="fa fa-trash-o  bigger-120">删除</i>
-                                  </a>
+                                  <input type="hidden" value="{$v.user_id}" class="uid">
+                                  <button class="btn btn-xs btn-warning ban" value=""><i class="fa fa-times bigger-120">{$v.isban}</i>
+                                  </button>
+                                  <button class="btn btn-xs btn-danger del"><i class="fa fa-trash-o  bigger-120">删除</i>
+                                  </button>
                                 </td>
                               </tr>
                               {/foreach}
@@ -153,5 +152,21 @@
     <!-- END JS --> 
    </body>
 </html>
+<script type="text/javascript">
+  $('.del').click(function(){
+      var obj = $(this);
+    //$(this).parent().parent().remove();
+    //console.log($(this).val());
+    $.post("{:url('Index/userOperate')}",{delId:$(this).siblings('.uid').val()},function(data){
+      if(data)
+      {
+         obj.parent().parent().remove();
+      }
+    },'json');
+  })
+  $('.ban').click(function(){
+    console.log($(this).siblings('.uid').val());
+  });
+</script>
 
 
