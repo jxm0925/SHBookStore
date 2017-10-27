@@ -200,7 +200,7 @@
       },'json');
     })
   });
- $('.del').click(function(){
+/* $('.del').click(function(){
       var r = confirm('确定要删除吗');
       if(r)
       {
@@ -215,22 +215,19 @@
         alert('不修改');
       }
     })
-  });
+  });*/
   $('.del').click(function(){
     var obj = $(this);
-      layer.confirm('确定退款吗', {
+      layer.confirm('确定删除吗', {
       btn: ['确定','取消'] //按钮
       }, function(){
-        $.post("{:url('delNotice')}",{noticeid:$(this).siblings('.noticeID').val()},function(data){
+        layer.msg('删除成功', {icon: 1});
+        $.post("{:url('delNotice')}",{noticeid:obj.siblings('.noticeID').val()},function(data){
           if(data)
           {
             obj.parent().parent().remove();
-            layer.msg('退款成功', {icon: 1});
           }
-          else
-          {
-            layer.msg('退款成功', {icon: 1});
-          }
+        },'json')
       }, function(){
         layer.msg('已取消',{icon:5});
       });
