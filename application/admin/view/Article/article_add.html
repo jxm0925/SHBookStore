@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- BEGIN META -->
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Olive Enterprise">
+    <!-- END META -->
+    
+    <!-- BEGIN SHORTCUT ICON -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- END SHORTCUT ICON -->
+    <title>
+      Advanced Form Components
+    </title>
+    
+    <!-- BEGIN STYLESHEET -->
+    
+    <link href="__ADMIN_CSS__/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+    <link href="__ADMIN_CSS__/bootstrap-reset.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+    
+<link href="__ASSETS__/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME ICON STYLESHEET -->
+<link rel="stylesheet" type="text/css" href="__ASSETS__/bootstrap-fileupload/bootstrap-fileupload.css"><!-- BOOTSTRAP FILEUPLOAD PLUGIN CSS -->
+<link rel="stylesheet" type="text/css" href="__ASSETS__/bootstrap-wysihtml5/bootstrap-wysihtml5.css"><!-- BOOTSTRAP WYSIHTML5 PLUGIN CSS -->
+<link rel="stylesheet" type="text/css" href="__ASSETS__/bootstrap-datepicker/css/datepicker.css"><!-- BOOTSTRAP DATEPICKER PLUGIN CSS -->
+<link rel="stylesheet" type="text/css" href="__ASSETS__/bootstrap-timepicker/compiled/timepicker.css"><!-- BOOTSTRAP TIMEPICKER PLUGIN CSS -->
+<link rel="stylesheet" type="text/css" href="__ASSETS__/bootstrap-colorpicker/css/colorpicker.css"><!-- BOOTSTRAP COLORPICKER PLUGIN CSS -->
+<link rel="stylesheet" type="text/css" href="__ASSETS__/bootstrap-daterangepicker/daterangepicker-bs3.css"><!-- DATERANGE PLUGIN CSS -->
+<link rel="stylesheet" type="text/css" href="__ASSETS__/bootstrap-datetimepicker/css/datetimepicker.css"><!-- DATETIMEPICKER PLUGIN CSS -->
+<link rel="stylesheet" type="text/css" href="__ASSETS__/jquery-multi-select/css/multi-select.css"><!-- JQUERY MULTI SELECT PLUGIN CSS -->
+<link href="__ADMIN_CSS__/style.css" rel="stylesheet"><!-- THEME BASIC CSS -->
+<link href="__ADMIN_CSS__/style-responsive.css" rel="stylesheet"><!-- THEME BASIC RESPONSIVE  CSS -->
+    
+    <!--[if lt IE 9]>
+<script src="__ADMIN_JS__/html5shiv.js">
+</script>
+<script src="__ADMIN_JS__/respond.min.js">
+</script>
+<![endif]-->
+  <!-- END STYLESHEET -->
+  
+  </head>
+  <body>
+    <!-- BEGIN SECTION -->
+    {include file="common/admin/head.html"}
+    <!-- END HEADER NAV -->
+        
+     <!-- START USER LOGIN DROPDOWN  -->
+
+      <!-- END HEADER -->
+         <!-- BEGIN SIDEBAR -->
+      {include file="common/admin/left.html"}
+      <!-- END SIDEBAR -->
+      
+      <!-- START MAIN CONTENT -->
+      <section id="main-content">
+    
+      <!-- START WRAPPER -->
+        <section class="wrapper">
+          
+      <!-- START ROW -->
+          <div class="row">
+            <div class="col-md-12">
+              <section class="panel">
+                <header class="panel-heading">
+                  
+                  <span class="label label-primary">
+                    添加公告
+                  </span>
+                  <span class="tools pull-right">
+                    <a href="javascript:;" class="fa fa-chevron-down">
+                    </a>
+                    <a href="javascript:;" class="fa fa-times">
+                    </a>
+                  </span>
+                </header>
+                <div class="panel-body">
+                  <form action="{:url('addNotice')}" class="form-horizontal tasi-form">
+                    <div class="col-md-offset">
+                       <label>标题</label>
+                       <input type="text" class="form-control" name="notice_name" placeholder="标题">
+                    </div>
+                    <br />
+                    <div class="form-group">
+                      <label class="control-label col-md-2">
+                        内容
+                      </label>
+                      <div class="col-md-9">
+                        <textarea class="wysihtml5 form-control" rows="10" name="notice">
+                        </textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-5">
+                      <button class="btn btn-primary radius" type="submit"><i class="fa fa-save "></i>保存</button>
+        
+                      <button class="btn btn-default radius" type="button"><i class="fa fa-trash-o"></i>取消</button>
+
+                    </div>
+                  </form>
+                </div>
+              </section>
+            </div>
+          </div>
+      <!-- END ROW -->
+        <!-- START ROW -->
+          
+        <!-- END ROW -->
+        </section>
+    <!-- START WRAPPER -->
+      </section>
+      <!-- END MAIN CONTENT -->
+    
+    
+    <!-- BEGIN JS -->
+    
+    <script src="__ADMIN_JS__/jquery.js" ></script><!-- BASIC JS LIABRARY -->
+    <script src="__ADMIN_JS__/bootstrap.min.js" ></script><!-- BOOTSTRAP JS  -->
+    <script src="__ADMIN_JS__/jquery.dcjqaccordion.2.7.js"></script><!-- ACCORDING JS -->
+    <script src="__ADMIN_JS__/jquery.scrollTo.min.js" ></script><!-- SCROLLTO JS  -->
+    <script src="__ADMIN_JS__/jquery.nicescroll.js" > </script><!-- NICESCROLL JS  -->
+    <script src="__ADMIN_JS__/respond.min.js" ></script><!-- RESPOND JS  -->
+    <script src="__ASSETS__/fuelux/js/spinner.min.js"></script><!-- FUELUX JS  -->
+    <script src="__ASSETS__/bootstrap-fileupload/bootstrap-fileupload.js"></script><!-- BOOTSTRAP FILEUPLOAD JS  -->
+    <script src="__ASSETS__/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script><!-- BOOTSTRAP wysihtml5 JS  -->
+    <script src="__ASSETS__/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script><!-- BOOTSTRAP wysihtml5 JS  -->
+    <script src="__ASSETS__/bootstrap-datepicker/js/bootstrap-datepicker.js"></script><!-- BOOTSTRAP DATEPICKER JS  -->
+    <script src="__ASSETS__/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script><!-- BOOTSTRAP DATETIMEPICKER JS  -->
+    <script src="__ASSETS__/bootstrap-daterangepicker/moment.min.js"></script>
+    <script src="__ASSETS__/bootstrap-daterangepicker/daterangepicker.js"></script><!-- BOOTSTRAP DATERANGEPICKER JS  -->
+    <script src="__ASSETS__/bootstrap-colorpicker/js/bootstrap-colorpicker.js"> </script><!-- BOOTSTRAP COLORPICKER JS  -->
+    <script src="__ASSETS__/bootstrap-timepicker/js/bootstrap-timepicker.js"></script><!-- BOOTSTRAP TIMEPICKER JS  -->
+    <script src="__ASSETS__/jquery-multi-select/js/jquery.multi-select.js"></script><!-- BOOTSTRAP MULTISELECT JS  -->
+    <script src="__ASSETS__/jquery-multi-select/js/jquery.quicksearch.js"></script><!-- BOOTSTRAP MULTISELECT JS  -->
+    <script src="__ADMIN_JS__/common-scripts.js" ></script><!-- BASIC COMMON JS  -->
+    <script src="__ADMIN_JS__/advanced-form-components.js" ></script><!-- ADVANCE FORM COMPONENTS PAGE JS  -->
+    <script src="__ASSETS__/ckeditor/ckeditor.js"></script><!-- CKEDITOR JS  -->
+    <!-- END JS -->
+    
+  </body>
+</html>
+

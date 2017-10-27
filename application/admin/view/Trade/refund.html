@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- BEGIN META --> 
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="Custom Theme">
+    <!-- END META -->
+     
+      <!-- BEGIN SHORTCUT ICON -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- END SHORTCUT ICON -->
+      <title>role</title>
+    
+    <!-- BEGIN STYLESHEET --> 
+      <link href="__ADMIN_CSS__/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+      <link href="__ADMIN_CSS__/bootstrap-reset.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+      <link href="__ASSETS__/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME ICON STYLESHEET -->
+      <link rel="stylesheet" href="__ASSETS__/data-tables/DT_bootstrap.css"><!-- DATATABLE CSS -->
+      <link href="__ADMIN_CSS__/style.css" rel="stylesheet"><!-- THEME BASIC CSS -->
+      <link href="__ADMIN_CSS__/style-responsive.css" rel="stylesheet"><!-- THEME BASIC RESPONSIVE  CSS -->
+      <!--[if lt IE 9]>
+      <script src="__ADMIN_JS__/html5shiv.js"></script>
+      <script src="__ADMIN_JS__/respond.min.js"></script>
+      <![endif]-->
+    <!-- END STYLESHEET --> 
+   </head>
+   <body>
+   <!-- BEGIN SECTION --> 
+         <!-- BEGIN SECTION -->
+    {include file="common/admin/head.html"}
+    <!-- END HEADER NAV -->
+        
+     <!-- START USER LOGIN DROPDOWN  -->
+
+      <!-- END HEADER -->
+         <!-- BEGIN SIDEBAR -->
+      {include file="common/admin/left.html"}
+      <!-- END SIDEBAR --> 
+     
+     <!-- BEGIN MAIN CONTENT --> 
+         <section id="main-content">
+        <!-- BEGIN WRAPPER  -->
+            <section class="wrapper site-min-height">
+               <section class="panel">
+                  <header class="panel-heading">
+                     <span class="label label-primary">退款管理</span>
+                     <span class="tools pull-right">
+                     <a href="javascript:;" class="fa fa-chevron-down"></a>                     
+                     </span>
+                  </header>
+                  <div class="panel-body">
+                     <div class="adv-table editable-table ">
+                        <div class="clearfix">
+                        <div class="border clearfix">
+                         <span class="l_f">
+                            <a href="javascript:ovid()" class="btn btn-success Order_form"><i class="fa fa-check-square-o"></i>&nbsp;已退款订单</a>
+                            <a href="javascript:ovid()" class="btn btn-warning Order_form"><i class="fa fa-close"></i>&nbsp;未退款订单</a>
+                            <a href="javascript:ovid()" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;批量删除</a>
+                           </span>
+                           <span class="r_f">共：<b>2334</b>笔</span>
+                       </div>
+                          
+                        </div>
+                        <br>
+                        <div class="btn-group" role="group"> 
+                          <a class="btn btn-default" onClick="select()">全选</a> 
+                          <a class="btn btn-default" onClick="reverse()">反选</a> 
+                          <a class="btn btn-default" onClick="noselect()">不选</a>
+                        </div>
+                        <div class="space15"></div>
+                          <table class="table table-bordered">
+                            <caption>会员列表</caption>
+                            <thead>
+                              <tr>
+                                <th></th>
+                                <th>订单号</th>
+                                <th>产品名</th>
+                                <th>交易金额</th>
+                                <th>交易时间</th>
+                                <th>退款数量</th>
+                                <th>状态</th>
+                                <th>说明</th>
+                                <th>操作</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><input type="checkbox" name="checkbox[]"></td>
+                                <td>xxxxx</td>
+                                <td>铁砂掌</td>
+                                <td>23.00</td>
+                                <td>1990-6-1</td>
+                                <td>1</td>
+                                <td class="td-status">
+                                  未退款
+                                </td>
+                                <td>重复购买</td>
+                                <td>
+                                   <button class="btn btn-xs btn-success reMoney">退款</button> 
+                                   <button class="btn btn-xs btn-info refund_detaile">详细</button> 
+                                   <button class="btn btn-xs btn-warning">删除</button>    
+                               </td>
+                               <!--
+                                <td>
+                                  <a title="编辑" onclick="member_edit()" href="javascript:;"  class="btn btn-xs btn-info" >
+                                    <i class="icon-edit bigger-120">编辑</i>
+                                  </a>
+                                  <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-warning" >
+                                    <i class="icon-trash  bigger-120">删除</i>
+                                  </a>
+                                </td>-->
+                              </tr>
+                          
+                              
+                            </tbody>
+                          </table>
+                     </div>
+                  </div>
+               </section>
+            </section>
+         </section>
+      </section>
+<!-- BEGIN JS -->     
+    <script type="text/javascript" src="__ADMIN_JS__/table_choose.js"></script><!--全选-->
+    <script src="__ADMIN_JS__/jquery-1.8.3.min.js" ></script><!-- BASIC JS LIABRARY 1.8.3 -->
+    <script src="__ADMIN_JS__/bootstrap.min.js" ></script><!-- BOOTSTRAP JS  -->
+    <script src="__ADMIN_JS__/jquery.dcjqaccordion.2.7.js"></script><!-- ACCORDING JS -->
+    <script src="__ADMIN_JS__/jquery.scrollTo.min.js" ></script><!-- SCROLLTO JS  -->
+    <script src="__ADMIN_JS__/jquery.nicescroll.js" > </script><!-- NICESCROLL JS  -->
+    <script src="__ASSETS__/data-tables/jquery.dataTables.js"></script><!-- DATATABLE JS  -->
+    <script src="__ASSETS__/data-tables/DT_bootstrap.js"></script><!-- DATATABLE JS  -->
+    <script src="__ADMIN_JS__/respond.min.js" ></script><!-- RESPOND JS  -->
+    <script src="__ADMIN_JS__/common-scripts.js" ></script><!-- BASIC COMMON JS  -->
+    <script src="__ADMIN_JS__/editable-table.js" ></script><!-- EDITABLE TABLE JS  -->
+    <script src="__ASSETS__/layer/layer.js" type="text/javascript" ></script>
+    <script src="__ASSETS__/laydate/laydate.js" type="text/javascript"></script>
+    <!-- END JS --> 
+   </body>
+</html>
+<script>
+ //订单列表
+      $('.reMoney').click(function(){
+        var obj = $(this);
+          layer.confirm('确定退款吗', {
+          btn: ['确定','取消'] //按钮
+          }, function(){
+            obj.parent().parent().find('.td-status').html('已退款');
+            obj.remove();
+            layer.msg('退款成功', {icon: 1});
+          }, function(){
+            layer.msg('已取消',{icon:5});
+          });
+   })
+
+</script>
+
+

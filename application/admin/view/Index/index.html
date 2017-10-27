@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Olive Enterprise">
+    <!-- END META -->
+    
+     <!-- BEGIN SHORTCUT ICON -->
+     <link rel="shortcut icon" href="img/favicon.ico">
+     <!-- END SHORTCUT ICON -->
+     <title>
+       Olive Admin - Flat & Responsive Bootstrap Admin Template
+     </title>
+     <!-- BEGIN STYLESHEET-->
+		<link href="__ADMIN_CSS__/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+		<link href="__ADMIN_CSS__/bootstrap-reset.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+		<link href="__ASSETS__/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME ICON CSS -->
+		<link href="__ADMIN_CSS__/style.css" rel="stylesheet"><!-- THEME BASIC CSS -->
+		<link href="__ADMIN_CSS__/style-responsive.css" rel="stylesheet"><!-- THEME RESPONSIVE CSS -->
+		<link href="__ASSETS__/morris.js-0.4.3/morris.css" rel="stylesheet"><!-- MORRIS CHART CSS -->
+
+     <!--dashboard calendar-->
+     <link href="__ADMIN_CSS__/clndr.css" rel="stylesheet"><!-- CALENDER CSS -->
+     <!--[if lt IE 9]>
+<script src="__ADMIN_JS__/html5shiv.js">
+</script>
+<script src="__ADMIN_JS__/respond.min.js">
+</script>
+<![endif]-->
+     <!-- END STYLESHEET-->
+  </head>
+  <body>
+    <!-- BEGIN SECTION -->
+    {include file="common/admin/head.html"}
+		<!-- END HEADER NAV -->
+        
+		 <!-- START USER LOGIN DROPDOWN  -->
+
+      <!-- END HEADER -->
+         <!-- BEGIN SIDEBAR -->
+      {include file="common/admin/left.html"}
+      <!-- END SIDEBAR -->
+      <!-- BEGIN MAIN CONTENT -->
+      
+      
+      <section id="main-content">
+	  <!-- BEGIN WRAPPER  -->
+        <section class="wrapper">
+		  <!-- BEGIN ROW  -->
+          <div class="row state-overview">
+            <div class="col-lg-3 col-sm-6">
+              <section class="panel">
+                <div class="symbol">
+                  <i class="fa fa-tags blue">
+                  </i>
+                </div>
+                <div class="value">
+                  <h1 class="count">
+                    0
+                  </h1>
+                  <p>
+                    总销售额
+                  </p>
+                </div>
+              </section>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <section class="panel">
+                <div class="symbol">
+                  <i class="fa fa-user yellow">
+                  </i>
+                </div>
+                <div class="value">
+                  <h1 class=" count2">
+                    0
+                  </h1>
+                  <p>
+                    新用户
+                  </p>
+                </div>
+              </section>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <section class="panel">
+                <div class="symbol">
+                  <i class="fa fa-shopping-cart purple">
+                  </i>
+                </div>
+                <div class="value">
+                  <h1 class=" count3">
+                    0
+                  </h1>
+                  <p>
+                    订单成交量
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+		   <!-- END ROW  -->
+       <div class="alert alert-info">欢迎您，管理员admin,当前时间：2017-10-10 22:10</div>
+         <!-- BEGIN ROW  -->
+       <div class="row">
+        <div class="panel-group col-lg-6" id="accordion">
+          <div class="panel panel-default">
+            <h3 class="text-center">通知栏</h3>
+            {foreach $list as $v}
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" 
+                   href="#{$v.notice_name}">
+                  {$v.notice_name}
+                </a>
+              </h4>
+            </div>
+            <div id="{$v.notice_name}" class="panel-collapse collapse">
+              <div class="panel-body">
+               {$v.notice}
+              </div>
+            </div>
+            {/foreach}
+          </div>
+          </div>
+        <div class="col-lg-6">
+          <section class="panel">
+            <div class="panel-body bg-primary">
+              <a href="picture-add.html" title="添加商品" class="btn  btn-info">
+                <i class="fa fa-plus"></i>
+              <h5 class="margin-top">添加商品</h5>
+              </a>
+              <a href="picture-add.html" title="订单管理" class="btn  btn-info">
+                <i class="fa fa-plus"></i>
+              <h5 class="margin-top">订单管理</h5>
+              </a>
+             <a href="picture-add.html" title="个人信息" class="btn  btn-info">
+                <i class="fa fa-plus"></i>
+              <h5 class="margin-top">个人信息</h5>
+              </a>
+              <a href="picture-add.html" title="系统设置" class="btn  btn-info">
+                <i class="fa fa-plus"></i>
+              <h5 class="margin-top">系统设置</h5>
+              </a>
+             <a href="picture-add.html" title="添加通知" class="btn  btn-info">
+                <i class="fa fa-plus"></i>
+              <h5 class="margin-top">添加通知</h5>
+              </a>                                         
+            </div>           
+          </section>
+        </div>
+         </div>
+               <!-- BEGIN ROW -->
+      <div class="row">
+        <div class="col-lg-4">
+          <section class="panel">
+            <table class="table table-striped">
+              <caption>
+                <h4 >订单统计信息</h4>
+              </caption>
+              <thead>
+                <tr>
+                  <td class="text-warning">未处理订单：</td>
+                  <td>0个</td>
+                </tr>
+              </tdead>
+              <tbody>
+                <tr>
+                  <td class="text-warning">待发货订单</td>
+                  <td>10个</td>
+                </tr>
+                <tr>
+                  <td class="text-primary">待结算订单</td>
+                  <td>13个</td>
+                </tr>
+                <tr>
+                  <td class="text-success">已成交订单</td>
+                  <td>5个</td>
+                </tr>
+                <tr>
+                  <td class="text-danger">交易失败</td>
+                  <td>23个</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+        <div class="col-lg-4">
+          <section class="panel">
+            <table class="table table-striped">
+               <caption>
+                <h4 >商品统计信息</h4>
+              </caption>
+              <thead>
+                <tr>
+                  <td>商品总数</td>
+                  <td>0个</td>
+                </tr>
+              </tdead>
+              <tbody>
+                <tr>
+                  <td>上架商品</td>
+                  <td>10个</td>
+                </tr>
+                <tr>
+                  <td>下架商品</td>
+                  <td>13个</td>
+                </tr>
+                <tr>
+                  <td>商品评论</td>
+                  <td>5个</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+        <div class="col-lg-4">
+          <section class="panel">
+            <table class="table table-striped">
+               <caption>
+                <h4 >会员统计信息</h4>
+              </caption>
+              <thead>
+                <tr>
+                  <td>已注册会员：</td>
+                  <td>0个</td>
+                </tr>
+              </tdead>
+              <tbody>
+                <tr>
+                  <td class="text-warning">钻石会员</td>
+                  <td>10个</td>
+                </tr>
+                <tr>
+                  <td style="color:#E9D55C">黄金会员</td>
+                  <td>13个</td>
+                </tr>
+                <tr>
+                  <td style="color: #48AF9C">青铜会员</td>
+                  <td>5个</td>
+                </tr>
+                <tr>
+                  <td>普通会员</td>
+                  <td>23个</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </div>          
+          </section>
+        </div>
+      <!-- END ROW -->
+        </section>
+
+		<!-- END WRAPPER  -->
+      </section>   
+
+    <!-- BEGIN JS -->
+     <script src="__ADMIN_JS__/underscore.js" ></script>
+    <script src="__ADMIN_JS__/jquery-1.8.3.min.js" ></script><!-- BASIC JQUERY 1.8.3 LIB. JS -->
+    <script src="__ADMIN_JS__/bootstrap.min.js" ></script><!-- BOOTSTRAP JS -->
+    <script src="__ADMIN_JS__/jquery.dcjqaccordion.2.7.js"></script><!-- ACCORDIN JS -->
+    <script src="__ADMIN_JS__/jquery.scrollTo.min.js" ></script><!-- SCROLLTO JS -->
+    <script src="__ADMIN_JS__/jquery.nicescroll.js" ></script><!-- NICESCROLL JS -->
+    <script src="__ADMIN_JS__/respond.min.js" ></script><!-- RESPOND JS -->
+    <script src="__ADMIN_JS__/jquery.sparkline.js"></script><!-- SPARKLINE JS -->
+    <script src="__ADMIN_JS__/sparkline-chart.js"></script><!-- SPARKLINE CHART JS -->
+    <script src="__ADMIN_JS__/common-scripts.js"></script><!-- BASIC COMMON JS -->
+   <script type="text/javascript">
+       function countUp(count) {
+
+    'use strict';
+
+        var div_by = 100,
+            speed = Math.round(count / div_by),
+            $display = $('.count'),
+            run_count = 1,
+            int_speed = 24;
+        var int = setInterval(function () {
+            if (run_count < div_by) {
+                $display.text(speed * run_count);
+                run_count++;
+            } else if (parseInt($display.text()) < count) {
+                var curr_count = parseInt($display.text()) + 1;
+                $display.text(curr_count);
+            } else {
+                clearInterval(int);
+            }
+        }, int_speed);
+    }
+    countUp(495);
+
+    function countUp2(count) {
+
+    'use strict';
+
+        var div_by = 100,
+            speed = Math.round(count / div_by),
+            $display = $('.count2'),
+            run_count = 1,
+            int_speed = 24;
+        var int = setInterval(function () {
+            if (run_count < div_by) {
+                $display.text(speed * run_count);
+                run_count++;
+            } else if (parseInt($display.text()) < count) {
+                var curr_count = parseInt($display.text()) + 1;
+                $display.text(curr_count);
+            } else {
+                clearInterval(int);
+            }
+        }, int_speed);
+    }
+    countUp2(947);
+
+    function countUp3(count) {
+
+
+    'use strict';
+
+        var div_by = 100,
+            speed = Math.round(count / div_by),
+            $display = $('.count3'),
+            run_count = 1,
+            int_speed = 24;
+        var int = setInterval(function () {
+            if (run_count < div_by) {
+                $display.text(speed * run_count);
+                run_count++;
+            } else if (parseInt($display.text()) < count) {
+                var curr_count = parseInt($display.text()) + 1;
+                $display.text(curr_count);
+            } else {
+                clearInterval(int);
+            }
+        }, int_speed);
+    }
+    countUp3(10328);  
+
+   </script><!-- COUNT JS -->
+    <!--Morris-->
+    <script src="__ASSETS__/morris.js-0.4.3/morris.min.js" ></script><!-- MORRIS JS -->
+    <script src="__ASSETS__/morris.js-0.4.3/raphael-min.js" ></script><!-- MORRIS  JS -->
+    <!--Calendar-->
+    <script src="__ADMIN_JS__/calendar/clndr.js"></script><!-- CALENDER JS -->
+    <script src="__ADMIN_JS__/calendar/evnt.calendar.init.js"></script><!-- CALENDER EVENT JS -->
+    <script src="__ADMIN_JS__/calendar/moment-2.2.1.js"></script><!-- CALENDER MOMENT JS -->
+    <script src="__ASSETS__/jquery-knob/js/jquery.knob.js" ></script><!-- JQUERY KNOB JS -->
+    <script >
+      //knob
+      $(".knob").knob();
+      
+    </script>
+    <!-- END JS -->
+  </body>
+</html>
+
+

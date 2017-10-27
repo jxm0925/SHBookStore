@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- BEGIN META -->
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="Olive Enterprise">
+    <!-- END META -->
+     
+      <!-- BEGIN SHORTCUT ICON -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- END SHORTCUT ICON -->
+      <title>Dynamic Table</title>
+    <!-- BEGIN STYLESHEET --> 
+      <link href="__ADMIN_CSS__/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+      <link href="__ADMIN_CSS__/bootstrap-reset.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+      <link href="__ASSETS__/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME ICON STYLESHEET -->
+      <link href="__ASSETS__/advanced-datatable/media/css/demo_page.css" rel="stylesheet"><!-- ADVANCED DATATABLE CSS -->
+      <link href="__ASSETS__/advanced-datatable/media/css/demo_table.css" rel="stylesheet"><!-- ADVANCED DATATABLE CSS -->
+      <link rel="stylesheet" href="__ASSETS__/data-tables/DT_bootstrap.css"><!-- DATATABLE CSS -->
+      <link href="__ADMIN_CSS__/style.css" rel="stylesheet"><!-- THEME BASIC CSS -->
+      <link href="__ADMIN_CSS__/style-responsive.css" rel="stylesheet"><!-- THEME BASIC RESPONSIVE  CSS -->
+          <link href="css/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+          <link href="css/bootstrap-reset.css" rel="stylesheet"><!-- BOOTSTRAP CSS -->
+          <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME ICON STYLESHEET -->
+          <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css"><!-- DATEPICKER CSS -->
+          <link rel="stylesheet" type="text/css" href="assets/bootstrap-colorpicker/css/colorpicker.css"><!-- COLORPICKER CSS -->
+          <link rel="stylesheet" type="text/css" href="assets/bootstrap-daterangepicker/daterangepicker.css"><!-- DATERANGEPICKER CSS -->
+          <link href="css/style.css" rel="stylesheet"><!-- THEME BASIC CSS -->
+          <link href="css/style-responsive.css" rel="stylesheet">
+
+      <link rel="stylesheet" type="text/css" href="__STATIC__/h-ui/css/H-ui.min.css" />
+      <link rel="stylesheet" type="text/css" href="__STATIC__/h-ui.admin/css/H-ui.admin.css" />
+      <link rel="stylesheet" type="text/css" href="__LIB__/Hui-iconfont/1.0.8/iconfont.css" />
+
+      <link rel="stylesheet" type="text/css" href="__STATIC__/h-ui.admin/skin/default/skin.css" id="skin" />
+      <link rel="stylesheet" type="text/css" href="__STATIC__/h-ui.admin/css/style.css" />
+      <link href="__LIB__/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+
+      <script type="text/javascript" src="__LIB__/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="__LIB__/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="__LIB__/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+      <!--[if lt IE 9]>
+      <script src="__ADMIN_JS__/html5shiv.js"></script>
+      <script src="__ADMIN_JS__/respond.min.js"></script>
+      <![endif]-->
+    <!-- END STYLESHEET --> 
+   </head>
+   <body>
+   <!-- BEGIN SECTION --> 
+    {include file="common/admin/head.html"}
+    <!-- END HEADER NAV -->
+        
+     <!-- START USER LOGIN DROPDOWN  -->
+
+      <!-- END HEADER -->
+         <!-- BEGIN SIDEBAR -->
+      {include file="common/admin/left.html"}
+      <!-- END SIDEBAR -->
+      <!-- BEGIN MAIN CONTENT -->       
+         <!-- BEGIN MAIN CONTENT -->    
+         <section id="main-content">
+          <section class="wrapper site-min-height">
+            <!---->
+            <div class="page-container">
+              <form method="post" action="{:url('BookAdd/bookInsert')}" class="form form-horizontal" id="F_id" enctype="multipart/form-data">
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>书名：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="" name="bookname">
+                  </div>
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>作者：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="" name="author">
+                  </div>
+                </div>
+                 <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>出版社：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="" name="producter">
+                  </div>
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2">出版时间：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" name="product_time" onfocus="{literal}WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}' }){/literal}" id="datemax" class="input-text Wdate" style="width:180px;">
+                  </div>
+                </div>
+                <!--
+                <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>数量：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                       <input type="text" name="count" placeholder="" data-mask="999,999,999.99" class="form-control">
+                       <span class="help-inline">999,999,999.99</span>
+                 </div>
+                </div>
+                
+                <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>成本：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                       <input type="text" name="price" placeholder="" data-mask="$ 999,999,999.99" class="form-control">
+                       <span class="help-inline">$999,999,999.99</span>
+                 </div>
+                </div>
+                <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>售价：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                       <input type="text" name="cell_price" placeholder="" data-mask="$ 999,999,999.99" class="form-control">
+                       <span class="help-inline">$999,999,999.99</span>
+                 </div>
+                </div>
+                <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>展示价：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                       <input type="text" name="show_price" placeholder="" data-mask="$ 999,999,999.99" class="form-control">
+                       <span class="help-inline">$999,999,999.99</span>
+                 </div>
+                </div>
+                -->
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>数量：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="" name="count">
+                  </div>
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>成本价格：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="" name="price">
+                  </div>
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>售价：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="" name="sell_price">
+                  </div>
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>展示价：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="" name="show_price">
+                  </div>
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
+                  <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+                    <select name="type" class="select">
+                    <option value='0' selected="selected">---选择分类---</option>
+                    {if !empty($type)}
+                      {foreach $type as $vo}
+                      <option value="{$vo.type_id}">{:str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;',substr_count($vo.type_path,'-'))}|--{$vo.type_name}</option>
+                      {/foreach} 
+                      {/if}
+                    </select>
+                    </span> </div>
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2">销售开始时间：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" name="start_time" onfocus="{literal}WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' }){/literal}" id="datemin" class="input-text Wdate" style="width:180px;">
+                  </div>
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2">销售结束时间：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" name="end_time" onfocus="{literal}WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}' }){/literal}" id="datemax" class="input-text Wdate" style="width:180px;">
+                  </div>
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2">产品关键字：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" name="key_words" id="" placeholder="多个关键字用英文逗号隔开，限10个关键字" value="" class="input-text">
+                  </div>
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2">产品详情：</label>
+                  <div class="formControls col-xs-8 col-sm-9">
+                    <textarea name="details" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"></textarea>
+                    <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+                  </div>
+                </div>
+                <!--
+                <div class="form-group last">
+                      <label class="control-label col-md-3">
+                        Image Upload
+                      </label>
+                      <div class="col-md-9">
+                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                          <div class="fileupload-new thumbnail">
+                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+                          </div>
+                          <div class="fileupload-preview fileupload-exists thumbnail">
+                          </div>
+                          <div>
+                            <span class="btn btn-white btn-file">
+                              <span class="fileupload-new">
+                                <i class="fa fa-paper-clip">
+                                </i>
+                                Select image
+                              </span>
+                              <span class="fileupload-exists">
+                                <i class="fa fa-undo">
+                                </i>
+                                Change
+                              </span>
+                              <input type="file" class="default">
+                            </span>
+                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">
+                              <i class="fa fa-trash">
+                              </i>
+                              Remove
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    -->
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片上传：</label>
+                  <input type="file" name="picture" value="">
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2">详细内容：</label>
+                  <div class="formControls col-xs-8 col-sm-9"> 
+                    <script id="editor" type="text/plain" style="width:100%;height:400px;"></script> 
+                  </div>
+                </div>
+                <div class="row cl">
+                  <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                    <button id="sub" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+                    
+                    <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+     <!-- END SECTION --> 
+     
+     <!-- BEGIN FOOTER --> 
+  <!-- 删除模态提示（Modal） -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">提示信息</h4>
+                  </div>
+                  <div class="modal-body">您确定要删除吗？</div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                      <button type="button" class="btn btn-danger">确认</button>
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal -->
+      </div>
+<!--图书信息模态框-->
+
+    <!-- BEGIN JS --> 
+    <script language="javascript" src="__ASSETS__/advanced-datatable/media/js/jquery.js"></script><!-- BASIC JQUERY JS  -->
+    <script src="__ADMIN_JS__/bootstrap.min.js" ></script><!-- BOOTSTRAP JS  -->
+    <script src="__ADMIN_JS__/jquery.dcjqaccordion.2.7.js"></script><!-- ACCORDING JS -->
+    <script src="__ADMIN_JS__/jquery.scrollTo.min.js" ></script><!-- SCROLLTO JS  -->
+    <script src="__ADMIN_JS__/jquery.nicescroll.js" > </script><!-- NICESCROLL JS  -->
+    <script src="__ADMIN_JS__/respond.min.js" ></script><!-- RESPOND JS  -->
+    <script src="__ASSETS__/flot/jquery.flot.js"></script><!-- FLOT JS  -->
+    <script src="__ASSETS__/flot/jquery.flot.tooltip.js"></script><!-- FLOT TOOLTIP JS  -->
+    <script src="__ASSETS__/flot/jquery.flot.resize.js"></script><!-- FLOT RESIZE  JS  -->
+    <script src="__ASSETS__/flot/jquery.flot.pie.resize.js"></script><!-- FLOT PIE CHART RESIZE JS  -->
+    <script src="__ADMIN_JS__/common-scripts.js" ></script><!-- BASIC COMMON JS  -->
+    <script src="__ADMIN_JS__/table_choose.js"></script>
+    <script src="__ADMIN_JS__/flot_chart.js"></script>
+
+    <script src="__ASSETS__/bootstrap-inputmask/bootstrap-inputmask.min.js"></script><!-- INPUT MASK JS 
+
+    </script>
+
+    <!--请在下方写此页面业务相关的脚本-->
+    <script type="text/javascript" src="__LIB__/My97DatePicker/4.8/WdatePicker.js"></script>
+    <script type="text/javascript" src="__LIB__/jquery.validation/1.14.0/jquery.validate.js"></script> 
+    <script type="text/javascript" src="__LIB__/jquery.validation/1.14.0/validate-methods.js"></script> 
+    <script type="text/javascript" src="__LIB__/jquery.validation/1.14.0/messages_zh.js"></script>
+    <script type="text/javascript" src="__LIB__/webuploader/0.1.5/webuploader.min.js"></script> 
+    <script type="text/javascript" src="__LIB__/ueditor/1.4.3/ueditor.config.js"></script>
+    <script type="text/javascript" src="__LIB__/ueditor/1.4.3/ueditor.all.min.js"> </script>
+    <script type="text/javascript" src="__LIB__/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript">
+    /*
+      $(function(){
+        $('#sub').click(function(){
+          console.log($("form").serialize());
+          console.log(11);
+          $.ajax({
+                type: "POST",
+                url:"{:url('BookAdd/bookInsert')}",
+                data:$('form').serialize(),// 你的formid
+                async: false,
+                success: function(data) {
+                  console.log(data);
+                    if(data == 1){
+                      alert('添加成功');
+                    }else{
+                      alert('添加失败')
+                    }
+                }
+            });
+        });
+      });*/
+    </script>
+
+
+
+   </body>
+</html>
+
+
