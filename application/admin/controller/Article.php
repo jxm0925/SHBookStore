@@ -2,20 +2,11 @@
 namespace app\admin\controller;
 
 use app\admin\controller\Index;
-use app\admin\model\Notice;
-use app\admin\model\Comment;
 use \think\Session;
 use think\Paginator;
 use think\DB;
 class Article extends Index
 {
-	protected $notice;
-	protected $comment;
-	public function _initialize()
-	{
-		$this->notice = new Notice();
-		$this->comment= new Comment();
-	}
 	public function article_list()
 	{
 		$result = $this->notice->listAll();

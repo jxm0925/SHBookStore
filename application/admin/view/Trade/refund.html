@@ -79,7 +79,6 @@
                                 <th>产品名</th>
                                 <th>交易金额</th>
                                 <th>交易时间</th>
-                                <th>退款数量</th>
                                 <th>状态</th>
                                 <th>说明</th>
                                 <th>操作</th>
@@ -92,15 +91,15 @@
                                 <td>铁砂掌</td>
                                 <td>23.00</td>
                                 <td>1990-6-1</td>
-                                <td>1</td>
                                 <td class="td-status">
                                   未退款
                                 </td>
                                 <td>重复购买</td>
                                 <td>
+                                  <input type="hidden" class="hiddenId" value="">
                                    <button class="btn btn-xs btn-success reMoney">退款</button> 
                                    <button class="btn btn-xs btn-info refund_detaile">详细</button> 
-                                   <button class="btn btn-xs btn-warning">删除</button>    
+                                   <button class="btn btn-xs btn-warning del">删除</button>    
                                </td>
                                <!--
                                 <td>
@@ -140,7 +139,7 @@
    </body>
 </html>
 <script>
- //订单列表
+//退款按钮事件
       $('.reMoney').click(function(){
         var obj = $(this);
           layer.confirm('确定退款吗', {
@@ -153,7 +152,19 @@
             layer.msg('已取消',{icon:5});
           });
    })
-
+//删除按钮事件
+      $('.del').click(function(){
+        var obj = $(this);
+          layer.confirm('确定删除吗', {
+          btn: ['确定','取消'] //按钮
+          }, function(){
+            obj.parent().parent().remove();
+            layer.msg('删除成功', {icon: 1});
+          }, function(){
+            layer.msg('已取消',{icon:5});
+          });
+   })
+  $('')
 </script>
 
 

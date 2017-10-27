@@ -3,19 +3,12 @@ namespace app\admin\controller;
 
 use app\admin\controller\Auth;
 use app\admin\model\Notice;
-use app\admin\model\User;
 use \think\Session;
 use think\Paginator;
 
 class Index extends Auth
 {
 	protected $is_login = ['*'];
-	protected $user;
-	//初始化
-	public function _initialize()
-	{
-		$this->user = new User();
-	}
 	public function index()
 	{
 		$list = Notice::all();
