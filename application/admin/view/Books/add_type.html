@@ -51,6 +51,7 @@
       <!-- BEGIN WRAPPER  -->
           <section class="wrapper site-min-height">
               <table class="table">
+              <span>点击子节点进行删除</span>
                 <tr>
                   <td width="200" class="va-t"><ul id="treeDemo" class="ztree"></ul></td>
                   
@@ -150,22 +151,24 @@ var setting = {
       var zTree = $.fn.zTree.getZTreeObj("tree");
 
       if (treeNode.isParent) {
-        alert(treeNode.id);
         alert('下面有子节点，不可删除');
-        //  $('treeNode').mousedown(function(e){ 
-        //       if(3 == e.which){ 
-        //            alert('这是右键单击事件'); 
-        //       }else if(1 == e.which){ 
-        //                alert('这是左键单击事件'); 
-        //       } 
-        //  })
-        // alert(1);
-        // alert(2);
-        // zTree.expandNode(treeNode);
-        // return false;
       } else {
-        demoIframe.attr("src",treeNode.file + ".html");
-        return true;
+        
+          $.ajax({
+            url:"{:url('TypeAdd/typeDelete')}",
+            type:'post',
+            data:{id:treeNode.id},
+            dataType:'json',
+            async:true,
+            success:function(data){
+              if (data == 1) {
+                alert('删除成功');
+                parent.location.href="{:url('Books/addType')}";
+              }else{
+                alert('删除失败');
+              }
+            }
+          });
       }
     }
   }
