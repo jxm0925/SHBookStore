@@ -2,7 +2,6 @@
 namespace app\admin\controller;
 
 use think\Controller;
-use \think\Session;
 use app\admin\model\Admin;
 
 class Auth extends Controller
@@ -24,11 +23,9 @@ class Auth extends Controller
 	}
 	public function dologin()
 	{
-		
 		$info = Admin::where('admin_name', $this->request->param('name'))->where('admin_pwd',md5($this->request->param('pwd')))->find();
-		//dump($info);
 		if ($info) {
-			session('admin_id',$info->admin_id);
+			session('admin_id', $info->admin_id);
 			$this->success('登录成功', url('admin/index/index'));
 		} else {
 			$this->error('登录失败', url('admin/auth/login'));
