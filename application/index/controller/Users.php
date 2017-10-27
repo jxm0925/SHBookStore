@@ -3,7 +3,7 @@ namespace app\index\controller;
 
 use \think\Controller;
 
-class Books extends Controller
+class Users extends Controller
 {
 	public function cart()
 	{
@@ -34,6 +34,10 @@ class Books extends Controller
 		return $this->fetch();
 	}
 	public function settings()
+	{
+		return $this->fetch();
+	}
+	public function order()
 	{
 		return $this->fetch();
 	}

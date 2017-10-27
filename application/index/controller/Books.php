@@ -1,9 +1,9 @@
 <?php
 namespace app\index\controller;
 
-use \think\Controller;
+use app\index\controller\Index;
 
-class Books extends Controller
+class Books extends Index
 {
 	public function newBook()
 	{
