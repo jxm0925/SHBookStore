@@ -108,8 +108,11 @@
                                 <td>黄铜</td>
                                 <td>
                                   <input type="hidden" value="{$v.user_id}" class="uid">
-                                  <button class="btn btn-xs btn-warning ban" value=""><i class="fa fa-times bigger-120">{$v.isban}</i>
-                                  </button>
+<!--                                   {if $v.isban==1}
+                                  <button class="btn btn-xs btn-warning ban" value="{$v.isban}">解除</button>
+                                  {else}
+                                   <button class="btn btn-xs btn-warning ban" value="{$v.isban}">禁止</button>
+                                  {/if} -->
                                   <button class="btn btn-xs btn-danger del"><i class="fa fa-trash-o  bigger-120">删除</i>
                                   </button>
                                 </td>
@@ -164,9 +167,20 @@
       }
     },'json');
   })
-  $('.ban').click(function(){
-    console.log($(this).siblings('.uid').val());
-  });
+/*  $('.ban').click(function(){
+      var obj = $(this); 
+      if($(this).val()==1)
+      {
+        $.post("{:url('Index/userOperate')}",{banId:$(this).siblings('.uid').val()},function(data){},'json');
+        $(this).val(0);
+        $(this).text("禁止");
+      }
+      else
+      {
+        $(this).val(1)
+        $(this).text("解除")
+      }
+  });*/
 </script>
 
 

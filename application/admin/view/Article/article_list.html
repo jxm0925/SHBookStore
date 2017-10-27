@@ -95,13 +95,14 @@
                               {if !empty($list)}
                               {foreach $list as $v}
                               <tr>
-                                <td><input type="checkbox" name="checkbox[]" value="{$v.notice_id}" class="noticeID"></td>
+                                <td><input type="checkbox" name="checkbox[]" value="{$v.notice_id}"></td>
 
                                 <td>{$v.notice_id}</td>
                                 <td class="admin_name">{$v.admin_name}</td>
                                 <td>{$v.create_time}</td>
                                 <td class="notice_name">{$v.notice_name}</td>
                                 <td>
+                                  <input type="hidden" class="noticeID" value="{$v.notice_id}">
                                   <button class="btn btn-xs btn-info showModal" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i></button>
                                  
                                   <button class="btn btn-xs btn-danger del"><i class="fa fa-trash-o"></i></button>
@@ -175,6 +176,8 @@
     <script src="__ADMIN_JS__/respond.min.js" ></script><!-- RESPOND JS  -->
     <script src="__ADMIN_JS__/common-scripts.js" ></script><!-- BASIC COMMON JS  -->
     <script src="__ADMIN_JS__/editable-table.js" ></script><!-- EDITABLE TABLE JS  -->
+    <script src="__ASSETS__/layer/layer.js" type="text/javascript" ></script>
+    <script src="__ASSETS__/laydate/laydate.js" type="text/javascript"></script>
       <script >
        <!-- EDITABLE TABLE FUNCTION  -->
          jQuery(document).ready(function() {
@@ -197,12 +200,10 @@
       },'json');
     })
   });
- $('.del').each(function(i,obj){
-    $(this).click(function(){
+ $('.del').click(function(){
       var r = confirm('确定要删除吗');
       if(r)
       {
-        $.post("{:url('delNotice')}",{noticeid:$(".noticeID").eq(i).attr('value')},function(data){
           if(data)
           {
             window.location.reload()
@@ -215,6 +216,25 @@
       }
     })
   });
+  $('.del').click(function(){
+    var obj = $(this);
+      layer.confirm('确定退款吗', {
+      btn: ['确定','取消'] //按钮
+      }, function(){
+        $.post("{:url('delNotice')}",{noticeid:$(this).siblings('.noticeID').val()},function(data){
+          if(data)
+          {
+            obj.parent().parent().remove();
+            layer.msg('退款成功', {icon: 1});
+          }
+          else
+          {
+            layer.msg('退款成功', {icon: 1});
+          }
+      }, function(){
+        layer.msg('已取消',{icon:5});
+      });
+    })
 </script>
 
 

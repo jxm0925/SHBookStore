@@ -37,6 +37,11 @@ class Index extends Auth
 			$id = $this->request->param('delId');
 			return $this->user->delUser($id);
 		}
+/*		if(!empty($this->request->param('banId')))
+		{
+			$id = $this->request->param('delId');
+			return $this->user->banUser($id);
+		}*/
 	}
 	public function site_config()
 	{

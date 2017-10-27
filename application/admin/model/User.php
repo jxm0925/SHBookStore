@@ -17,12 +17,13 @@ class User extends Model
 	{
 		return $this->destroy($id);
 	}
+/*	public function banUser($id)
+	{
+		$result = $this->get($id);
+		
+	}*/
 	public function getSexAttr($value) {
 		$sex = [0=>'女',1=>'男',2=>'保密'];
-		return $sex[$value];
-	}
-	public function getIsBanAttr($value) {
-		$sex = [0=>'禁用',1=>'解除'];
 		return $sex[$value];
 	}
 }
