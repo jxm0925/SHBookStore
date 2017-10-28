@@ -7,20 +7,72 @@ use \think\Request;
 use \think\Validate;
 use framework\Ucpaas;
 use app\index\model\User;
+use app\index\model\Type;
+use app\index\model\Notice;
+use app\index\model\Picture;
+use app\index\model\Good;
 
 class Index extends Controller
 {
 	protected $user;
 	protected $uc;
+	protected $type;
+	protected $notice;
+	protected $fstarr;
+	protected $picture;
+	protected $good;
 	//变量初始化
 	public function _initialize()
 	{
 		$this->user = new User();
+		$this->type = new Type();
+		$this->notice = new Notice();
+		$this->picture= new Picture();
+		$this->good   = new Good();
+		$this->fstarr = $this->listMenu();
 	}
 
 	public function index()
 	{
+		$banner = $this->picture->listBanner();
+		$notice = $this->notice->listNotice();
+		$new	= $this->good->listNews();
+		$hot	= $this->good->listHot();
+		$this->assign(['fstarr'=>$this->fstarr,
+			'notice'=>$notice,
+			'banner'=>$banner,
+			'new'	=>$new,
+			'hot'	=>$hot,
+		]);
 		return $this->fetch();
+	}
+	public function listMenu()
+	{
+		$fst = $this->type->listfstType();
+		$fstarr = array();
+		$snd = array();
+		$sndarr = array();
+		$trd = array();
+		$trdarr = array();
+		//dump($fst);
+		foreach ($fst as $key => $value) {
+			$fstarr[$key] = $value->toArray();
+			$fstarr[$key]['child'] = array();
+			$snd = $this->type->listsndType($value->type_id);
+			//array_push($fst[$key]['child'],$snd->type_name);
+			foreach($snd as $k=>$v){
+				$sndarr[$k] = $v->toArray();
+				array_push($fstarr[$key]['child'], $sndarr[$k]);
+				$fstarr[$key]['child'][$k]['child2'] = array();
+				$trd = $this->type->listtrdType($v->type_id);
+				foreach ($trd as $k2=>$v2) {
+					$sndarr[$k2] = $v2->toArray();
+					array_push($fstarr[$key]['child'][$k]['child2'],$sndarr[$k2]);
+				}
+
+			}
+		}
+		return $fstarr;
 	}
 	//注册相关操作
 	public function regist()

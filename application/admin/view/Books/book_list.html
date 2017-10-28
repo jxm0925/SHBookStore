@@ -121,7 +121,7 @@
                             <td><input type="checkbox" class="input-control bookid" name="checkbox[]" value="{$value['good_id']}" /></td>
                             <td>{$value['good_id']}</td>
                             <td class="bookname">{$value['good_name']}</td>
-                            <td><img width="100" height="40" src="/uploads/{$value['good_pic']}" /></td>
+                            <td><img width="40" height="40" src="/uploads/{$value['good_pic']}" /></td>
                             <td>{$value['type_name']}</td>
                             <td class="bookauthor">{$value['good_author']}</td>
                             <td class="booktime">{:date('Y-m-d',$value['good_time'])}</td>
@@ -345,7 +345,8 @@
       });   
     })
   
-
+</script>
+<script type="text/javascript">
 
         var data = [{
             label: "文艺书籍",

@@ -7,6 +7,7 @@ class Books extends Index
 {
 	public function newBook()
 	{
+		$this->assign('fstarr',$this->fstarr);
 		return $this->fetch();
 	}
 	public function ranking()

@@ -6,11 +6,6 @@ use app\admin\model\Picture as PictureModel;
 use app\admin\model\Type;
 class Picture extends Index
 {
-	protected $pic;
-	public function _initials()
-	{
-		$this->pic = new PictureModel();
-	}
 	public function picList()
 	{
 		$data =PictureModel::getPicInfo()->paginate(3);
@@ -30,6 +25,7 @@ class Picture extends Index
 		$data = $this->request->param();
 		if ($file ||empty($data['pic_name'])) {
 			$picture = $this->upload($file);
+			$picture = str_replace('\\', '/', $picture);
 			$pic = new PictureModel;
 			$re = $pic->data([
 				'pic_name' =>$data['pic_name'],

@@ -28,46 +28,13 @@
        <div class="banner pr" style="position: relative;left: 50%;margin-left: -960px;">
         <div class="flexslider banner index">
             <ul class="slides">
-                <li>
-                    <a target="_blank" href="/page.php?id=97">
-                        <img data-src="__PICTURE__/20171019103953934.jpg" alt="鸡汤" width="1920" height="400" class="db hidden">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/page.php?id=98">
-                        <img data-src="__PICTURE__/20171019172549302.jpg" alt="图书APP" width="1920" height="400" class="db hidden">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/page.php?id=95">
-                        <img data-src="__PICTURE__/20171010102457877.jpg" alt="十月好书" width="1920" height="400" class="db hidden">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/page.php?id=93">
-                        <img data-src="__PICTURE__/20171005235511977.jpg" alt="诺贝尔" width="1920" height="400" class="db hidden">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/page.php?id=80">
-                        <img data-src="__PICTURE__/20170918222000622.jpg" alt="19大" width="1920" height="400" class="db hidden">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/page.php?id=22">
-                        <img data-src="__PICTURE__/20170921105522521.jpg" alt="文具专场" width="1920" height="400" class="db hidden">
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/page.php?id=85">
-                        <img data-src="__PICTURE__/20170921115022770.jpg" alt="赛车" width="1920" height="400" class="db hidden">
-                    </a>
-                </li>
+                {foreach $banner as $v}
                 <li>
                     <a target="_blank" href="/page.php?id=77">
-                        <img data-src="__PICTURE__/20170915174901957.jpg" alt="中少" width="1920" height="400" class="db hidden">
+                        <img data-src="/uploads/{$v['pic_path']}" alt="{$v['pic_name']}" width="1920" height="400" class="db hidden">
                     </a>
                 </li>
+                {/foreach}
             </ul>
         </div>
     </div>
@@ -83,29 +50,15 @@
 </script>
 <!-- 公告 -->
 <div class="notice">   
-    <div class="mt-20 ht-40 ta-ct ">
-        <a class="cl-f fs-16 pd-0830 br-30" target="_blank" href="//www.bookuu.com/shop/regist.php" style="border-radius: 30px;background-image: url(images/button.png);background-repeat: no-repeat;background-position: center center;">一键开店</a>
-    </div>
-
     <div class="pd-0510">
         <p class="lh-30 cl-3 bb-1-f1">服务公告</p>
         <div class="ht-100 oh fs-12 lh-25 cl-6">
-            <a class="db to-hd cl-6 hover" href="/notice.php?act=detail&id=13&type=0">
+            {foreach $notice as $v}
+            <a class="db to-hd cl-6 hover" href="#">
                 <span class="icon-arrow-line2 mr-2 fs-11">&#xe903;</span>
-                发货通知
+                {$v.notice_name}
             </a>
-            <a class="db to-hd cl-6 hover" href="/notice.php?act=detail&id=9&type=0">
-                <span class="icon-arrow-line2 mr-2 fs-11">&#xe903;</span>
-                购物注意事项及常见问题
-            </a>
-            <a class="db to-hd cl-6 hover" href="/notice.php?act=detail&id=8&type=0">
-                <span class="icon-arrow-line2 mr-2 fs-11">&#xe903;</span>
-                博库网改版升级重要公告
-            </a>
-            <a class="db to-hd cl-6 hover" href="/notice.php?act=detail&id=7&type=0">
-                <span class="icon-arrow-line2 mr-2 fs-11">&#xe903;</span>
-                IC充值卡兑换通道
-            </a>
+            {/foreach}
         </div>
     </div>
     <!-- <div class="patch"></div> -->
@@ -163,12 +116,8 @@
                         </a>
                     </div>
                 </li>
-                <li class="wd-50p fl ht-93">
-                    <div class="bd-4-f scale oh">
-                        <a class="db" target="_blank" href="/page.php?id=41">
-                            <img data-src="__PICTURE__/20170816115237948.jpg" alt="好书成套" width="190" height="85" class="hidden db">
-                        </a>
-                    </div>
+                <li>
+                    <img src="__IMAGE__/recommed.jpg" height="183" width="400">
                 </li>
                 <div class="cb"></div>
             </ul>
@@ -186,26 +135,16 @@
             </div>
 
             <ul class="clearfix ht-370 scale-box oh">
+                <li>
+                    <img src="__IMAGE__/newGood.jpg" height="183" width="400">
+                </li>
+                {foreach $new as $v}
                 <li class="wd-50p fl ht-183">
-                    <div class="bd-4-f scale oh"><a class="db" target="_blank" href="/page.php?id=34">
-                        <img data-src="__PICTURE__/20170811140055452.jpg" alt="新书预售" width="190" height="175" class="hidden db">
+                    <div class="bd-4-f scale oh"><a class="db" target="_blank" href="">
+                        <img data-src="/uploads/{$v['good_pic']}" alt="新书预售" width="190" height="175" class="hidden db">
                     </a></div>
                 </li>
-                <li class="wd-50p fl ht-183">
-                    <div class="bd-4-f scale oh"><a class="db" target="_blank" href="/journal.php?id=3&year=2017&month=10">
-                        <img data-src="__PICTURE__/20170811140055574.jpg" alt="壹周新书" width="190" height="175" class="hidden db">
-                    </a></div>
-                </li>
-                <li class="wd-50p fl ht-93">
-                    <div class="bd-4-f scale oh"><a class="db" target="_blank" href="/page.php?id=40">
-                        <img data-src="__PICTURE__/20170816115445894.jpg" alt="签名专区" width="190" height="85" class="hidden db">
-                    </a></div>
-                </li>
-                <li class="wd-50p fl ht-93">
-                    <div class="bd-4-f scale oh"><a class="db" target="_blank" href="//v.bookuu.com/bbs/circle/?act=home&cir_id=89">
-                        <img data-src="__PICTURE__/20170816115445584.jpg" alt="书单来了" width="190" height="85" class="hidden db">
-                    </a></div>
-                </li>
+                {/foreach}
             </ul>
         </li>
 
@@ -214,256 +153,72 @@
             <div class="card-box">
                 <p class="card clearfix">
                     <label class="fl fs-18 mr-10"><span class="icon-fire-line mr-10 fs-22 pr tp-3">&#xe920;</span>热销排行</label>
-                    <a class="fl cl-f" target="_blank" href="/ranking.php">网罗全民挚爱<span class="icon-aoorw-line cl-f ml-5 pr tp-2 fs-15">&#xe902;</span></a>
+                    <a class="fl cl-f" target="_blank" href="{:url('Books/ranking')}">网罗全民挚爱<span class="icon-aoorw-line cl-f ml-5 pr tp-2 fs-15">&#xe902;</span></a>
                 </p>
             </div>
 
             <div class="bd-1-e8 tab-box">
-
-                <ul class="tab-title hotsale-title">
-                    <li class="ranking_list wd-25p fl on-tab" data-id="31"><span>图书</span></li>
-                    <li class="ranking_list wd-25p fl " data-id="38"><span>童书</span></li>
-                    <li class="ranking_list wd-25p fl " data-id="34"><span>文学</span></li>
-                    <li class="ranking_list wd-25p fl " data-id="39"><span>教辅</span></li>
-                    <div class="cb"></div>
-                </ul>
-
                 <ul class="tab-content hotsale-content mouseenter-box patch ht-325 oh">
                    <li id="my_ranktab_31" class="my_ranktab_content fs-14 on-tab ">
-                       <a class="db clearfix mouseenter on-mouse bb-1-e8" target="_blank" href="/detail.php?id=100105481">
-                        <div class="fl wd-30 ta-lf">
-                            <img src="__PICTURE__/first-block.svg" alt="" width="20" class="pr tp-4" />
-                        </div>
-                        <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                            <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/2601143.jpg);"></span></label>
-                        </p>
-                        <div class="fl wd-200 to-hd">追风筝的人</div>
-                        <div class="fr ta-rt cl-6 wd-120 to-hd">销量：697927</div>
-                        <div class="cb"></div>
-                    </a>
-                    <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100106941">
-                        <div class="fl wd-30 ta-lf">
-                            <img src="__PICTURE__/second-block.svg" alt="" width="20" class="pr tp-4" />
-                        </div>
-                        <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                            <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/3214421.jpg);"></span></label>
-                        </p>
-                        <div class="fl wd-200 to-hd">摆渡人</div>
-                        <div class="fr ta-rt cl-6 wd-120 to-hd">销量：569486</div>
-                        <div class="cb"></div>
-                    </a>
-                    <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100101670">
-                        <div class="fl wd-30 ta-lf">
-                            <img src="__PICTURE__/third-block.svg" alt="" width="20" class="pr tp-4" />
-                        </div>
-                        <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                            <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/1475199588.jpg);"></span></label>
-                        </p>
-                        <div class="fl wd-200 to-hd">从你的全世界路过(让所有人心动的故事)</div>
-                        <div class="fr ta-rt cl-6 wd-120 to-hd">销量：552525</div>
-                        <div class="cb"></div>
-                    </a>
-                    <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100104392">
-                        <div class="fl wd-30 ta-lf">
-                           4.
-                       </div>
-                       <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                        <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/2375506.jpg);"></span></label>
-                    </p>
-                    <div class="fl wd-200 to-hd">我们仨</div>
-                    <div class="fr ta-rt cl-6 wd-120 to-hd">销量：446263</div>
-                    <div class="cb"></div>
-                </a>
-                <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100104359">
-                    <div class="fl wd-30 ta-lf">
-                        5.
-                    </div>
-                    <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                        <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/2353163.jpg);"></span></label>
-                    </p>
-                    <div class="fl wd-200 to-hd">活着/余华作品</div>
-                    <div class="fr ta-rt cl-6 wd-120 to-hd">销量：416915</div>
-                    <div class="cb"></div>
-                </a>
-                
-            </li>
-            <li id="my_ranktab_38" class="my_ranktab_content fs-14  dn">
-                <a class="db clearfix mouseenter on-mouse bb-1-e8" target="_blank" href="/detail.php?id=100102150">
-                    <div class="fl wd-30 ta-lf">
-                       <img src="__PICTURE__/first-block.svg" alt="" width="20" class="pr tp-4" />
-                   </div>
-                   <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/1971599.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">父与子全集(彩色双语版)/常青藤绘本馆</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：256380</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100104490">
-                <div class="fl wd-30 ta-lf">
-                    <img src="__PICTURE__/second-block.svg" alt="" width="20" class="pr tp-4" />
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/2629062.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">猜猜我有多爱你(精)</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：253860</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100104940">
-                <div class="fl wd-30 ta-lf">
-                    <img src="__PICTURE__/third-block.svg" alt="" width="20" class="pr tp-4" />
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/1608336.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">狼王梦/动物小说大王沈石溪品藏书系</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：246938</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100102153">
-                <div class="fl wd-30 ta-lf">
-                    4.
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/1628401.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">长袜子皮皮(美绘版)/林格伦作品选集</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：242740</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100107118">
-                <div class="fl wd-30 ta-lf">
-                    5.
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/15/26/00/1489649160.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">没头脑和不高兴(注音版)/中国幽默儿童文学创作任溶溶系列</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：229686</div>
-                <div class="cb"></div>
-            </a>
-            
+                        <a class="db clearfix mouseenter on-mouse bb-1-e8" target="_blank" href="/detail.php?id=100105481">
+                            <div class="fl wd-30 ta-lf">
+                                <img src="__PICTURE__/first-block.svg" alt="" width="20" class="pr tp-4" />
+                            </div>
+                            <p class="fl wd-100 ht-100 oh mr-10 scale-box">
+                                <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(/uploads/{$hot[0]->good_pic});"></span></label>
+                            </p>
+                            <div class="fl wd-200 to-hd">{$hot[0]->good_name}</div>
+                            <div class="fr ta-rt cl-6 wd-120 to-hd">销量：{$hot[0]->good_sold}</div>
+                            <div class="cb"></div>
+                        </a>
+                        <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100106941">
+                            <div class="fl wd-30 ta-lf">
+                                <img src="__PICTURE__/second-block.svg" alt="" width="20" class="pr tp-4" />
+                            </div>
+                            <p class="fl wd-100 ht-100 oh mr-10 scale-box">
+                                <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(/uploads/{$hot[1]->good_pic});"></span></label>
+                            </p>
+                            <div class="fl wd-200 to-hd">{$hot[1]->good_name}</div>
+                            <div class="fr ta-rt cl-6 wd-120 to-hd">销量：{$hot[1]->good_sold}</div>
+                            <div class="cb"></div>
+                        </a>
+                        <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100101670">
+                            <div class="fl wd-30 ta-lf">
+                                <img src="__PICTURE__/third-block.svg" alt="" width="20" class="pr tp-4" />
+                            </div>
+                            <p class="fl wd-100 ht-100 oh mr-10 scale-box">
+                                <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(/uploads/{$hot[2]->good_pic});"></span></label>
+                            </p>
+                            <div class="fl wd-200 to-hd">{$hot[2]->good_name}</div>
+                            <div class="fr ta-rt cl-6 wd-120 to-hd">销量：{$hot[2]->good_sold}</div>
+                            <div class="cb"></div>
+                        </a>
+                        <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100101670">
+                            <div class="fl wd-30 ta-lf">
+                                4.
+                            </div>
+                            <p class="fl wd-100 ht-100 oh mr-10 scale-box">
+                                <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(/uploads/{$hot[3]->good_pic});"></span></label>
+                            </p>
+                            <div class="fl wd-200 to-hd">{$hot[3]->good_name}</div>
+                            <div class="fr ta-rt cl-6 wd-120 to-hd">销量：{$hot[3]->good_sold}</div>
+                            <div class="cb"></div>
+                        </a>
+                           <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100101670">
+                            <div class="fl wd-30 ta-lf">
+                                5.
+                            </div>
+                            <p class="fl wd-100 ht-100 oh mr-10 scale-box">
+                                <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url('/uploads/{$hot[4]->good_pic}');"></span></label>
+                            </p>
+                            <div class="fl wd-200 to-hd">{$hot[4]->good_name}</div>
+                            <div class="fr ta-rt cl-6 wd-120 to-hd">销量：{$hot[4]->good_sold}</div>
+                            <div class="cb"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </li>
-        <li id="my_ranktab_34" class="my_ranktab_content fs-14  dn">
-            <a class="db clearfix mouseenter on-mouse bb-1-e8" target="_blank" href="/detail.php?id=100105481">
-                <div class="fl wd-30 ta-lf">
-                    <img src="__PICTURE__/first-block.svg" alt="" width="20" class="pr tp-4" />
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/2601143.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">追风筝的人</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：697927</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100106941">
-                <div class="fl wd-30 ta-lf">
-                    <img src="__PICTURE__/second-block.svg" alt="" width="20" class="pr tp-4" />
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/3214421.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">摆渡人</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：569486</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100101670">
-                <div class="fl wd-30 ta-lf">
-                    <img src="__PICTURE__/third-block.svg" alt="" width="20" class="pr tp-4" />
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/09/39/48/1475199588.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">从你的全世界路过(让所有人心动的故事)</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：552525</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100104392">
-                <div class="fl wd-30 ta-lf">
-                    4.
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/2375506.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">我们仨</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：446263</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100104359">
-                <div class="fl wd-30 ta-lf">
-                    5.
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(images/2353163.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">活着/余华作品</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：416915</div>
-                <div class="cb"></div>
-            </a>
-            
-        </li>
-        <li id="my_ranktab_39" class="my_ranktab_content fs-14  dn">
-            <a class="db clearfix mouseenter on-mouse bb-1-e8" target="_blank" href="/detail.php?id=100000966">
-                <div class="fl wd-30 ta-lf">
-                    <img src="__PICTURE__/first-block.svg" alt="" width="20" class="pr tp-4" />
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/18/51/51/1330058.jpg_300_300.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">新概念英语<新版>(2)</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：101137</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100102186">
-                <div class="fl wd-30 ta-lf">
-                    <img src="__PICTURE__/second-block.svg" alt="" width="20" class="pr tp-4" />
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/11/58/47/1508212727.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">小学生小古文100课(附光盘上下修订版)/朱老师教小古文系列</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：94052</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100103564">
-                <div class="fl wd-30 ta-lf">
-                    <img src="__PICTURE__/third-block.svg" alt="" width="20" class="pr tp-4" />
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/19/47/44/2690035.jpg_300_300.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">日有所诵(小学1年级第4版)/亲近母语</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：90849</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100102880">
-                <div class="fl wd-30 ta-lf">
-                    4.
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/18/31/16/1482402676.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">新概念英语(新版1)</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：77685</div>
-                <div class="cb"></div>
-            </a>
-            <a class="db clearfix mouseenter  bb-1-e8" target="_blank" href="/detail.php?id=100104851">
-                <div class="fl wd-30 ta-lf">
-                    5.
-                </div>
-                <p class="fl wd-100 ht-100 oh mr-10 scale-box">
-                    <label class="db pd-5 scale oh"><span class="img db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/20/15/12/1426986.jpg_300_300.jpg);"></span></label>
-                </p>
-                <div class="fl wd-200 to-hd">城南旧事</div>
-                <div class="fr ta-rt cl-6 wd-120 to-hd">销量：65998</div>
-                <div class="cb"></div>
-            </a>
-            
-        </li>
-    </ul>
-</div>
-</li>
 
 <script>
     $(function(){
@@ -482,398 +237,6 @@
 <div class="cb"></div>
 
 </ul>
-
-</div>
-
-
-<!--人气作家 板块 plate_type=7 template_id=3-->
-<div class="anchor-box" id="3" data-template-id="3" plate-id="3" plate-type="7">
-
-    <!-- 人气作家 -->
-    <div class="mb-30 ht-445 tab-box">
-        <div class="navyblue-border">
-            <div class="context">
-                <label class="fl fs-18 mr-15">
-                    <span class="icon-fire-line2 mr-4 fs-24 pr tp-5">&#xe921;</span>
-                    人气作家
-                </label>
-
-                <p class="fr">
-                    <a class="navyblue cl-3 pd-0410 mr-10 cp  on-click   my_tab" data-id="1036">严歌苓</a>
-                    <a class="navyblue cl-3 pd-0410 mr-10 cp   my_tab" data-id="48">张爱玲</a>
-                    <a class="navyblue cl-3 pd-0410 mr-10 cp   my_tab" data-id="1">曹文轩</a>
-                </p>
-                <div class="cb"></div>
-            </div>
-        </div>
-
-        <!-- 模块加载区域-->
-        <!--人气作家 单个作者 module_type=4 template_id=1-->
-        <div class="my_tab_content  bc-f" id="my_tab_1036">
-
-            <div class="fl hot-1">
-                <div class="circle-140 ma">
-                    <img data-src="__PICTURE__/20170925165614294.jpg" width="140" height="140" alt="" class="db hidden">
-                </div>
-                <p class="fs-18  to-hd ta-ct lh-45 mt-5">严歌苓</p>
-                <p class="fs-12 cl-6 lh-25 ht-175 oh">
-                    美籍华人，著名旅美作家、好莱坞专业编剧，以中、英双语创作小说，无论是对于东、西方文化魅力的独特阐释，还是对社会底层人物、边缘人物的关怀以及对历史的重新评价，都折射出复杂的人性，哲思和批判意识。
-                </p>
-                <div class="patch"></div>
-            </div>
-
-            <div class="fl hot-2">
-                <!-- 主推 商品展示 -->
-                <div>
-                    <div class="fl wd-160 mr-20">
-                        <a class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/19/26/10/3806021-fm.jpg);" href="/detail.php?id=100930872"></a>
-                    </div>
-                    <div class="fl wd-370">
-                        <a class="fs-16 ht-40 lh-20 oh db" target="_blank" href="/detail.php?id=100930872">芳华(精)</a>
-                        <p class="lh-45">
-                            <span class="fs-21  cl-rd-l mr-15">¥25.74</span>
-                            <del class="fs-13 cl-9">¥39.00</del>
-                        </p>
-                        <p class="cl-9 lh-25 ht-75 oh">冯小刚导演、黄轩主演同名电影即将上映！青春不是年华，是你我的芳华。</p>
-                    </div>
-                    <div class="cb"></div>
-                </div>
-
-                <!-- 分隔 -->
-                <div class="hot-seprate">
-                    <p>其他作品</p>
-                    <span class="icon-triangle-block2">&#xe958;</span>
-                    <div class="patch"></div>
-                </div>
-
-                <!-- 商品列表 4 个-->
-                <ul class="productlist-1 mouseenter-box">
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/23/44/20/3670808-fm.jpg);" href="/detail.php?id=100738909"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100738909">严歌苓十书(典藏版共10册)(精)</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥199.70</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥298.00</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/20/19/24/1477570764.jpg);" href="/detail.php?id=100234640"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100234640">金陵十三钗(精) 严歌苓作品</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥21.25</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥36.00</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/02/52/58/3648270-fm.jpg);" href="/detail.php?id=100647344"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100647344">小姨多鹤</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥20.90</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥29.00</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/09/21/01/3392377-fm.jpg);" href="/detail.php?id=100293641"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100293641">谁家有女初长成(精)</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥21.50</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥29.00</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <div class="cb"></div>
-                </ul>
-            </div>
-
-            <!-- 广告图 -->
-            <div class="wd-400 fr">
-                <a class="db" target="_blank" href="/detail.php?id=100105988">
-                    <img data-src="__PICTURE__/20170925161858903.jpg" alt="" width="400" height="195" class="db hidden">
-                </a>
-                <div class="clearfix mt-10">
-                    <div class="wd-195 fl">
-                        <a target="_blank" href="/detail.php?id=100127559">
-                            <img data-src="__PICTURE__/20170925161858270.jpg" alt="" width="200" height="200" class="db hidden">
-                        </a>
-                    </div>
-                    <div class="wd-195 fr">
-                        <a target="_blank" href="/detail.php?id=100105988">
-                            <img data-src="__PICTURE__/20170925161858264.jpg" alt="" width="200" height="200" class="db hidden">
-                        </a>
-                    </div>
-                    <div class="cb"></div>
-                </div>
-            </div>
-
-            <div class="cb"></div>
-
-        </div>
-        
-
-        <!--人气作家 单个作者 module_type=4 template_id=1-->
-        <div class="my_tab_content dn bc-f" id="my_tab_48">
-
-            <div class="fl hot-1">
-                <div class="circle-140 ma">
-                    <img data-src="__PICTURE__/20170807150651360.jpg" width="140" height="140" alt="" class="db hidden">
-                </div>
-                <p class="fs-18  to-hd ta-ct lh-45 mt-5">张爱玲</p>
-                <p class="fs-12 cl-6 lh-25 ht-175 oh">
-                    张爱玲文笔冷静，小说常用第三人称即“他”来描写，以一种全知的视角来叙述，小说中虽然没有掺杂太多作者个人的情感，但是感情基调悲凉。
-                </p>
-                <div class="patch"></div>
-            </div>
-
-            <div class="fl hot-2">
-                <!-- 主推 商品展示 -->
-                <div>
-                    <div class="fl wd-160 mr-20">
-                        <a class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/20/18/25/2278477.jpg);" href="/detail.php?id=100105301"></a>
-                    </div>
-                    <div class="fl wd-370">
-                        <a class="fs-16 ht-40 lh-20 oh db" target="_blank" href="/detail.php?id=100105301">倾城之恋</a>
-                        <p class="lh-45">
-                            <span class="fs-21  cl-rd-l mr-15">¥24.44</span>
-                            <del class="fs-13 cl-9">¥29.80</del>
-                        </p>
-                        <p class="cl-9 lh-25 ht-75 oh">“传奇里的倾国倾城的人大抵如此。到处都是传奇，可不见得有这么圆满的收场。胡琴咿咿哑哑拉着，在万盏灯的夜晚，拉过来又拉过去，说不尽的苍凉的故事不问也罢！”</p>
-                    </div>
-                    <div class="cb"></div>
-                </div>
-
-                <!-- 分隔 -->
-                <div class="hot-seprate">
-                    <p>其他作品</p>
-                    <span class="icon-triangle-block2">&#xe958;</span>
-                    <div class="patch"></div>
-                </div>
-
-                <!-- 商品列表 4 个-->
-                <ul class="productlist-1 mouseenter-box">
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/13/59/30/1477288770.jpg);" href="/detail.php?id=100101541"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100101541">红玫瑰与白玫瑰</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥22.96</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥28.00</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/10/53/51/1487300031.jpg);" href="/detail.php?id=100106212"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100106212">小团圆</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥17.93</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥28.00</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/20/21/20/2359538.jpg);" href="/detail.php?id=100105615"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100105615">流言</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥18.88</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥29.50</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/20/06/42/2301162.jpg);" href="/detail.php?id=100104396"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100104396">红楼梦魇</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥18.88</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥29.50</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <div class="cb"></div>
-                </ul>
-            </div>
-
-            <!-- 广告图 -->
-            <div class="wd-400 fr">
-                <a class="db" target="_blank" href="/detail.php?id=100916376">
-                    <img data-src="__PICTURE__/20170807151716508.jpg" alt="" width="400" height="195" class="db hidden">
-                </a>
-                <div class="clearfix mt-10">
-                    <div class="wd-195 fl">
-                        <a target="_blank" href="/search.php?k=%E5%8D%97%E6%B4%BE%E4%B8%89%E5%8F%94">
-                            <img data-src="__PICTURE__/20170807153553173.jpg" alt="" width="200" height="200" class="db hidden">
-                        </a>
-                    </div>
-                    <div class="wd-195 fr">
-                        <a target="_blank" href="/search.php?k=%E7%90%BC%E7%91%B6&sorttype=sale_asc&page=1&havestoreonly=0">
-                            <img data-src="__PICTURE__/20170807154500740.jpg" alt="" width="200" height="200" class="db hidden">
-                        </a>
-                    </div>
-                    <div class="cb"></div>
-                </div>
-            </div>
-
-            <div class="cb"></div>
-
-        </div>
-        
-
-        <!--人气作家 单个作者 module_type=4 template_id=1-->
-        <div class="my_tab_content dn bc-f" id="my_tab_1">
-
-            <div class="fl hot-1">
-                <div class="circle-140 ma">
-                    <img data-src="__PICTURE__/20170807160034844.jpg" width="140" height="140" alt="" class="db hidden">
-                </div>
-                <p class="fs-18  to-hd ta-ct lh-45 mt-5">曹文轩</p>
-                <p class="fs-12 cl-6 lh-25 ht-175 oh">
-                    曹文轩在成长小说的创作中表达着对少年儿童生存状态和心灵世界的关怀，以自觉的承担意识，关注儿童的生存状态，扶助儿童的生命成长，写出了内在的人性、人情、尊严与理想。
-                </p>
-                <div class="patch"></div>
-            </div>
-
-            <div class="fl hot-2">
-                <!-- 主推 商品展示 -->
-                <div>
-                    <div class="fl wd-160 mr-20">
-                        <a class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/00/33/08/3635853-fm.jpg);" href="/detail.php?id=100740826"></a>
-                    </div>
-                    <div class="fl wd-370">
-                        <a class="fs-16 ht-40 lh-20 oh db" target="_blank" href="/detail.php?id=100740826">曹文轩经典长篇小说礼盒(共7册)</a>
-                        <p class="lh-45">
-                            <span class="fs-21  cl-rd-l mr-15">¥81</span>
-                            <del class="fs-13 cl-9">¥150.00</del>
-                        </p>
-                        <p class="cl-9 lh-25 ht-75 oh">囊括了曹文轩所有的经典儿童文学作品，囊括了国家图书奖等国家图书大奖，蕴含着丰富的情感和哲理，语言优美动人，深受各个年龄段读者喜爱。</p>
-                    </div>
-                    <div class="cb"></div>
-                </div>
-
-                <!-- 分隔 -->
-                <div class="hot-seprate">
-                    <p>其他作品</p>
-                    <span class="icon-triangle-block2">&#xe958;</span>
-                    <div class="patch"></div>
-                </div>
-
-                <!-- 商品列表 4 个-->
-                <ul class="productlist-1 mouseenter-box">
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/10/11/02/1472782262.jpg);" href="/detail.php?id=100445446"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100445446">根鸟 曹文轩纯美小说系列</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥9.44</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥18.00</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/10/16/54/1496715414.jpg);" href="/detail.php?id=100880563"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100880563">穿堂风</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥18.00</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥25.00</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/10/01/22/3519552.jpg);" href="/detail.php?id=100422924"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100422924">草房子 曹文轩纯美小说系列</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥15.84</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥22.00</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wd-25p ta-ct fl">
-                        <div class="mg-5 mouseenter mouseleave">
-                            <a target="_blank" class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/09/33/05/1494984785.jpg);" href="/detail.php?id=100439858"></a>
-                            <div class="context lh-20">
-                                <a class="fs-12 cl-6  to-hd title db" target="_blank" href="/detail.php?id=100439858">青铜葵花 曹文轩纯美小说系列</a>
-                                <p>
-                                    <span class="fs-12 cl-rd-l ">¥15.87</span>
-                                    <span class="fs-12 cl-9">|</span>
-                                    <del class="fs-12 cl-9">¥22.00</del>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <div class="cb"></div>
-                </ul>
-            </div>
-
-            <!-- 广告图 -->
-            <div class="wd-400 fr">
-                <a class="db" target="_blank" href="/detail.php?id=100449586">
-                    <img data-src="__PICTURE__/20170807160020507.jpg" alt="" width="400" height="195" class="db hidden">
-                </a>
-                <div class="clearfix mt-10">
-                    <div class="wd-195 fl">
-                        <a target="_blank" href="/search.php?k=%E6%9D%A8%E7%BA%A2%E6%A8%B1">
-                            <img data-src="__PICTURE__/20170807160627465.jpg" alt="" width="200" height="200" class="db hidden">
-                        </a>
-                    </div>
-                    <div class="wd-195 fr">
-                        <a target="_blank" href="/detail.php?id=100449586">
-                            <img data-src="__PICTURE__/20170807160020669.jpg" alt="" width="200" height="200" class="db hidden">
-                        </a>
-                    </div>
-                    <div class="cb"></div>
-                </div>
-            </div>
-
-            <div class="cb"></div>
-
-        </div>
-        
-
-        <!-- 模块加载区域-->
-
-    </div>
 
 </div>
 
@@ -4036,7 +3399,6 @@
     <ul class="bb-1-e8 anchor-action">
         <li class="cp">分类列表</li>
         <li class="cp">重磅推荐</li>
-        <li class="cp">人气作家</li>
         <li class="cp">博库热推</li>
         <li class="cp">图书频道</li>
         <li class="cp">童书频道</li>

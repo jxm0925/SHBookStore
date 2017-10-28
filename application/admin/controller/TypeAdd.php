@@ -61,5 +61,16 @@ class TypeAdd extends Index
 			}		
 		}
 	}
+		//删除分类
+	public function typeDelete()
+	{
+		$type_id = $this->request->param('id');
+		$data = Type::destroy($type_id);
+		if ($data) {
+			echo 1;
+		}
+		//echo $type_id;
+		// $result = Type::typeDelete($type_id);
+	}
 
 }
