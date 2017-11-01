@@ -297,36 +297,44 @@
                                 <tr>
                                     <td class="pr-50" width="15%" height="28" align="right">手机号</td>
                                     <td>
-                                                                                18601021538
-                                        </td>
+                                        {$data['phone']}
+                                    </td>
                                     <td width="15%" align="right" colspan="2"><a class="edit" href="javascript:void(0);" title="编辑">编辑</a></td>
                                 </tr>
                                 <tr>
                                     <td class="pr-50" height="28" align="right">昵称</td>
-                                    <td id="nick_name">自行车</td>
+                                    <td id="nick_name">{$data['nickname']}</td>
                                 </tr>
                                 <tr>
                                     <td class="pr-50" height="28" align="right">性别</td>
+                                    {if($data['sex']==0)}
                                     <td id="gender">男</td>
+                                    {else}
+                                    <td id="gender">女</td>
+                                    {/if}
                                 </tr>
                                 <tr>
                                     <td class="pr-50" height="28" align="right">职业</td>
-                                    <td id="occupation">addddd</td>
+                                    <td id="occupation">{$data['work']}</td>
                                 </tr>
                                 <tr>
                                     <td class="pr-50" height="28" align="right">签名</td>
-                                    <td id="msg">奥术大师多</td>
+                                    <td id="msg">{$data['signature']}</td>
+                                </tr>
+                                <tr>
+                                    <td class="pr-50" height="28" align="right">头像</td>
+                                    <td id="msg"><img src="/uploads/{$data['headpic']}" height="192" width="192"></td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
                         <!-- 编辑个人设置页 -->
-                        <form class="set-info-form" action="javascript:void(0);">
+                        <form class="set-info-form" enctype="multipart/form-data" action="{:url('UserInfo/userInfo')}" method="post">
                             <ul class="mt-20">
                                 <li>
                                     <div class="fl mr-20 lh-28 ta-rt wd-80"><label for="user-name-rel">昵称</label></div>
                                     <div class="fl">
-                                        <input id="nickname" class="wd-158 bd-1-e8 br-4 lh-28" type="text" name="nickname" value="自行车"></div>
+                                        <input id="nickname" class="wd-158 bd-1-e8 br-4 lh-28" type="text" name="nickname" value="{$data['nickname']}"></div>
                                     <div class="cb">
                                     </div>
                                 </li>
@@ -334,16 +342,31 @@
                                     <div class="fl mr-20 lh-28 ta-rt wd-80"><label>性别</label></div>
                                     <div class="fl lh-28">
                                         <label class="user-lable">
+                                            {if($data['sex']==0)}
                                             <span class="icon-checkbox-line2" data-sex="1" >
-                                            &#xe915;                                            </span>
+                                            
+                                            &#xe915;                   
+
+                                            {else}
+                                             <span class="icon-checkbox-line" data-sex="1" >
+                                             &#xe914;
+                                            {/if}                         
+                                            </span>
                                             <span class="cl-21">&nbsp;男</span>
-                                            <input name="user-six" class="hidden" type="radio" value="男">
+                                            <input name="user-six" class="hidden" type="radio" value="0">
                                         </label>
                                         <label class="user-lable">
+                                            {if($data['sex']==1)}
+                                            <span class="icon-checkbox-line2" data-sex="2">
+                                            
+                                            &#xe915;                   
+
+                                            {else}
                                             <span class="icon-checkbox-line" data-sex="2">
-                                            &#xe914;                                            </span>
+                                             &#xe914;
+                                            {/if}                                     </span>
                                             <span class="cl-21">&nbsp;女</span>
-                                            <input name="user-six" class="hidden" type="radio" value="女">
+                                            <input name="user-six" class="hidden" type="radio" value="1">
                                         </label>
                                     </div>
                                     <div class="cb"></div>
@@ -351,21 +374,36 @@
                                 <li class="mt-10">
                                     <div class="fl mr-20 lh-28 ta-rt wd-80"><label>职业</label></div>
                                     <div class="fl lh-28">
-                                        <input id="profession" class="wd-158 bd-1-e8 br-4 lh-28" type="text" name="profession" value="addddd">
+                                        <input id="profession" class="wd-158 bd-1-e8 br-4 lh-28" type="text" name="profession" value="{$data['work']}">
                                     </div>
                                     <div class="cb"></div>
                                 </li>
                                 <li class="mt-10">
                                     <div class="fl mr-20 lh-28 ta-rt wd-80"><label>签名</label></div>
                                     <div class="fl lh-28">
-                                        <input id="signature" class="wd-158 bd-1-e8 br-4 lh-28" type="text" name="signature" value="奥术大师多">
+                                        <input id="signature" class="wd-158 bd-1-e8 br-4 lh-28" type="text" name="signature" value="{$data['signature']}">
                                     </div>
                                     <div class="cb"></div>
                                 </li>
+                                <li class="mt-10"> 
+                                    <div class="fl mr-20 lh-28 ta-rt wd-80"><label>头像</label></div>
+                                    <div class="avator-mode" id="localImag">                       
+                                    <img class="avator-img" id="pic" src="/uploads/{$data['headpic']}" data-portrait="" width="192" height="192" >
+                                    </div> 
+                                 </li>   
+                                 <li class="mt-10"> 
+                                    <div class="fl mr-20 lh-28 ta-rt wd-80" ><label></label>                      
+                                        <a herf="javascript:void(0)" class="avator-btn-fake" onclick="document.getElementById('upload').click();return false;">
+                                            上传头像
+                                         </a>                 
+                                        <input class="hide headpic" type="file" title="上传头像" name="image" value="" id="upload" accept="image/gif,image/jpeg,image/jpg,image/png" onchange="preview(this)">          
+                                    </div>          
+                                </li>             
                                 <li class="mt-40">
                                     <div class="fl mr-20 lh-28 ta-rt wd-80">&nbsp;</div>
                                     <div class="fl">
-                                        <a class="btn-save lh-28 ta-ct bd-1-e8 wd-78 br-4" href="javascript:void(0);">保存</a>
+                                       <!--  <a class="btn-save lh-28 ta-ct bd-1-e8 wd-78 br-4" href="javascript:void(0);">保存</a> -->
+                                        <input type="submit" name="sub">
                                     </div>
                                     <div class="cb"></div>
                                 </li>
@@ -377,6 +415,22 @@
         </div>
         <div class="cb"></div>
     </div>
+    <script type="text/javascript">
+        //头像实时预览    
+        function preview(file)  
+        {  
+            var prevDiv = document.getElementById('localImag');  
+            if (file.files && file.files[0]){  
+                var reader = new FileReader();  
+                reader.onload = function(evt){  
+                    prevDiv.innerHTML = '<img src="' + evt.target.result + '" style="width:200px;height:200px;"/>';  
+                }    
+                reader.readAsDataURL(file.files[0]);  
+            }else{  
+                prevDiv.innerHTML = '<div class="img" style="width:100px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';  
+            }  
+        }  
+    </script>
     <!--一组或者多个商品，带标题 module_type=3 template_id=7 -->
 <div class="my_module" id="11" data-template-id="7" module-id="11" module-type="3">
 
@@ -950,43 +1004,69 @@
 
     /*保存设置*/
 
-    $('.set-info-form').on('click', '.btn-save', function () {
-
+    $('.btn-save').on('click', function () {
+        console.log(111);
         var nickname = $('#nickname').val();
         var sex = $('.icon-checkbox-line2').data('sex');
-        if (!sex) sex = 0;
         var profession = $('#profession').val();
         var signature = $('#signature').val();
+        var headpic = $('.headpic').val();
 
-        $.post(
-                'settings.php',
-                {nickname: nickname, sex: sex, profession: profession, signature: signature},
-                function (data) {
+        var form = new FormData(document.getElementById("fm"));
+           $.ajax({
+                url:"{:url('UserInfo/userInfo')}",
+                type:"post",
+                data:form,
+                processData:false,
+                contentType:false,
+                success:function(data){
+                  if (data == -1) {
+                    alert('要插入图片');
+                  }else if (data == 0) {
+                    alert('插入失败');
+                  }else{
+                    alert('成功');
+                  }
+                  // window.location.reload(); 
+                    // window.clearInterval(timer);
+                    // console.log("over..");
+                },
+                error:function(e){
+                    alert("错误！！");
+                    window.location.reload(); 
+                    // window.clearInterval(timer);
+                }
+            });        
 
-                    if (data.status) {
-                        /*$('#nick_name').html(nickname);
+        // $.post(
+        //         "{:url('UserInfo/userInfo')}",
+        //         {nickname: nickname, sex: sex, profession: profession, signature: signature,headpic:headpic},
+        //         function (data) {
 
-                        var str = '男';
-                        if (Number(sex) == 1) {
-                            str = '男';
-                        }elseif(Number(sex) == 2){
-                            str = '女';
-                        }
+        //             if (data.status) {
+        //                 $('#nick_name').html(nickname);
 
-                        $('#gender').html(str);
-                        $('#occupation').html(profession);
-                        $('#msg').html(signature);
+        //                 var str = '男';
+        //                 if (Number(sex) == 1) {
+        //                     str = '男';
+        //                 }elseif(Number(sex) == 2){
+        //                     str = '女';
+        //                 }
 
-                        $('.set-info-table').removeClass('hide');
-                        $('.set-info-form').removeClass('active');*/
+        //                 $('#gender').html(str);
+        //                 $('#occupation').html(profession);
+        //                 $('#msg').html(signature);
 
-                        window.location.href = data.url;
-                    }else{
+        //                 $('.set-info-table').removeClass('hide');
+        //                 $('.set-info-form').removeClass('active');
 
-                        alert(data.message);
-                    }
-                }, 'json'
-        );
+        //                 window.location.href = data.url;
+        //             }else{
+
+        //                 alert(data.message);
+        //             }
+        //         }, 'json'
+        // );
     });
 
 </script>

@@ -14,6 +14,10 @@ class Books extends Index
 		$this->assign('book',$book);
 		return $this->fetch('book_list');
 	}
+	public function bookDelMore()
+	{
+		dump($this->request->param());die;
+	}
 
 	public function bookAdd()
 	{
