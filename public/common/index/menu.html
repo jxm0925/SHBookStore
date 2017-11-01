@@ -1,0 +1,29 @@
+{foreach $fstarr as $v}
+<div class="mouseenter mouseleave">
+    <div class="title">
+        <label style="background-image: url(images/category.png);"></label>
+        <a class="cl-f lh-40 db">{$v['type_name']}</a>
+        <div class="triangle-patch"><span class="icon-triangle-block2">&#xe958;</span></div>
+        <div class="patch"><span class="icon-arrow-line2">&#xe903;</span></div>
+    </div>
+    <ul>
+        <div class="minh-215 mb-5">
+            <li class="clearfix fs-13 lh-20">
+                {foreach $v['child'] as $data}
+                <div class="wd-110 fl ">
+                    <a class="hover fl mr-15 fw-bd">{$data['type_name']}</a>
+                    <div class="cb"></div>
+                </div>
+                <div class="wd-650 cl-6 fl" style="width: 650px;">
+                     {foreach $data['child2'] as $data2}
+                    <a href="/index/books/search/sid/{$data2['type_id']}" class="hover fl mr-15">{$data2['type_name']}</a>
+                    {/foreach}
+                    <div class="cb"></div>
+                </div>
+                {/foreach}
+                <div class="cb"></div>
+            </li>
+        </div>
+    </ul>
+</div>
+{/foreach}

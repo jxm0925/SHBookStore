@@ -1,0 +1,115 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="博库网品种丰富的中文网上书店，160万种图书在线热销！图书、音像、软件正品行货超低折扣，全场免邮，支持全国货到付款。" />
+    <meta name="keywords" content="博库网,博库,博库书城,网上书店,网上买书,图书,影视,音像,软件"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/myframe.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/public.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/component.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/module.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/sinaFaceAndEffec.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/pagestyle.css" />
+    <link rel="shortcut icon" href="http://bnmpstyle.bookuu.com/www/images/favicon.ico" type="image/x-icon" />
+
+    <!-- 字体图标 -->
+    <link rel="stylesheet" type="text/css" href="__CSS__/iconfonts.css" />
+
+    <script type="text/javascript" src="__JS__/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="__JS__/component.js"></script>
+
+    <!-- FlexSlider -->
+    <link rel="stylesheet" type="text/css" href="__CSS__/flexslider.css" />
+    <script type="text/javascript" src="__JS__/jquery.flexslider.js"></script>
+
+    <title id="www_pc_title">博库网-博库体验店</title></head>
+    <body>
+
+        <!-- 头部 -->
+        <div class="header bc-f">
+            <!-- 顶部 小标题  登录信息-->
+            <div class="bc-f5 ht-30 lh-30">
+                <div class="wd-1200 ma fs-12 cl-6">
+                    <p class="fl" id="www_user_session_info">
+
+                    </p>
+                    <p class="fr">
+                        <a class="hover fr cl-6" href="javascript:void()" onclick="openQiYuSDK();" title="联系客服">联系客服</a>
+                        <span class="pd-0015 cl-c fr">|</span>
+                        <a class="hover fr cl-6" href="{:url('Users/collection')}" target="_blank" title="收藏夹">收藏夹</a>
+                        <span class="pd-0015 cl-c fr">|</span>
+                        <div class="fr mouseenter-box mouseenter mouseleave pr">
+                            <label class="cp">我的博库<span class="icon-down-line ml-5 fs-11">&#xe91e;</span></label>
+                            <div class="acount">
+                                <a class="hover cl-6 to-hd" href="{:url('Users/main')}"  target="_blank" title="">我的博库</a>
+                                <a class="hover cl-6 to-hd" href="{:url('Users/order')}" target="_blank" title="">我的订单</a>
+                                <a class="hover cl-6 to-hd" href="{:url('Users/coupon')}" target="_blank" title="">我的优惠券</a>
+                                <a class="hover cl-6 to-hd" href="{:url('Users/collection')}" target="_blank" title="">我的收藏</a>
+                                <a class="hover cl-6 to-hd" href="//www.bookuu.com/user/message.php" target="_blank" title="">官方消息</a>
+                                <a class="hover cl-6 to-hd" href="javascript:void(0);" title=""></a>
+                            </div>
+                        </div>
+                        <div class="cb"></div>
+                    </p>
+                    <div class="cb"></div>
+                    <input type="hidden" id="header_user_session_userid" value=0 />
+                    <input type="hidden" id="header_user_session_name" value="" />
+                    <input type="hidden" id="header_user_session_mobilephone" value="" />
+                    <input type="hidden" id="header_user_session_header" value="" />
+                </div>
+            </div>
+            <script src="__JS__/385c0351a4c1868328bba0ad1532fd1b.js" charset="utf-8"></script>
+            <script>
+
+    //用户信息
+    $(document).ready(function()
+    {
+        $.ajax({
+            type: "post",
+            url: "/index/index/userCheck",
+            dataType: "json",
+            success: function (data) {
+                var user_str = '';
+                if(data.code == "0" && data.info.is_login == 1){
+                    $("#header_user_session_userid").val(data.info.userid);
+                    $("#header_user_session_name").val(data.info.name);
+                    $("#header_user_session_mobilephone").val(data.info.mobilephone);
+                    user_str += '欢迎，' + data.info.name;
+                    user_str += '<span class="pd-0005 cl-c">|</span>';
+                    user_str += '<a class="mr-30 hover cl-6" href="{:url(\'/index/Index/logout\')}" title="退出登录">退出登录</a>';
+                }else{
+                    user_str += '<a class="hover cl-6" href="{:url(\'/index/Index/login\')}" target="_blank" title="登录">登录</a><span class="pd-0005 cl-c">|</span><a class="mr-30 hover cl-6" href="{:url(\'/index/Index/regist\')}" target="_blank" title="免费注册">免费注册</a>';
+                }
+                $("#www_user_session_info").html(user_str);
+            },
+        });
+    });
+</script>
+<!-- logo+搜索+购物车 -->
+<div class="wd-1200 ma">
+    <div class="search-container" id="search-container">
+        <div class="logo-container">
+            <a class="db logo-box fl" href="{:url('/index')}">
+                <img src="__PICTURE__/logo.png" alt="" width="220" class="db" alt="logo" draggable="false" />
+            </a>
+            <!-- 搜索 -->
+                <div class="fl">
+                <div class="search-box">
+                    <div class="fl wd-480 pr zi-1 associate-container">
+                        <input type="text" value="" class="bd-n" id="searchkey">
+                    </div>
+                    <p class="fr icon-search-line cl-f fs-27 tosearch">&#xe937;</p>
+                    <div class="cb"></div>
+                </div>
+                <div class="cb"></div>
+            </div>
+            <div class="fr ta-rt mt-8 cart">
+                <a class="fs-16 bd-1-d br-4 pd-0610 cart-box" href="{:url('Users/cart')}">
+                    <span class="icon-cart-block mr-10 cl-a9 pr tp-3 fs-18">&#xe90e;</span>
+                    <span class="mr-5">购物车</span>
+                    <label class="cl-f fw-nm br-10 cart_num"></label>
+                </a>
+            </div>
+            <div class="cb"></div>
+        </div>
+    </div>

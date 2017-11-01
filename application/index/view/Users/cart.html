@@ -1,112 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="博库网品种丰富的中文网上书店，160万种图书在线热销！图书、音像、软件正品行货超低折扣，全场免邮，支持全国货到付款。" />
-    <meta name="keywords" content="博库网,博库,博库书城,网上书店,网上买书,图书,影视,音像,软件"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <link rel="stylesheet" type="text/css" href="__CSS__/myframe.css" />
-    <link rel="stylesheet" type="text/css" href="__CSS__/public.css" />
-    <link rel="stylesheet" type="text/css" href="__CSS__/component.css" />
-    <link rel="stylesheet" type="text/css" href="__CSS__/module.css" />
-    <link rel="shortcut icon" href="http://bnmpstyle.bookuu.com/www/images/favicon.ico" type="image/x-icon" />
-
-    <!-- 字体图标 -->
-    <link rel="stylesheet" type="text/css" href="__CSS__/iconfonts.css" />
-
-    <script type="text/javascript" src="__JS__/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="__JS__/component.js"></script>
-
-    <!-- FlexSlider -->
-    <link rel="stylesheet" type="text/css" href="__CSS__/flexslider.css" />
-    <script type="text/javascript" src="__JS__/jquery.flexslider.js"></script>
-
-    <title id="www_pc_title">购物车-博库体验店</title></head>
-    <body>
-
-        <!-- 头部 -->
-        <div class="header-2 bc-f oh">
-
-            <!-- 顶部 小标题  登录信息-->
-            <div class="bc-f5 ht-30 lh-30">
-                <div class="wd-1200 ma fs-12 cl-6">
-                    <p class="fl">
-                        欢迎，自行车
-                        <span class="pd-0005 cl-c">|</span>
-                        <a class="mr-30 hover cl-6" href="//www.bookuu.com/login.php?act=loginout" title="退出登录">退出登录</a>
-                        <a class="hover cl-6" href="/download.php" target="_blank" title="下载博库APP"><span class="icon-phone-line cl-bl-l fs-16 tp-3 mr-2 pr">&#xe933;</span>下载博库APP</a>
-                    </p>
-                    <p class="fr">
-                        <a class="hover fr cl-6" href="javascript:void()" onclick="openQiYuSDK();" title="联系客服">联系客服</a>
-                        <span class="pd-0015 cl-c fr">|</span>
-                        <a class="hover fr cl-6" href="/user/shop/settings.php" target="_blank" title="店铺管理">店铺管理</a>
-                        <span class="pd-0015 cl-c fr">|</span>
-                        <a class="hover fr cl-6" href="/user/collection.php" target="_blank" title="收藏夹">收藏夹</a>
-                        <span class="pd-0015 cl-c fr">|</span>
-                        <div class="fr mouseenter-box mouseenter mouseleave pr">
-                            <label class="cp">我的博库<span class="icon-down-line ml-5 fs-11">&#xe91e;</span></label>
-                            <div class="acount">
-                                <a class="hover cl-6 to-hd" href="//www.bookuu.com/user/"  target="_blank" title="">我的博库</a>
-                                <a class="hover cl-6 to-hd" href="//www.bookuu.com/user/orders/order.php" target="_blank" title="">我的订单</a>
-                                <a class="hover cl-6 to-hd" href="//www.bookuu.com/user/coupon.php" target="_blank" title="">我的优惠券</a>
-                                <a class="hover cl-6 to-hd" href="//www.bookuu.com/user/collection.php" target="_blank" title="">我的收藏</a>
-                                <a class="hover cl-6 to-hd" href="//www.bookuu.com/user/account.php" target="_blank" title="">我的收入</a>
-                                <a class="hover cl-6 to-hd" href="//www.bookuu.com/user/message.php" target="_blank" title="">官方消息</a>
-                                <a class="hover cl-6 to-hd" href="javascript:void(0);" title=""></a>
-                            </div>
-                        </div>
-                        <div class="cb"></div>
-                    </p>
-                    <div class="cb"></div>
-                </div>
-            </div>
-            <script src="__JS__/385c0351a4c1868328bba0ad1532fd1b.js" charset="utf-8"></script>
-            <script>
-
-                ysf.on({
-                    'onload': function(){
-                        var user_id = "100580004";
-                        var goods_id = "";
-                        if(user_id){
-                            ysf.config({
-                                uid:"100580004",
-                                name:'自行车',
-                                email:'',
-                                mobile:'18601021538',
-                                avatar:''
-                            });
-                        }
-                        if(goods_id){
-                            ysf.product({
-                    show : 1, // 1为打开， 其他参数为隐藏（包括非零元素）
-                    title : '',
-                    desc : '',
-                    picture : 'http://bnmppic.bookuu.com/',
-                    note : '¥',
-                    url : 'http://www.bookuu.com/detail.php?id='
-                });
-                        }
-                    }
-                });
-
-                window.openQiYuSDK = function(){
-                    ysf.open();
-                }
-            </script>
-            <div class="wd-1200 ma bb-1-e8">
-                <div class="logo">
-                    <a class="db logo-box fl" href="/index.php">
-                        <img data-src="picture/logo.png" alt="" height="45" class="db hidden">
-                    </a>
-                    <div class="cb"></div>
-                </div>
-            </div>
+{include file="common/index/head.html"}
 
         </div>
-        <script>
-            var host = "http://bnmppic.bookuu.com";
-        </script>
+    </div>
+</div>
         <script type="text/javascript" src="__JS__/cart.js"></script>
 
         <div class="section">
@@ -116,6 +14,17 @@
                     <span class="fr cl-9">温馨提示:1.购物车中的商品无法保留库存，请您尽快完成购买。2.商品的价格和库存将以订单提交时为准哦。</span>
                     <div class="cb"></div>
                 </p>
+                {if empty($Think.session.shopcar)}
+                <div class="ta-ct pd-20000">
+                    <span class="icon-zzzzzcart-line cl-9 fs-60">&#xe977;</span>
+                    <div class="fs-18 pd-2000">购物车还是空滴</div>
+                    <div class="mt-30 fs-18 cl-f">
+                                        <a class="bd-1-bl-d bc-bl pd-1050 mr-10 cl-f" href="{:url('/index/index/login')}">登录</a>
+                                        <a class="cl-bl-l bd-1-bl-d bc-bl-l pd-1050" href="{:url('/index')}">继续逛</a>
+                    </div>
+                </div>
+
+                {else}
                 <table width="100%" class="total-box tablecart">
                     <thead class="thead-1">
                         <tr>
@@ -145,92 +54,48 @@
                         <tr id="ssid_1">
                             <td colspan="8" class="fs-16 lh-50 pd-0010">图书仓</td>
                         </tr>
+                        {foreach $shopcar as $v}
                         <tr class="goods-box" id="goods_id_100930872">
+
                             <td colspan="8">
                                 <div class="typecart-2">
                                     <ul class="bb-1-e8 delete-box wd-1200 pd-0500">
                                         <li class="pr ta-ct wd-80 ht-80 fl fs-15">
-                                            <input type="checkbox" data-free="" data-id="100930872" data-economize="13.26" data-multi-id="119" data-goods-ssid="1" class="choose choose-child product pafull-box zi-1 op-0">
+                                            <input type="checkbox" data-free="" data-id="{$v[0]}" data-economize="13.26" data-multi-id="119" data-goods-ssid="1" class="choose choose-child product pafull-box zi-1 op-0">
                                             <span class="icon-checkbox-line cl-c">&#xe914;</span>
                                         </li>
                                         <li class="wd-450 ht-100 fl">
                                             <div class="fl wd-100">
-                                                <a class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/19/26/10/3806021-fm.jpg);" href="http://www.bookuu.com/detail.php?id=100930872"></a>
+                                                <img src="/uploads/{$v[2]['good_pic']}" height="70" width="50">
                                             </div>
                                             <div class="fr wd-300 ">
-                                                <p class="ht-60 lh-20 oh mt-8">芳华(精)</p>
+                                                <p class="ht-60 lh-20 oh mt-8">{$v[2]['good_name']}</p>
                                                 <p class="ht-25 lh-25 oh mt-10"></p>
                                             </div>
                                             <div class="cb"></div>
                                         </li>
                                         <li class="ta-ct wd-160 fl lh-30">
-                                            <del class="cl-9 mt-10">¥39.00</del>
-                                            <p class="fs-16">¥<span class="money">25.74</span></p>
+                                            <del class="cl-9 mt-10">¥{$v[2]['good_price']}</del>
+                                            <p class="fs-16">¥<span class="money">{$v[2]['good_showprice']}</span></p>
                                             <!-- <label class="cl-bl-l bd-1-bl-d bc-bl-l pd-0208 br-2">卖家促销<span class="icon-down-line ml-5 fs-13">&#xe91e;</span></label> -->
                                         </li>
                                         <li class="ta-ct wd-120 fl">
                                             <div class="count-box mt-35">
-                                                <div class="count-sub fl cl-c" data-price="25.74" data-id="100930872" onclick="Sub(this);">-</div>
-                                                <input class="text fl number-box" type="tel" data-id="100930872" data-count="16125" data-max="16125" value="1" onkeyup="input_Change(this);">
-                                                <div class="count-add fr" data-price="25.74" data-id="100930872" onclick="Add(this);">+</div>
+                                                <div class="count-sub fl cl-c" data-price="{$v[2]['good_showprice']}" data-id="{$v[0]}" onclick="Sub(this);">-</div>
+                                                <input class="text fl number-box" type="tel" data-id="{$v[0]}" data-count="16125" data-max="16125" value="{$v[1]}" onkeyup="input_Change(this);">
+                                                <div class="count-add fr" data-price="{$v[2]['good_showprice']}" data-id="{$v[0]}" onclick="Add(this);">+</div>
                                                 <div class="cb"></div>
                                             </div>
                                         </li>
                                         <li>
                                         </li>
-                                        <li class="fs-16  cl-rd ta-ct wd-200 fl mt-35">¥<span>25.74</span></li>
-                                        <li class="fs-16 wd-120 fl">
-                                            <p class=" mt-35" onclick="del_collect(this)" data-id="100930872">取消收藏</p>
-                                            <span class="cl-bl-l cp" onclick="deleteConfirm(this, 'product');" data-id="100930872">删除</span>
-                                        </li>
+                                        <li class="fs-16  cl-rd ta-ct wd-200 fl mt-35">¥<span>{$v[2]['good_showprice']}</span></li>
                                         <div class="cb"></div>
                                     </ul>
                                 </div>
                             </td>
                         </tr>
-                        <tr class="goods-box" id="goods_id_100105481">
-                            <td colspan="8">
-                                <div class="typecart-2">
-                                    <ul class="bb-1-e8 delete-box wd-1200 pd-0500">
-                                        <li class="pr ta-ct wd-80 ht-80 fl fs-15">
-                                            <input type="checkbox" data-free="" data-id="100105481" data-economize="6.96" data-multi-id="131" data-goods-ssid="1" class="choose choose-child product pafull-box zi-1 op-0">
-                                            <span class="icon-checkbox-line cl-c">&#xe914;</span>
-                                        </li>
-                                        <li class="wd-450 ht-100 fl">
-                                            <div class="fl wd-100">
-                                                <a class="db square-box one-one bgimg lazyload hidden" data-bgimg="background-image: url(http://bnmppic.bookuu.com/goods/20/20/27/2601143.jpg);" href="http://www.bookuu.com/detail.php?id=100105481"></a>
-                                            </div>
-                                            <div class="fr wd-300 ">
-                                                <p class="ht-60 lh-20 oh mt-8">追风筝的人</p>
-                                                <p class="ht-25 lh-25 oh mt-10"></p>
-                                            </div>
-                                            <div class="cb"></div>
-                                        </li>
-                                        <li class="ta-ct wd-160 fl lh-30">
-                                            <del class="cl-9 mt-10">¥29.00</del>
-                                            <p class="fs-16">¥<span class="money">22.04</span></p>
-                                            <!-- <label class="cl-bl-l bd-1-bl-d bc-bl-l pd-0208 br-2">卖家促销<span class="icon-down-line ml-5 fs-13">&#xe91e;</span></label> -->
-                                        </li>
-                                        <li class="ta-ct wd-120 fl">
-                                            <div class="count-box mt-35">
-                                                <div class="count-sub fl cl-c" data-price="22.04" data-id="100105481" onclick="Sub(this);">-</div>
-                                                <input class="text fl number-box" type="tel" data-id="100105481" data-count="23953" data-max="23953" value="2" onkeyup="input_Change(this);">
-                                                <div class="count-add fr" data-price="22.04" data-id="100105481" onclick="Add(this);">+</div>
-                                                <div class="cb"></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                        </li>
-                                        <li class="fs-16  cl-rd ta-ct wd-200 fl mt-35">¥<span>44.08</span></li>
-                                        <li class="fs-16 wd-120 fl">
-                                            <p class=" mt-35" onclick="del_collect(this)" data-id="100105481">取消收藏</p>
-                                            <span class="cl-bl-l cp" onclick="deleteConfirm(this, 'product');" data-id="100105481">删除</span>
-                                        </li>
-                                        <div class="cb"></div>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
+                        {/foreach}
                     </tbody>
                 </table>
                 <table width="100%" class="mt-10 total-box tablecart">
@@ -246,7 +111,7 @@
                                 <span class="cp  fs-16 op-60 button-delete" onclick="deleteConfirm(this, 'all');">删除选中商品</span>
                             </td>
                             <td colspan="4" align="right" class="lh-30" width="550">
-                                <p class="pd-0010">应付金额(不含运费): <label class="cl-rd">¥<span class="fs-22  money-box">0.00</span></label></p>
+                                <p class="pd-0010">应付金额(不含运费): <label class="cl-rd">¥<span class="fs-22  money-box" id="moneyCount">0.00</span></label></p>
                                 <p class="pd-0010 cl-6">商品合计 ¥<span class="money-box withpostage">0.00</span><span class="pd-0015">邮费：¥<span class="postage">0.00</span></span><!--您已从本次购买中<span class=" cl-21">节省了<span class="economize_num">0</span>元</span>--></p>
                             </td>
                             <td align="center">
@@ -255,289 +120,14 @@
                         </tr>
                     </tfoot>
                 </table>
-                
+                {/if}
             </div>
         </div>
 
         <!-- 底部 -->
 
         <!-- 底部 -->
-        <div class="footer">
-            <!-- tag -->
-            <div class="tag">
-                <ul class="clearfix">
-                    <li class="cl-4 lh-25 pd-0500 wd-25p fl">
-                        <img src="picture/zheng.png" alt="" width="50" height="50" class="fl mr-10" />
-                        <div class="fl">
-                            <p class="fs-24 ">全场正品</p>
-                            <p>新华书店·正品保证</p>
-                        </div>
-                        <div class="cb"></div>
-                    </li>
-                    <li class="cl-4 lh-25 pd-0500 wd-25p fl">
-                        <img src="picture/sheng.png" alt="" width="50" height="50" class="fl mr-10" />
-                        <div class="fl">
-                            <p class="fs-24 ">全场满额包邮</p>
-                            <p>惊喜不断·让利多多</p>
-                        </div>
-                        <div class="cb"></div>
-                    </li>
-                    <li class="cl-4 lh-25 pd-0500 wd-25p fl">
-                        <img src="picture/huo.png" alt="" width="50" height="50" class="fl mr-10" />
-                        <div class="fl">
-                            <p class="fs-24 ">门店自取</p>
-                            <p>就近取货·方式灵活</p>
-                        </div>
-                        <div class="cb"></div>
-                    </li>
-                    <li class="cl-4 lh-25 pd-0500 wd-25p fl">
-                        <img src="picture/hao.png" alt="" width="50" height="50" class="fl mr-10" />
-                        <div class="fl">
-                            <p class="fs-24 ">售后无忧</p>
-                            <p>服务体验·更加精彩</p>
-                        </div>
-                        <div class="cb"></div>
-                    </li>
-                </ul>
-            </div>
-            <div class="wd-1200 ma pd-2000 clearfix">
-                <ul class="links-box fl clearfix">
-                    <li class="lh-30 wd-20p fl">
-                        <span class="db fs-16 lh-40 ">新手指南</span>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=2&cid=9&cid_name=新用户注册">新用户注册</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=2&cid=10&cid_name=购物流程">购物流程</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=2&cid=11&cid_name=积分制度">积分制度</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=2&cid=12&cid_name=注册开店">注册开店</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=2&cid=13&cid_name=激励制度">激励制度</a></div>
-                    </li>
-                    <li class="lh-30 wd-20p fl">
-                        <span class="db fs-16 lh-40 ">支付与配送</span>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=3&cid=14&cid_name=IC卡充值说明">IC卡充值说明</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=3&cid=15&cid_name=验货与签收">验货与签收</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=3&cid=16&cid_name=配送范围">配送范围</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=3&cid=17&cid_name=自行取货">自行取货</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=3&cid=18&cid_name=支付方式">支付方式</a></div>
-                    </li>
-                    <li class="lh-30 wd-20p fl">
-                        <span class="db fs-16 lh-40 ">售后服务</span>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=5&cid=19&cid_name=发票制度">发票制度</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=5&cid=21&cid_name=退换货流程">退换货流程</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=5&cid=35&cid_name=退换货地址">退换货地址</a></div>
-                    </li>
-                    <li class="lh-30 wd-20p fl">
-                        <span class="db fs-16 lh-40 ">个人中心</span>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=6&cid=27&cid_name=店铺设置">店铺设置</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=6&cid=28&cid_name=团队管理">团队管理</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=6&cid=29&cid_name=收入管理">收入管理</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=6&cid=30&cid_name=我的订单">我的订单</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=6&cid=31&cid_name=我的优惠券">我的优惠券</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=6&cid=32&cid_name=我的等级">我的等级</a></div>
-                    </li>
-                    <li class="lh-30 wd-20p fl">
-                        <span class="db fs-16 lh-40 ">了解博库</span>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=37&cid=38&cid_name=关于博库">关于博库</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="//www.bookuu.com/help.php?act=list&pid=37&cid=39&cid_name=联系我们">联系我们</a></div>
-                        <div><a  target="_blank" class="hover cl-6" href="http://job.bookuu.com/">公司招聘</a></div>
-                    </li>
-                </ul>
-                <div class="code-box fr">
-                    <ul class="clearfix">
-                        <li class="cl-6 lh-30 ta-ct wd-50p fl">
-                            <p class="fs-16 lh-40 ">手机博库</p>
-                            <img data-src="picture/app.jpg" align="" width="105" height="105" class="db hidden bd-1-d ma">
-                            <p class="lh-30">下载手机客户端</p>
-                        </li>
-                        <li class="cl-6 lh-30 ta-ct wd-50p fl">
-                            <p class="fs-16 lh-40 ">关注微信</p>
-                            <img data-src="picture/wx.jpg" align="" width="105" height="105" class="db hidden bd-1-d ma">
-                            <p class="lh-30">关注官方微信</p>
-                        </li>
-                    </ul>
-                    <div class="cl-6 lh-25 mt-15">
-                        <p class="fs-16 fw-bd">服务热线&nbsp;0571-26306883</p>
-                        <p>服务时间&nbsp;9：00-21：00</p>
-                    </div>
-                </div>
-            </div>
-            <!-- copyright -->
-            <div class="copyright">
-                <div class="wd-605 ma cl-9 ta-ct" style="width: 656px;">
-                    <div class="fl lh-50">
-                        <img src="picture/jingcha.png" alt="" height="36" class="va-md pd-0005">
-                        <a href="/system/refer.php" target="_blank"><img src="picture/huizhang.png" alt="" height="36" class="va-md pd-0005"></a>
-                        <!--<a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1575312902" target="_blank"><img src="picture/xin.png" alt="" height="36" class="va-md pd-0005"></a>-->
-                    </div>
-                    <div class="fl pd-0010">
-                        <p>©Copyright 2005-2017 bookuu.com 版权所有</p>
-                        <p>增值电信业务经营许可证:浙B2-2011021</p>
-                    </div>
-                    <div class="fl lh-50">
-                        <a href="https://ss.knet.cn/verifyseal.dll?sn=e14082133010052836nfbw000000&comefrom=trust&trustKey=dn&trustValue=www.bookuu.com" target="_blank"><img src="picture/knetseallogo.png" alt="" height="30" class="va-md pd-0005"></a>
-                        <a href="https://credit.szfw.org/CX20160711016212850139.html" target="_blank"><img src="picture/cert.png" alt="" height="30" class="va-md pd-0005"></a>
-                    </div>
-                    <div class="cb"></div>
-                </div>
-            </div>
-        </div>
-        <script>
-            $(function(){
-            //频道 tab切换
-            $(".my_tab").click(function(){
-                var tabId = $(this).attr("data-id");
-                $(this).addClass('on-click');
-                $(this).siblings().removeClass('on-click');
-
-                $("#my_tab_"+tabId).removeClass("dn");
-                $("#my_tab_"+tabId).siblings(".my_tab_content").addClass('dn');
-            });
-        });
-
-        // 懒加载
-        lazyLoading();
-
-        // 菜单
-        mouseenterAndTab();
-        
-        $(function(){
-
-            //公共：加入收藏
-            $('.collect').on('click', function(){
-                var _span = $(this).find('span');
-
-                var goods_id = $(this).attr('goods-id');
-                if( _span.hasClass('icon-star-line') ){
-                    $.ajax({
-                        type: "get",
-                        url:"/ajax/collect.php",
-                        data: {act:'collect',type:'add',id:goods_id},
-                        dataType: "json",
-                        success: function(data) {
-                            if(parseInt(data.status) == 1){
-                                alert(data.info);
-
-                                _span.removeClass('icon-star-line').addClass('icon-star-block').html('&#xe945;');
-                                $('.collect').removeClass('bd-1-a cl-9').addClass('bd-1-bl-d cl-bl-l');
-                                
-
-
-                            } else if(parseInt(data.status) == 404){
-                                window.location.href = data.info;
-                            } else {
-                                alert(data.info);
-                            }
-                        }
-                    });
-                }else{
-                    confirm('', '你要取消收藏该商品吗?', '', function(res){
-                        if (res) {
-                            $.ajax({
-                                type: "get",
-                                url:"/ajax/collect.php",
-                                data: {act:'collect',type:'delete',id:goods_id},
-                                dataType: "json",
-                                success: function(data) {
-                                    if(parseInt(data.status) == 1){
-                                        alert(data.info);
-
-                                        _span.removeClass('icon-star-block').addClass('icon-star-line').html('&#xe946;');
-                                        $('.collect').removeClass('bd-1-bl-d cl-bl-l').addClass('bd-1-a cl-9');
-
-                                    } else if(parseInt(data.status) == 404){
-                                        window.location.href = data.info;
-                                    } else {
-                                        alert(data.info);
-                                    }
-                                }
-                            });
-                        }else{
-                            _span.removeClass('icon-star-line').addClass('icon-star-block').html('&#xe945;');
-                            $('.collect').removeClass('bd-1-a cl-9').addClass('bd-1-bl-d cl-bl-l');
-                        }
-                    });
-                }
-
-            });
-
-            getCartNum();
-
-            //公共：加入购物车
-            $('.addcart').on('click',function(){
-                var goods_id = $(this).attr('goods-id');
-                var number = $(this).attr('goods-number');
-                $.ajax({
-                    type: "post",
-                    url:"/ajax/cart.php?act=add",
-                    data: {id:goods_id,number: typeof(number) == 'undefined' ? 1 :number},
-                    dataType: "json",
-                    success: function(data) {
-                        if(parseInt(data.status) == 404){
-                            window.location.href = data.info;
-                        }else{
-                            if(data.status == 200){
-                                $('.cart_num').addClass('bc-rd-d pd-0005').html(data.list_number);
-                            }
-                            alert(data.info);
-                        }
-                    },error:function(){
-                        alert('加入失败');
-                    }
-                });
-            });
-
-            //公共：签到
-            $('.checkin').on('click',function(){
-                $.ajax({
-                    type: "post",
-                    url:"/ajax/checkin.php?act=signed",
-                    data: {},
-                    dataType: "json",
-                    success: function(data) {
-                        if(parseInt(data.status) == 404){
-                            window.location.href = data.info;
-                        }else{
-                            alert(data.info);
-                        }
-                    },error:function(){
-                        alert('签到失败');
-                    }
-                });
-            });
-
-        });
-
-        //获取购物车的数量
-        function getCartNum(){
-            var num = getCookie('gwshoppingcart');
-            if(num == null){
-                //公共：购物车数量统计
-                $.ajax({
-                    type: "get",
-                    url:"/ajax/cart.php?act=count",
-                    dataType: "json",
-                    success: function(data) {
-                        if( parseInt(data.status) == 200 && parseInt(data.list_number)>0){
-                            $('.cart_num').addClass('bc-rd-d pd-0005').html(data.list_number);
-                        }
-                    }
-                });
-            }
-            if(num >0 ){
-                $('.cart_num').addClass('bc-rd-d pd-0005').html(num);
-            }
-        }
-
-        function getCookie(name) {
-            var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-            if(arr=document.cookie.match(reg))
-                return unescape(arr[2]);
-            else
-                return null;
-        }
-
-        // 进度条
-        $('.progress-box').progress();
-
-    </script>
+        {include file="common/index/footer.html"}
 
 </body>
 </html>
@@ -546,8 +136,8 @@
     // 全选
     $('body').on('click', '.choose', function () {
         var _this = $(this),
-        _type = 'checkbox',
-        _bool = false;
+                _type = 'checkbox',
+                _bool = false;
         // 选择状态
         if (_this.hasClass('product')) check(_this, _type, _bool);
         getEconomize();
@@ -569,78 +159,356 @@
             alert('请选择要结算的商品!');
             return false;
         }
+        var countMoney = $("#moneyCount").text();
+        alert(countMoney);
         $.post(
-            'shoppingcart.php',
-            {act:'buy',goods_ids:goods_ids},
-            function (data) {
-                if (data.status) {
-                    window.location.href = 'http://www.bookuu.com/order/confirm.php';
-                } else {
-                    if (data.info) {
-                        window.location.href = data.info;
+                '{url:('confirm')}',
+                {goods_ids:goods_ids},
+                function (data) {
+                    console.log(data);
+                    /*if (data.status) {
+                        window.location.href = 'http://www.bookuu.com/order/confirm.php';
                     } else {
-                        alert(data.message);
-                    }
-                }
-            }, 'json'
-            );
+                        if (data.info) {
+                            window.location.href = data.info;
+                        } else {
+                            alert(data.message);
+                        }
+                    }*/
+                }, 'json'
+        );
 
         return false;
     });
-
-    function in_collect(obj) {
-        var $this = $(obj);
-        var goods_id = $this.data('id');
-        if (!goods_id) {
-            return;
+    function get_ids() {
+    var goods_ids = '';
+    $('.choose-child').each(function () {
+        if ($(this).prop("checked")) {
+            goods_ids += parseInt($(this).data('id')) + ',';
         }
+    });
 
-        $.post(
-            'shoppingcart.php',
-            {act:'collect',goods_id:goods_id},
-            function (data) {
+    return goods_ids;
+}
+    function get_count() {
+        var goods_ids = '';
+        $('.choose-child').each(function () {
+            if ($(this).prop("checked")) {
+                goods_ids += parseInt($(this).data('id')) + ',';
+            }
+        });
 
-                if (data.status) {
-                    $this.attr('onclick', 'del_collect(this)');
-                    $this.html('取消收藏');
-                } else {
-                    if (data.info) {
-                        window.location.href = data.info;
+        return goods_ids;
+    }
+
+function deleteConfirm(obj, type) {
+
+    confirm(obj, '确定从购物车中删除该商品吗?', type, function (_res) {
+        if (_res) {
+
+            var goods_ids = '';
+            if (type == 'all') {
+                goods_ids = get_ids();
+                //console.log(goods_ids);
+
+            } else {
+                return;
+            }
+
+            if (!goods_ids) {
+                return;
+            }
+
+            $.post(
+                '/index/books/removeCar',
+                {goods_ids: goods_ids},
+                function (data) {
+                    console.log(data);
+                    if (data.status) {
+                        window.location.reload();
                     } else {
                         alert(data.message);
                     }
-                }
-            }, 'json'
+                }, 'json'
             );
+
+        }
+    });
+}
+
+function Sub(_this) {
+    var _numBox = $(_this).parents('.count-box').find('.number-box'),
+        _numVal = parseInt(_numBox.val()),
+        _addBox = $(_this).parents('.count-box').find('.count-add'),
+        _subBox = $(_this).parents('.count-box').find('.count-sub'),
+        _amountsBox = $(_this).parents('.delete-box').find('.amounts-box');
+    if (_numVal > 2) {
+        _numVal--;
+        _numBox.val(_numVal);
+        _subBox.removeClass('cl-c');
+    } else if (_numVal == 2) {
+        _numVal--;
+        _numBox.val(_numVal);
+        _subBox.addClass('cl-c');
+    } else {
+        _subBox.addClass('cl-c');
+        // alert('1');
     }
+    _addBox.removeClass('cl-c');
+    // 关联计数
+    if (_amountsBox.length != 0) _amountsBox.text(_numVal);
 
-    function del_collect(obj) {
+    var price = $(_this).data('price');
+    var total_price = (parseFloat(price) * _numVal).toFixed(2);
+    $(_this).parent().parent().next().next().find('span').text(total_price);
 
-        var $this = $(obj);
-        var goods_id = $this.data('id');
-        if (!goods_id) {
-            return;
+    var id = $(_this).data('id');
+    asyncChangeShoppingCartNumber(_numVal, id);
+
+    // 统计已选商品金额和数量信息
+    productChoosed();
+    getEconomize();
+
+}
+
+function Add(_this) {
+    var _numBox = $(_this).parents('.count-box').find('.number-box'),
+        _numVal = parseInt(_numBox.val()),
+        _subBox = $(_this).parents('.count-box').find('.count-sub'),
+        _addBox = $(_this).parents('.count-box').find('.count-add'),
+        _amountBox = $(_this).parents('.delete-box').find('.amount-box');
+
+    var max_count = parseInt(_numBox.data('count'));
+    var usable = parseInt(_numBox.data('max'));
+
+    _numVal++;
+
+    if (max_count < _numVal) {
+        alert('只能购买' + max_count + '件商品');
+        _numVal = max_count;
+    }
+    if (_numVal > usable) {
+        _numVal = usable;
+        _numBox.val(_numVal);
+        _addBox.addClass('cl-c');
+    } else {
+        _numBox.val(_numVal);
+        _addBox.removeClass('cl-c');
+    }
+    _subBox.removeClass('cl-c');
+    // 关联计数
+    if (_amountBox.length != 0) _amountBox.text(_numVal);
+
+    var price = $(_this).data('price');
+    var total_price = (parseFloat(price) * _numVal).toFixed(2);
+    $(_this).parent().parent().next().next().find('span').text(total_price);
+
+    var id = $(_this).data('id');
+
+    asyncChangeShoppingCartNumber(_numVal, id);
+
+    // 统计已选商品金额和数量信息
+    productChoosed();
+    getEconomize();
+}
+
+function getEconomize() {
+
+    var flag = false;
+    var economize = 0;
+    $('.choose-child').each(function () {
+        if ($(this).prop("checked")) {
+            var munbox = parseInt($(this).parents('ul').find('.number-box').val());
+            economize += (parseFloat($(this).data('economize')) * munbox);
+            flag = true;
+        }
+    });
+
+    if (flag) {
+        $('#tobuy').removeClass('bc-dg').addClass('bc-rd-d');
+    } else {
+        $('#tobuy').removeClass('bc-rd-d').addClass('bc-dg');
+    }
+    //$('.economize_num').text(economize.toFixed(2));
+
+    getpostage();
+    getmulti();
+}
+
+function getpostage() {
+
+    var total_money = $('.money-box').text();
+    var _postage = 0;
+    var _total_postage = 0;
+    var total_postage = 0;
+
+    $('.choose-container').each(function () {
+
+        var _info = $(this).find('span[name=postageinfo]');
+        var this_postage = _info.attr('data-poatage');
+        var this_poatagerule = _info.attr('data-poatagerule');
+
+        if (parseFloat(this_postage) == 0) {
+            _postage = 0;
+            _total_postage = 0;
+        } else {
+            var _total_price = 0;
+            var is_free = 0;
+            $(this).find('.choose-child').each(function () {
+                if ($(this).prop("checked")) {
+                    _total_price += parseFloat($(this).parents('.typecart-2').find('.money').text()) * parseInt($(this).parents('.typecart-2').find('.number-box').val());
+                    if (is_free == 0 && parseInt($(this).data('free')) == 1) {
+                        is_free = 1;
+                    }
+                }
+            });
+
+            if (is_free == 1) {
+                _postage = 0;
+                _total_postage = 0;
+            } else {
+
+                if (_total_price >= parseFloat(this_postage)) {
+                    _postage = 0;
+                    _total_postage = 0;
+                } else {
+
+                    if (_total_price == 0) {
+                        _postage = parseFloat(this_poatagerule);
+                        _total_postage = 0;
+
+                    } else {
+
+                        _postage = parseFloat(this_poatagerule);
+                        _total_postage = parseFloat(this_poatagerule);
+                    }
+
+                }
+            }
         }
 
-        confirm($this, '您确定要取消该收藏商品吗?', 'all', function (res) {
-            if (res) {
-                $.post(
-                    'shoppingcart.php',
-                    {act:'collect_delete',goods_id:goods_id},
-                    function (data) {
-                        if (data.status) {
-                            $this.attr('onclick', 'in_collect(this)');
-                            $this.html('移入收藏夹');
-                        } else {
-                            if (data.info) {
-                                window.location.href = data.info;
-                            } else {
-                                alert(data.message);
-                            }
-                        }
-                    }, 'json'
-                    );
+        _info.text(_postage.toFixed(2));
+        total_postage = parseFloat(total_postage) + _total_postage;
+    });
+
+    $('.withpostage').text((parseFloat(total_money) + parseFloat(total_postage)).toFixed(2));
+    $('.postage').text(parseFloat(total_postage).toFixed(2));
+}
+
+function asyncChangeShoppingCartNumber(num, id) {
+
+    $.post(
+        '{:url('/index/books/changecount')}',
+        {goods_id: id, count: num},
+        function (data) {
+
+            console.log(data);
+/*
+            if (data.status) {
+                return true;
+            } else {
+                if(data.info){
+                    window.location.href = data.info;
+                }
+                return false;
+            }*/
+        }, 'json'
+    );
+}
+
+function input_Change(_this) {
+    var _val = parseInt($(_this).val()),
+        _addBox = $(_this).siblings('.count-add'),
+        _money = $(_this).parents('.delete-box').find('.money'),
+        _subBox = $(_this).siblings('.count-sub'),
+        _max = $(_this).attr('data-max');
+
+    console.log(_max);
+
+    var goods_id = $(_this).data('id');
+
+    if (!goods_id) {
+        return;
+    }
+
+    // 负数和非int型，强制转换为1
+    if (isNaN(_val) || _val <= 0) {
+        _subBox.removeClass('cl-c').addClass('cl-c');
+        _addBox.removeClass('cl-c');
+        // alert('1');
+        _val = 1;
+    } else if (_val > Number(_max)) {
+        _addBox.removeClass('cl-c').addClass('cl-c');
+        _subBox.removeClass('cl-c');
+        // alert('100');
+        _val = _max;
+    } else {
+        _addBox.removeClass('cl-c');
+        _subBox.removeClass('cl-c');
+    }
+
+    $(_this).val(_val);
+
+    asyncChangeShoppingCartNumber(_val, goods_id);
+
+    var total_price = (parseFloat(_money.text()) * _val).toFixed(2);
+    $(_this).parent().parent().next().next().find('span').text(total_price);
+    // 统计已选商品金额和数量信息
+    productChoosed();
+    getEconomize();
+}
+
+function getmulti() {
+
+    $('.multi_box').remove();
+
+    $('.multi_data').each(function () {
+
+        var _this = $(this);
+        var ssid = _this.data('multi-ssid'),
+            total_money = 0,
+            multi_id = _this.val(),
+            multi_minprice = 0,
+            multi_price = 0,
+            multi_base_name = _this.data('multi-basename'),
+            multi_array=new Array(),
+            multi_baseid = _this.data('multi-baseid');
+
+        $('.choose-child').each(function () {
+            if ($(this).prop("checked")) {
+                var $this = $(this);
+                if ($this.data('multi-id') == multi_id && $this.data('goods-ssid') == ssid) {
+                    var _money = parseFloat($this.parents('.delete-box').find('.money').text()) * parseInt($this.parents('.delete-box').find('.number-box').val());
+                    total_money = total_money + _money;
+                }
+            }
+
+            if ($(this).data('multi-id') == multi_id && $(this).data('goods-ssid') == ssid) {
+                multi_array.push($(this).data('id'));
             }
         });
-    }
+
+        if (total_money >= 0) {
+
+            var html = '';
+            var multi_arr = _this.data('multi-details');
+            for (i = 0; i < multi_arr.length; i++) {
+                if (total_money > parseFloat(multi_arr[i].price)) {
+                    if (multi_minprice == 0) multi_minprice = parseFloat(multi_arr[i].price);
+                    if (multi_price == 0 && parseInt(multi_baseid) == 5) multi_price = parseFloat(multi_arr[i].detail.money);
+                    if (parseInt(multi_baseid) == 7) var multi_zpinfo = multi_arr[i].detail;
+                    break;
+                }
+            }
+            if (multi_minprice == 0) {
+                multi_minprice = multi_arr[multi_arr.length - 1].price;
+                if (parseInt(multi_baseid) == 5) multi_price = multi_arr[multi_arr.length - 1].detail.money;
+                if (parseInt(multi_baseid) == 7) var multi_zpinfo = multi_arr[multi_arr.length - 1].detail;
+            }
+        }
+
+    });
+
+}
+
 </script>

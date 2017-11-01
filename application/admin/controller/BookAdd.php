@@ -37,6 +37,7 @@ class BookAdd extends Index
 				'good_pic'      =>$pic,
 				'good_count'    =>$data['count'],
 				'good_price'    =>$data['sell_price'],
+				'good_isbn'		=>$data['good_isbn'],
 				'good_realprice'=>$data['price'],
 				'good_showprice'=>$data['show_price'],
 				'good_details'	=>$data['details'],
