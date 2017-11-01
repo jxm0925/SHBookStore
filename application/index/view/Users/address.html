@@ -293,7 +293,7 @@ _associateBox.removeClass('history');
                         <div class="address-info mb-20">
                             <div class="address-info-address">
                                 <div class="mb-20 bb-1-e8">
-                                    <h3 class="list-item-title fl">已保存收货地址<span class="fs-14 cl-9"></span></h3>
+                                    <h3 class="list-item-title fl">已保存收货地址<span class="fs-14 cl-9">(地址最多50条，还能保存49条)</span></h3>
                                     <div class="fr pt-6"><a class="new-address cl-bl-l" href="javascript:void(0);" data-count="" title="新建地址">+新建地址</a></div>
                                     <div class="cb"></div>
                                 </div>
@@ -306,23 +306,17 @@ _associateBox.removeClass('history');
                                             <td class="item bb-1-e8" width="18%">&nbsp;</td>
                                             <td class="item bb-1-e8" width="18%">操作</td>
                                         </tr>
-                                        {foreach $data as $value}
                                         <tr class="info-text ta-ct">
-                                            <td class="item">{$value['username']}</td>
-                                            <td class="item">{$value['province'].$value['city'].$value['county'].$value['address']}</td>
-                                            <td class="item">{$value['phone']}</td>
-                                            {if($value['status'] == 0)}
-                                            <td class="item"><a class="btn-address active" href="javascript:void(0);" data-id="{$value['address_id']}" title="默认地址" >设置为默认地址</a></td>
-                                            {else}
-                                            <td class="item"><a class="btn-address active" href="javascript:void(0);" data-id="{$value['address_id']}" title="默认地址" >默认地址</a></td>
-                                            {/if}
+                                            <td class="item">姜晓孟</td>
+                                            <td class="item">北京北京市海淀区北京市海淀区宝盛北里西区天丰利商城4层千峰</td>
+                                            <td class="item">18601021538</td>
+                                            <td class="item"><a class="btn-address active" href="javascript:void(0);" data-id="467432" title="默认地址" >默认地址</a></td>
                                             <td class="item">
-                                                <a class="edit-address cl-bl-l" href="javascript:void(0);" data-id="{$value['address_id']}" title="编辑">编辑</a>
+                                                <a class="edit-address cl-bl-l" href="javascript:void(0);" data-id="467432" title="编辑">编辑</a>
                                                 &nbsp;&nbsp;
-                                                <a class="del-address cl-bl-l" href="javascript:void(0);" data-id="{$value['address_id']}" title="删除">删除</a>
+                                                <a class="del-address cl-bl-l" href="javascript:void(0);" data-id="467432" title="删除">删除</a>
                                             </td>
                                         </tr>
-                                        {/foreach}
                                     </tbody>
                                 </table>
                             </div>
@@ -331,7 +325,7 @@ _associateBox.removeClass('history');
                 </ul>
             </div>
             <div class="cb"></div>
-            
+
             <div class="mt-10">
                 <div class="page-number-group tcdPageCode fr">
 
@@ -360,17 +354,9 @@ _associateBox.removeClass('history');
                             <ul>
                                 <li>
                                     <div class="fl mr-20">所在地区:</div>
-
-                                    <div id="demo1" class="citys region">
-                                        <p>
-                                            <select name="province"></select>
-                                            <select name="city"></select>
-                                            <select name="area"></select>
-                                        </p>
+                                    <div id="address" class="fl">
+                                        <div id="region1" class="region"></div>
                                     </div>
-                                    <script type="text/javascript">
-                                        $('#demo1').citys({valueType:'name',province:'福建',city:'厦门',area:'思明'});
-                                    </script>
                                     <div class="cb"></div>
                                 </li>
                                 <li class="mt-20">
@@ -407,11 +393,11 @@ _associateBox.removeClass('history');
                                 </li>
                                 <li class="mt-42">
                                     <div class="fl">
-                                       <!--  <label class="set-defult">
-                                           <span class="icon-checkbox-line mr-5 bd-1-e8 pr tp-1" id="is_defult">&#xe914;</span>
-                                           <span class="va-bl">设为默认</span>
-                                           <input id="set-defult" class="hidden" type="checkbox" name="set-defult" value="设为默认">
-                                       </label> -->
+                                        <label class="set-defult">
+                                            <span class="icon-checkbox-line mr-5 bd-1-e8 pr tp-1" id="is_defult">&#xe914;</span>
+                                            <span class="va-bl">设为默认</span>
+                                            <input id="set-defult" class="hidden" type="checkbox" name="set-defult" value="设为默认">
+                                        </label>
                                     </div>
                                     <div class="fr">
                                         <a class="confirm-t wd-142 lh-40 mr-10" id="aa" href="javascript:void(0);" onclick="modify()" title="确定">确定</a>
@@ -998,22 +984,21 @@ _associateBox.removeClass('history');
     $('.btn-address').click(function () {
 
         var $this = $(this);
-        // if ($this.hasClass('active')) {
-        //     return;
-        // }
+        if ($this.hasClass('active')) {
+            return;
+        }
 
         var add_id = $this.data('id');
-        // if (!add_id) {
-        //     return;
-        // }
+        if (!add_id) {
+            return;
+        }
 
-        console.log(111);
         $.post(
-            "{:url('index/UserAddress/changeDefualt')}",
+            'address.php?act=change_default',
             {add_id: add_id},
             function (data) {
-                if (data == 1) {
-                    alert('成功');
+                alert(data.message);
+                if (data.status) {
                     window.location.reload();
                 }
             }, 'json'
@@ -1029,6 +1014,7 @@ _associateBox.removeClass('history');
 
     $('.new-address').on('click', function () {
         // $('.edit-address-box').addClass('active');
+
         $.get(
             'address.php?act=getCount',
             function (data) {
@@ -1038,14 +1024,14 @@ _associateBox.removeClass('history');
                 }
             }, 'json'
             );
+
         $('.popup-box.address').removeClass('visible hidden');
         $('.overlay').remove();
         $('body').append('<div class="overlay"></div>');
         $('html').addClass('oh');
     });
 
-    $('.address-info-form').on('click', function () {
-        console.log(111);
+    $('.address-info-form').on('click', '.set-defult', function () {
         console.log($('input[name=set-defult]').prop('checked'));
         if ($('input[name=set-defult]').prop('checked')) {
             $(this).find('span').eq(0).removeClass('icon-checkbox-line').addClass('icon-checkbox-line2').html('&#xe915;');
@@ -1068,13 +1054,12 @@ _associateBox.removeClass('history');
 
             if (res) {
                 $.post(
-                    "{:url('UserAddress/addressDel')}",
+                    'address.php?act=delete',
                     {address_id: add_id},
-                    function (data) { 
-                        if (data == 1) {
+                    function (data) {
+                        alert(data.msg);
+                        if (data.status == '0000') {
                             $this.parents('.info-text').remove();
-                        }else{
-                            alert('失败');
                         }
                     }, 'json'
                     );
@@ -1091,40 +1076,36 @@ _associateBox.removeClass('history');
      var city_id = '';
      var county_id = '';
      $('.address-info-table').on('click', '.edit-address', function () {
-        console.log(4567);
+
         var address_id = $(this).data('id');
         if (!address_id) {
             return;
         }
         $.post(
-            "{:url('UserAddress/addressUpdata')}",
+            'address.php',
             {act: 'getById', address_id: address_id},
             function (data) {
-                var jsonData = eval("("+data.responseText+")");
-                var info = data;
-                
+                var info = data.data;
+                console.log(info);
                 if (info) {
-                    $('#province_id').val(info.province);
-                    $('#city_id').val(info.city);
-                    $('#county_id').val(info.county);
+                    $('#province_id').val(info.consignee_province);
+                    $('#city_id').val(info.consignee_city);
+                    $('#county_id').val(info.consignee_county);
                     $('#address_ids').val(info.address_id);
-                    $('#detail_address').val(info.address);
-                    $('#zip').val(info.postcode);
-                    $('#user_name').val(info.name);
-                    $('#phone').val(info.phone);
-                    //更改选项
-                    $('#demo1').citys({valueType:info.name,province:info.province,city:info.city,area:info.county});
+                    $('#detail_address').val(info.consignee_address);
+                    $('#zip').val(info.consignee_postcode);
+                    $('#user_name').val(info.consignee_name);
+                    $('#phone').val(info.consignee_mobilephone);
 
-                    province_id = info.province;
-                    city_id = info.city;
-                    county_id = info.county;
+                    province_id = info.consignee_province;
+                    city_id = info.consignee_city;
+                    county_id = info.consignee_county;
 
                     $('.popup-box.address').removeClass('visible hidden');
                     $('.overlay').remove();
                     $('body').append('<div class="overlay"></div>');
                     $('html').addClass('oh');
 
-                    
 
                     console.log(province_id);
 
@@ -1164,6 +1145,7 @@ _associateBox.removeClass('history');
         var province_id = $('.region select').eq(0).find('option:selected').val();
         var city_id = $('.region select').eq(1).find('option:selected').val();
         var county_id = $('.region select').eq(2).find('option:selected').val();
+
         if (address_id) {
             if (!province_id || !city_id || !county_id) {
                 province_id = $('#province_id').val();
@@ -1200,23 +1182,21 @@ _associateBox.removeClass('history');
         } else {
             $('.reg-err').html('');
         }
-        if (!county_id || !province_id) {
+        if (!county_id || !city_id || !province_id) {
             alert('请选择收货人省市区');
-            console.log(111);
             return false;
         }
 
         $.post(
-            "{:url('UserAddress/addressAdd')}",
+            'address.php?act=modify',
             {address_id: address_id,
                 if_default: is_defult,
                 province_id: province_id,
                 city_id: city_id,
                 county_id: county_id, addres: detail_address, postcode: zip, phone: phone, name: user_name},
                 function (data) {
-                    
-                    if (data == '1') {
-                        alert('成功');
+                    alert(data.msg);
+                    if (data.status == '0000') {
                         window.location.reload();
                         console.log(666);
                     }

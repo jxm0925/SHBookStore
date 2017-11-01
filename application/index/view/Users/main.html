@@ -297,7 +297,7 @@ _associateBox.removeClass('history');
                             <tbody>
                                 <tr>
                                     <td class="pr-20" width="150" rowspan="4">
-                                        <img class="va-md" src="/uploads/{$headpic}" alt="" width="150" height="150">
+                                        <img class="va-md" src="picture/default_user.jpg" alt="" width="150" height="150">
                                     </td>
                                     <td width="190">
                                         <p>欢迎，{$Think.session.username}</p>
@@ -313,7 +313,7 @@ _associateBox.removeClass('history');
                                     <td>&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><span class="cl-6">账户余额</span>&nbsp;&nbsp;¥{$money}</td>
+                                    <td><span class="cl-6">账户余额</span>&nbsp;&nbsp;¥0.00</td>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                 </tr>
@@ -326,10 +326,10 @@ _associateBox.removeClass('history');
                         </table>
                         <ul class="ordsts-list mt-30 ta-ct mb-232">
                             <li class="item"><b>订单提醒</b></li>
-                            <li class="item"><a href="{:url('Users/order')}">待付款订单&nbsp;&nbsp;<span>{$paystatus}</span></a></li>
-                            <li class="item"><a href="{:url('Users/order')}">待发货订单&nbsp;&nbsp;<span>{$status}</span></a></li>
-                            <li class="item"><a href="{:url('Users/order')}">待收货订单&nbsp;&nbsp;<span>{$isstatus}</span></a></li>
-                            <li class="item"><a href="{:url('Users/order')}">待评价订单&nbsp;&nbsp;<span>{$apprstatus}</span></a></li>
+                            <li class="item"><a href="/user/orders/order.php?act=wait_pay">待付款订单&nbsp;&nbsp;<span>0</span></a></li>
+                            <li class="item"><a href="/user/orders/order.php?act=wait_send">待发货订单&nbsp;&nbsp;<span>0</span></a></li>
+                            <li class="item"><a href="/user/orders/order.php?act=been_send">待收货订单&nbsp;&nbsp;<span>0</span></a></li>
+                            <li class="item"><a href="/user/orders/order.php?act=wait_comment">待评价订单&nbsp;&nbsp;<span>0</span></a></li>
                             <li class="cb"></li>
                         </ul>
                     </li>

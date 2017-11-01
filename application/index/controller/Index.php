@@ -5,22 +5,88 @@ use \think\Controller;
 use \think\Session;
 use \think\Request;
 use \think\Validate;
+use think\Paginator;
+use think\DB;
 use framework\Ucpaas;
 use app\index\model\User;
+use app\index\model\Type;
+use app\index\model\Notice;
+use app\index\model\Picture;
+use app\index\model\Good;
+use app\index\model\Order;
+use app\index\model\Comment;
+use app\index\model\Collect;
 
 class Index extends Controller
 {
 	protected $user;
 	protected $uc;
+	protected $type;
+	protected $notice;
+	protected $fstarr;
+	protected $picture;
+	protected $good;
+	protected $collect;
+	protected $order;
 	//变量初始化
 	public function _initialize()
 	{
-		$this->user = new User();
+		$this->user   = new User();
+		$this->type   = new Type();
+		$this->notice = new Notice();
+		$this->picture= new Picture();
+		$this->good   = new Good();
+		$this->collect= new Collect();
+		$this->order  = new Order();
+		$this->comment= new Comment();
+		$this->fstarr = $this->listMenu();
 	}
 
 	public function index()
 	{
+		$banner = $this->picture->listBanner();
+		$notice = $this->notice->listNotice();
+		$new	= $this->good->listNews();
+		$hot	= $this->good->listHot();
+		$time = time();
+		$saleNew= Db::name('good')->where("start_time",'>',$time)->order('start_time asc')->select();
+		//dump($this->fstarr);
+		$this->assign(['fstarr'=>$this->fstarr,
+			'notice'  => $notice,
+			'banner'  => $banner,
+			'new'	  => $new,
+			'hot'	  => $hot,
+			'saleNew' => $saleNew,
+		]);
 		return $this->fetch();
+	}
+	public function listMenu()
+	{
+		$fst = $this->type->listfstType();
+		$fstarr = array();
+		$snd = array();
+		$sndarr = array();
+		$trd = array();
+		$trdarr = array();
+		//dump($fst);
+		foreach ($fst as $key => $value) {
+			$fstarr[$key] = $value->toArray();
+			$fstarr[$key]['child'] = array();
+			$snd = $this->type->listsndType($value->type_id);
+			//array_push($fst[$key]['child'],$snd->type_name);
+			foreach($snd as $k=>$v){
+				$sndarr[$k] = $v->toArray();
+				array_push($fstarr[$key]['child'], $sndarr[$k]);
+				$fstarr[$key]['child'][$k]['child2'] = array();
+				$trd = $this->type->listtrdType($v->type_id);
+				foreach ($trd as $k2=>$v2) {
+					$sndarr[$k2] = $v2->toArray();
+					array_push($fstarr[$key]['child'][$k]['child2'],$sndarr[$k2]);
+				}
+
+			}
+		}
+		return $fstarr;
 	}
 	//注册相关操作
 	public function regist()
@@ -100,7 +166,7 @@ class Index extends Controller
 	//注册信息插入数据库
 	public function insertReg()
 	{
-		//dump($this->request->param());
+		dump($this->request->param());
 		$data = $this->request->param();
 		$result = $this->user->insertUser($data);
 		//dump($result);
@@ -125,8 +191,9 @@ class Index extends Controller
 		}
 		else
 		{
-			Session::set('username',"$result->username");
 			Session::set('userid',"$result->user_id");
+			Session::set('username',"$result->username");
+			Session::set('headpic',"$result->headpic");
 			$this->success('登陆成功', 'index');
 		}
 	}

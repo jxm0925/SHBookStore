@@ -2,14 +2,19 @@
 namespace app\index\model;
 
 use think\Model;
-use think\Db;
-use think\Session;
-use think\User;
-
+use traits\model\SoftDelete;
 class Collect extends Model
 {
-	public static function getCollect()
+	use SoftDelete;
+	protected $autoWriteTimestamp = true;
+	public function findCollect($uid,$goodid)
 	{
-		return Db::name('collect')->alias('c')->join('shop_user u','c.user_id = u.user_id')->join('shop_good g','g.good_id = c.good_id')->where('c.user_id',Session::get('userid'))->select();
+		$result=$this->where("user_id=$uid and good_id=$goodid")->select();
+		return $result;
+	}
+	public function delCollect($uid,$goodid)
+	{
+		$result=$this->where("user_id=$uid and good_id=$goodid")->delete();
+		return $result;
 	}
 }

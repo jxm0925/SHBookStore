@@ -8,18 +8,16 @@
     <link rel="stylesheet" type="text/css" href="__CSS__/public.css" />
     <link rel="stylesheet" type="text/css" href="__CSS__/component.css" />
     <link rel="stylesheet" type="text/css" href="__CSS__/module.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/sinaFaceAndEffec.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/pagestyle.css" />
     <link rel="shortcut icon" href="http://bnmpstyle.bookuu.com/www/images/favicon.ico" type="image/x-icon" />
-    <!--三级联动-->
-    <!-- <link rel="stylesheet" type="text/css" href="__CSS__/common.css"> -->
-    <link rel="stylesheet" type="text/css" href="__CSS__/cssreset-min.css">
-    <script type="text/javascript" src="__JS__/jquery-1.8.2.min.js"></script>
-    <!-- <script type="text/javascript" src="__JS__/jquery.min.js"></script> -->
-    <script type="text/javascript" src="__JS__/jquery.citys.js"></script>
+
     <!-- 字体图标 -->
     <link rel="stylesheet" type="text/css" href="__CSS__/iconfonts.css" />
+
+    <script type="text/javascript" src="__JS__/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="__JS__/component.js"></script>
 
-    
     <!-- FlexSlider -->
     <link rel="stylesheet" type="text/css" href="__CSS__/flexslider.css" />
     <script type="text/javascript" src="__JS__/jquery.flexslider.js"></script>
@@ -38,7 +36,7 @@
                     <p class="fr">
                         <a class="hover fr cl-6" href="javascript:void()" onclick="openQiYuSDK();" title="联系客服">联系客服</a>
                         <span class="pd-0015 cl-c fr">|</span>
-                        <a class="hover fr cl-6" href="/user/collection.php" target="_blank" title="收藏夹">收藏夹</a>
+                        <a class="hover fr cl-6" href="{:url('Users/collection')}" target="_blank" title="收藏夹">收藏夹</a>
                         <span class="pd-0015 cl-c fr">|</span>
                         <div class="fr mouseenter-box mouseenter mouseleave pr">
                             <label class="cp">我的博库<span class="icon-down-line ml-5 fs-11">&#xe91e;</span></label>
@@ -78,9 +76,9 @@
                     $("#header_user_session_mobilephone").val(data.info.mobilephone);
                     user_str += '欢迎，' + data.info.name;
                     user_str += '<span class="pd-0005 cl-c">|</span>';
-                    user_str += '<a class="mr-30 hover cl-6" href="{:url(\'index/Index/logout\')}" title="退出登录">退出登录</a>';
+                    user_str += '<a class="mr-30 hover cl-6" href="{:url(\'/index/Index/logout\')}" title="退出登录">退出登录</a>';
                 }else{
-                    user_str += '<a class="hover cl-6" href="{:url(\'index/Index/login\')}" target="_blank" title="登录">登录</a><span class="pd-0005 cl-c">|</span><a class="mr-30 hover cl-6" href="{:url(\'index/Index/regist\')}" target="_blank" title="免费注册">免费注册</a>';
+                    user_str += '<a class="hover cl-6" href="{:url(\'/index/Index/login\')}" target="_blank" title="登录">登录</a><span class="pd-0005 cl-c">|</span><a class="mr-30 hover cl-6" href="{:url(\'/index/Index/regist\')}" target="_blank" title="免费注册">免费注册</a>';
                 }
                 $("#www_user_session_info").html(user_str);
             },
@@ -91,32 +89,22 @@
 <div class="wd-1200 ma">
     <div class="search-container" id="search-container">
         <div class="logo-container">
-            <a class="db logo-box fl" href="{:url('index')}">
+            <a class="db logo-box fl" href="{:url('/index')}">
                 <img src="__PICTURE__/logo.png" alt="" width="220" class="db" alt="logo" draggable="false" />
             </a>
             <!-- 搜索 -->
-            <div class="fl">
+                <div class="fl">
                 <div class="search-box">
                     <div class="fl wd-480 pr zi-1 associate-container">
-                        <input type="text" id="gudingsearch" placeholder="2017诺贝尔文学奖 石黑一雄" value="" class="bd-n searchkey">
-                        <ul class="associate-box history">
-
-                        </ul>
+                        <input type="text" value="" class="bd-n" id="searchkey">
                     </div>
                     <p class="fr icon-search-line cl-f fs-27 tosearch">&#xe937;</p>
                     <div class="cb"></div>
                 </div>
-                <p class="fs-12 lh-25  tip">
-                    <a target="_blank" class="cl-rd-l" href="//www.bookuu.com/search.php?k=法布尔昆虫记" title="法布尔昆虫记">法布尔昆虫记</a>
-                    <span class="cl-9 pd-0005">|</span>                                                                                                                <a target="_blank" class="cl-9" href="//www.bookuu.com/search.php?k=沈石溪" title="沈石溪">沈石溪</a>
-                    <span class="cl-9 pd-0005">|</span>                                                                                                                <a target="_blank" class="cl-9" href="//www.bookuu.com/search.php?k=芳华" title="芳华">芳华</a>
-                    <span class="cl-9 pd-0005">|</span>                                                                                                                <a target="_blank" class="cl-9" href="//www.bookuu.com/search.php?k=曹文轩" title="曹文轩">曹文轩</a>
-                    <span class="cl-9 pd-0005">|</span>                                                                                                                <a target="_blank" class="cl-9" href="//www.bookuu.com/search.php?k=趣味图解四大名著" title="趣味图解四大名著">趣味图解四大名著</a>
-                </p>
                 <div class="cb"></div>
             </div>
             <div class="fr ta-rt mt-8 cart">
-                <a target="_blank" class="fs-16 bd-1-d br-4 pd-0610 cart-box" href="{:url('Users/cart')}">
+                <a class="fs-16 bd-1-d br-4 pd-0610 cart-box" href="{:url('Users/cart')}">
                     <span class="icon-cart-block mr-10 cl-a9 pr tp-3 fs-18">&#xe90e;</span>
                     <span class="mr-5">购物车</span>
                     <label class="cl-f fw-nm br-10 cart_num"></label>

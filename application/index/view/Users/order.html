@@ -171,25 +171,25 @@
                 //延迟xx
                 if(timer2){
 //                    console.log(22,timer2);
-                clearTimeout(timer2);
-                console.log('未结束',timer2);
-                } else{
-                    console.log('开始了');
-                }
-                timer2 = setTimeout(function(){getHistoryKeys(_associateBox, _key)},600);
-                _associateBox.addClass('history');
-                }else{
-                                //延迟xx
-                                if(timer1){
-                //                    console.log(11,timer1);
-                clearTimeout(timer1);
-                console.log('未结束',timer1);
-                } else{
-                    console.log('开始了');
-                }
-                timer1 = setTimeout(function(){getKeyMore(_associateBox, _key)},600);
-                _associateBox.removeClass('history');
-                }
+clearTimeout(timer2);
+console.log('未结束',timer2);
+} else{
+    console.log('开始了');
+}
+timer2 = setTimeout(function(){getHistoryKeys(_associateBox, _key)},600);
+_associateBox.addClass('history');
+}else{
+                //延迟xx
+                if(timer1){
+//                    console.log(11,timer1);
+clearTimeout(timer1);
+console.log('未结束',timer1);
+} else{
+    console.log('开始了');
+}
+timer1 = setTimeout(function(){getKeyMore(_associateBox, _key)},600);
+_associateBox.removeClass('history');
+}
             // 搜索出来数据不为空才显示出来
             _associateBox.css('display', 'block');
             // enter键
@@ -292,78 +292,50 @@
                     <li class="list-item active">
                         <div class="myorder-info mb-20">
                             <ul class="myorder-item-tab mt-10">
-                                <li class="item br-1-e8 active"><a href="{:url('Users/order')}" data-type="all">全部订单</a></li>
-                                <li class="item br-1-e8 "><a href="{:url('Users/waitPay')}" data-type="wait_pay">待付款</a></li>
-                                <li class="item br-1-e8 "><a href="{:url('Users/waitSend')}" data-type="wait_send">待发货</a></li>
-                                <li class="item br-1-e8 "><a href="{:url('Users/beenSend')}" data-type="been_send">待收货</a></li>
-                                <li class="item br-1-t "><a href="{:url('waitComment')}" data-type="wait_comment">待评价</a></li>
+                                <li class="item br-1-e8 active"><a href="?act=all" data-type="all">全部订单</a></li>
+                                <li class="item br-1-e8 "><a href="?act=wait_pay" data-type="wait_pay">待付款</a></li>
+                                <li class="item br-1-e8 "><a href="?act=wait_send" data-type="wait_send">待发货</a></li>
+                                <li class="item br-1-e8 "><a href="?act=been_send" data-type="been_send">待收货</a></li>
+                                <li class="item br-1-t "><a href="?act=wait_comment" data-type="wait_comment">待评价</a></li>
                                 <li class="cb"></li>
                             </ul>
                             <div class="scroll mt-10">
-                                <div class="scroll-x" style=""></div>
+                                <div class="scroll-x"></div>
                             </div>
                             <ul class="myorder-item mt-14">
                                 <li class="item active">
-                                {foreach $data as $key=>$value1}
-                                    <table class="myorder-info-table bd-1-e8 mt-20" border="0" cellpadding="0" cellspacing="0">        
+                                    <table class="myorder-info-table bd-1-e8 mt-20" border="0" cellpadding="0" cellspacing="0">
                                         <tbody>
                                             <tr class="info-title ta-ct">
                                                 <td class="item bb-1-e8" width="12%">博库体验店</td>
-                                                <td class="item bb-1-e8" width="38%" colspan="3">订单号:&nbsp;<span>{$key}</span></td>
-                                                <td class="item bb-1-e8" width="38%" colspan="3">下单时间:&nbsp;<span>{:date('Y-m-d H:i:s',$value1[0]['create_time'])}</span></td>
-                                                
+                                                <td class="item bb-1-e8" width="38%" colspan="3">订单号:&nbsp;<span>1710190411284729</span></td>
+                                                <td class="item bb-1-e8" width="38%" colspan="3">下单时间:&nbsp;<span>2017-10-19 11:28:04</span></td>
+                                                <td class="item bb-1-e8">&nbsp;</td>
                                             </tr>
-                                            {foreach $value1 as $value}
                                             <tr class="info-text">
-                                               
                                                 <td class="item bb-1-e8">
-                                                    <a href="">
-                                                        <div class="goodlist-pic" data-src="/uploads/{$value['good_pic']}" data-height="100" data-width="100" style="opacity: 1;">
+                                                    <a href="/detail.php?id=100426673">
+                                                        <div class="goodlist-pic" data-src="http://bnmppic.bookuu.com/goods/15/37/54/3454669-fm.jpg" data-height="100" data-width="100">
                                                         </div>
                                                     </a>
                                                 </td>
-                                                <td class="item bb-1-e8 pt-18 va-tp" width="174">{$value['good_name']}</td>
+                                                <td class="item bb-1-e8 pt-18 va-tp" width="174">PHP+Ajax+jQuery网站开发项目式教程(工业和信息化人才培养规划教材国家信息技术紧缺人才培养工程指定教材)</td>
                                                 <td class="item bb-1-e8 ta-ct" width="120">
-                                                    <p class="price-init">¥{$value['good_showprice']}</p>
-                                                    <p>¥{$value['good_price']}</p>
-                                                    <input type="hidden" name="totalmoney" value="">
+                                                    <p class="price-init">¥43.00</p>
+                                                    <p>¥25.53</p>
                                                 </td>
-                                                <td class="item bb-1-e8 br-1-e8" width="90">x&nbsp;{$value['order_count']}
-                                                </td>
-                                                {/foreach}
-                                                
-                                                
-                                                <td class="item br-1-e8 ta-ct" width="148" rowspan="2"><p><b class="fs-16 cl-rd">¥{$value['totalmoney']}</b><br/><span class="cl-9">(含运费：¥5.00)</span></p></td>
-                                                <td class="item br-1-e8 ta-ct" width="148" style="border-right:1px solid #e8e8e8" rowspan="2">
-                                                    {if ($value['order_paystatus']==0)}
-                                                    <p>待付款</p>
-                                                    {elseif($value['order_paystatus']==1&&$value['order_send']==0)}
-                                                    <p>待发货</p>
-                                                    {elseif($value['order_paystatus']==1&&$value['order_send']==1&&$value['order_receive']==0)}
-                                                    <p>待收货</p>
-                                                    {elseif($value['order_paystatus']==1&&$value['order_send']==1&&$value['order_receive']==1&&$value['order_apprstatus']==0)}
-                                                    <p>待评价</p>
-                                                    {/if}
+                                                <td class="item bb-1-e8 br-1-e8" width="90">x&nbsp;1</td>
+
+                                                <td class="item br-1-e8 ta-ct" width="148" ><p><b class="fs-16 cl-rd">¥30.53</b><br/><span class="cl-9">(含运费：¥5.00)</span></p></td>
+                                                <td class="item br-1-e8 ta-ct" width="148" ><p>待付款</p>
                                                     <p><a class="cl-bl-l" href="order_detail.php?order_id=1710190411284729" title="订单详情">订单详情</a></p></td>
-                                                <td class="item ta-ct" width="148" colspan="2" rowspan="2">
-                                                        {if ($value['order_paystatus']==0)}
-                                                        <a class="btn-buy wd-60 ma" href="{:url('pay')}?order_id={$value['order_num']}"title="立即付款">立即付款</a>
-                                                        
+                                                    <td class="item ta-ct" width="148" colspan="2" >
+                                                        <a class="btn-buy wd-60 ma" href="/cashier/pay.php?product_id=1710190411284729" title="立即付款">立即付款</a>
                                                         <a class="btn-cancel wd-60 ma" href="javascript:void(0);" onclick="cancel(1710190411284729,30.53,  this)" title="取消订单">取消订单</a>
-                                                        {elseif($value['order_paystatus']==1&&($value['order_send']==0))}
-                                                        <a class=" btn-buy wd-60 ma" id="" href=""  title="退款">退款</a>
-                                                        <a id="" href="">退货</a>
-                                                        {elseif($value['order_paystatus']==0&&$value['order_send']==1&&$value['order_receive']==0)}
-                                                        <a class="btn-buy wd-60 ma" href="/cashier/pay.php?product_id=1710190411284729" title="查看物流">查看物流</a>
-                                                        {elseif($value['order_paystatus']==1&&$value['order_send']==1&&$value['order_receive']==1&&$value['order_apprstatus']==0)}
-                                                        <a class="btn-buy wd-60 ma" href="/cashier/pay.php?product_id=1710190411284729" title="评价">评价</a>
-                                                        <a class="btn-cancel wd-60 ma" href="javascript:void(0);" id="refund" value="{$value['order_num']}" title="退款">退款</a>
-                                                        {/if}
-                                                </td>
-                                                </tr> 
-                                            </tbody>   
+                                                    </td>
+                                                </tr>
+                                            </tbody>
                                         </table>
-                                        {/foreach}
                                     </li>
                                 </ul>
                             </div>
@@ -371,66 +343,7 @@
                     </ul>
                 </div>
                 <div class="cb"></div>
-                <!---->
-               <div class="popup-box address wd-640 pr hidden">
-                    <div class="popup-content">
-                        <div class="content-center">
-                            <div class="edit-address-box">
-                                <span class="cp close-popup icon-close-line fs-20 fr">&#xe919;</span>
-                                <div class="cb"></div>
-                                <div class="fs-16">
-                                    <p>填写退款信息</p>
-                                </div>
-                                <form class="address-info-form mt-42" action="{:url('Users/refund')}">
 
-                                    <input type="hidden" id="order_number" name="order_num" value="">
-                                    <input type="hidden" value="">
-                                    <input type="hidden" id="county_id" value="">
-                                    <input type="hidden" id="address_ids" value="">
-                                    <ul>
-                                        <li>
-                                            <div class="fl mr-20" >订单号:</div>
-
-                                            <div id="demo1" class="citys region">
-                                                <p id="order_num">
-                                                    刚回家考虑
-                                                </p>
-                                            </div>
-                                            <div class="cb"></div>
-                                        </li>
-                                        <li class="mt-20">
-                                            <div class="fl mr-20">退货说明:</div>
-                                            <div class="fl">
-                                                <textarea class="address bd-1-e8 br-4" id="detail_address" name="detail" placeholder=""></textarea>
-                                            </div>
-                                            <div class="cb"></div>
-                                        </li>
-                                        <li class="mt-20">
-                                            <div class="fl mr-20 lh-28">快递单号</div>
-                                            <div class="fl">
-                                                <input class="bd-1-e8 br-4" type="text" name="postcode" id="zip" value="">
-                                            </div>
-                                            <div class="cb"></div>
-                                        </li>
-
-                                        <li class="mt-42">
-                                            <div class="fl">
-
-                                            </div>
-                                            <div class="fr">
-                                                <input type="submit" class="confirm-t wd-142 lh-40 mr-10" id="aa" href="javascript:void(0); title="确定" value="确定">确定
-                                                <a class="confirm-f close-popup wd-142 lh-40" href="javascript:void(0);" title="取消">取消</a>
-                                            </div>
-                                            <div class="cb"></div>
-                                        </li>
-                                    </ul>
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-        <!---->
                 <div class="mt-10">
                     <div class="page-number-group tcdPageCode fr">
 
@@ -828,7 +741,6 @@
     $(function(){
             //频道 tab切换
             $(".my_tab").click(function(){
-                console.log(111);
                 var tabId = $(this).attr("data-id");
                 $(this).addClass('on-click');
                 $(this).siblings().removeClass('on-click');
@@ -837,6 +749,7 @@
                 $("#my_tab_"+tabId).siblings(".my_tab_content").addClass('dn');
             });
         });
+
         // 懒加载
         lazyLoading();
 
@@ -988,26 +901,13 @@
 </html>
 <script type="text/javascript">
 
-    $(function(){
-        $('.myorder-info-table').on('click','#refund',function(){
-            var order_num = $(this).attr('value');
-            $('#order_num').text(order_num) ;
-            $("#order_number").attr('value',order_num);
-            $('.popup-box.address').removeClass('visible hidden');
-            $('.overlay').remove();
-            $('body').append('<div class="overlay"></div>');
-            $('html').addClass('oh');
-        })        
-    })
-
     /******************************
      我的订单选项卡
      *******************************/
      $('.myorder-item>.item.active .goodlist-pic').layzload({imgshow: 300});
      change_item();
      function change_item() {
-
-        var act = 'all';console.log(12345);
+        var act = 'all';
         if (!act) {
             act = 'all';
         }
@@ -1096,14 +996,4 @@
             }
             )
     }
-    $(function(){
-        $('.refund').on('click',function(){
-            console.log(123);
-            $('.popup-box.address').removeClass('visible hidden');
-            $('.overlay').remove();
-            $('body').append('<div class="overlay"></div>');
-            $('html').addClass('oh');
-        })        
-    })
-
 </script>

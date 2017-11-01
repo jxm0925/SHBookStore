@@ -24,7 +24,9 @@ class BookAdd extends Index
 		$data = $this->request->param();
 		if ($file) {
 			$pic = $this->upload($file);
-			// dump($this->request->file('picture'));
+			//dump($this->request->file('picture'));
+			$pic = str_replace('\\', '/', $pic);
+			//dump($pic);die;
 			// dump($data);
 			$re=$this->goods->data([
 				'good_name'     =>$data['bookname'],
@@ -35,6 +37,7 @@ class BookAdd extends Index
 				'good_pic'      =>$pic,
 				'good_count'    =>$data['count'],
 				'good_price'    =>$data['sell_price'],
+				'good_isbn'		=>$data['good_isbn'],
 				'good_realprice'=>$data['price'],
 				'good_showprice'=>$data['show_price'],
 				'good_details'	=>$data['details'],
@@ -55,15 +58,18 @@ class BookAdd extends Index
 	{
 		$data = $this->request->param();
 
+		dump($data);
 		$re = $this->goods->save([
 				'good_name'=>$data['name'],
 				'good_author'=>$data['author'],
 				'good_time'=>strtotime($data['btime']),
 			],['good_id'=>$data['id']]);
+		echo $this->goods->getLastSql();
 		if ($re) {
-			echo 1;
-		}else{
-			echo 0;
+			$value = $this->goods->get($data['id']);
+			dump($value);
+			dump(json_encode($value));
+			//echo json_encode($value);
 		}
 	}
 

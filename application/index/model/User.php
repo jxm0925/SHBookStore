@@ -2,8 +2,7 @@
 namespace app\index\model;
 
 use think\Model;
-use think\Db;
-use think\Session;
+
 class User extends Model
 {
 	protected $autoWriteTimestamp = true;
@@ -47,11 +46,5 @@ class User extends Model
 		]);
 		$result = $this->save();
 		return $result;
-	}
-
-	public static function getInfo()
-	{
-		//总的订单
-		return Db::name('user')->alias('u')->join('shop_order','shop_order.user_id = shop_user.user_id')->where('username',Session::get('username'))->select();
 	}
 }

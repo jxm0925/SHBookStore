@@ -31,7 +31,11 @@
          <!-- BEGIN SECTION -->
     {include file="common/admin/head.html"}
     <!-- END HEADER NAV -->
+        
+     <!-- START USER LOGIN DROPDOWN  -->
 
+      <!-- END HEADER -->
+         <!-- BEGIN SIDEBAR -->
       {include file="common/admin/left.html"}
       <!-- END SIDEBAR --> 
      
@@ -55,7 +59,7 @@
                             <a href="javascript:ovid()" class="btn btn-warning Order_form"><i class="fa fa-close"></i>&nbsp;未退款订单</a>
                             <a href="javascript:ovid()" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;批量删除</a>
                            </span>
-                           <span class="r_f">共：<b>{if!empty($count)}{$count}{/if}</b>笔</span>
+                           <span class="r_f">共：<b>2334</b>笔</span>
                        </div>
                           
                         </div>
@@ -67,7 +71,7 @@
                         </div>
                         <div class="space15"></div>
                           <table class="table table-bordered">
-                            <caption>退款列表</caption>
+                            <caption>会员列表</caption>
                             <thead>
                               <tr>
                                 <th></th>
@@ -75,47 +79,40 @@
                                 <th>产品名</th>
                                 <th>交易金额</th>
                                 <th>交易时间</th>
-                                <th>退款时间</th>
                                 <th>状态</th>
                                 <th>说明</th>
                                 <th>操作</th>
                               </tr>
                             </thead>
                             <tbody>
-                            {if!empty($data)}
-                            {foreach $data as $key=>$value}
                               <tr>
                                 <td><input type="checkbox" name="checkbox[]"></td>
-                                <td class="order_num">{$key}</td>
-                                <td>
-                                {foreach $value as $v}
-                                  {$v['good_name']}+
-                                {/foreach}
-                                </td>
-                                <td>{$v['totalmoney']}</td>
-                                <td>{:date('Y-m-d',$v['create_time'])}</td>
-                                <td>{:date('Y-m-d',$v['refund_time'])}</td>
-                                {if $v['refund_status'] == 0}
+                                <td>xxxxx</td>
+                                <td>修改</td>
+                                <td>23.00</td>
+                                <td>1990-6-1</td>
                                 <td class="td-status">
                                   未退款
                                 </td>
-                                {else}
-                                <td class="td-status">
-                                  已退款
-                                </td>
-                                {/if}
-                                <td>{$v['refund_details']}</td>
+                                <td>重复购买</td>
                                 <td>
                                   <input type="hidden" class="hiddenId" value="">
-                                  {if($v['refund_status']==0)}
                                    <button class="btn btn-xs btn-success reMoney">退款</button> 
-                                   {/if}
-                                   <button class="btn btn-xs btn-info refund_detaile"><a href="refund_detaile?userid={$v['user_id']}&refund_id={$v['refund_id']}&order_num={$key}">详细</a></button> 
+                                   <button class="btn btn-xs btn-info refund_detaile">详细</button> 
                                    <button class="btn btn-xs btn-warning del">删除</button>    
                                </td>
+                               <!--
+                                <td>
+                                  <a title="编辑" onclick="member_edit()" href="javascript:;"  class="btn btn-xs btn-info" >
+                                    <i class="icon-edit bigger-120">编辑</i>
+                                  </a>
+                                  <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-warning" >
+                                    <i class="icon-trash  bigger-120">删除</i>
+                                  </a>
+                                </td>-->
                               </tr>
-                              {/foreach}   
-                              {/if} 
+                          
+                              
                             </tbody>
                           </table>
                      </div>
@@ -144,52 +141,25 @@
 <script>
 //退款按钮事件
       $('.reMoney').click(function(){
-        var order_num = $('.order_num').text();
-        console.log(order_num);
         var obj = $(this);
           layer.confirm('确定退款吗', {
           btn: ['确定','取消'] //按钮
           }, function(){
-            $.ajax({
-                type: "post",
-                url:"changeRefundStatus",
-                data: {order_num:order_num},
-                dataType: "json",
-                success: function(data) {
-                  if (data == 1) {
-                    obj.parent().parent().find('.td-status').html('已退款');
-                    obj.remove();
-                    layer.msg('退款成功', {icon: 1});
-                  }else{
-                    layer.msg('退款失败',{icon:5});
-                  }
-                }
-             });
+            obj.parent().parent().find('.td-status').html('已退款');
+            obj.remove();
+            layer.msg('退款成功', {icon: 1});
           }, function(){
             layer.msg('已取消',{icon:5});
           });
    })
 //删除按钮事件
       $('.del').click(function(){
-        var order_num = $('.order_num').text();
         var obj = $(this);
           layer.confirm('确定删除吗', {
           btn: ['确定','取消'] //按钮
           }, function(){
-            $.ajax({
-                type: "post",
-                url:"deleteRefund",
-                data: {order_num:order_num},
-                dataType: "json",
-                success: function(data) {
-                  if (data==1) {
-                    obj.parent().parent().remove();
-                    layer.msg('删除成功', {icon: 1});
-                  }else{
-                    layer.msg('删除失败',{icon:5});
-                  }
-                }
-              })
+            obj.parent().parent().remove();
+            layer.msg('删除成功', {icon: 1});
           }, function(){
             layer.msg('已取消',{icon:5});
           });

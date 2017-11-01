@@ -115,15 +115,13 @@
                             <th>操作</th>
                           </tr>
                         </thead>
-                        <form action="{:url('BookAdd/bookDelMore')}" method="post">
                         <tbody>
-                        
                           {foreach $book as $value}
                           <tr>
                             <td><input type="checkbox" class="input-control bookid" name="checkbox[]" value="{$value['good_id']}" /></td>
                             <td>{$value['good_id']}</td>
                             <td class="bookname">{$value['good_name']}</td>
-                            <td><img width="100" height="40" src="/uploads/{$value['good_pic']}" /></td>
+                            <td><img width="40" height="40" src="/uploads/{$value['good_pic']}" /></td>
                             <td>{$value['type_name']}</td>
                             <td class="bookauthor">{$value['good_author']}</td>
                             <td class="booktime">{:date('Y-m-d',$value['good_time'])}</td>
@@ -146,9 +144,6 @@
                             <button type="button" class="btn btn-info update" value="{$value['good_id']}" data-toggle="modal"  data-target="#changeModal">
                               <i class="fa fa-pencil-square-o"></i>
                             </button>
-                            <button type="button" class="btn btn-info del" value="{$value['good_id']}" data-toggle="modal"  data-target="#myModal" style="background-color:#ff6c60;">
-                              <i class="fa">下架</i>
-                            </button>
                             </td>
                           {/foreach}
                           </tr>
@@ -165,7 +160,7 @@
                           <button type="button" class="btn btn-danger" onclick="noselect()">
                             不选
                           </button>&emsp;
-                          <button type="submit" class="btn btn-info delet" data-toggle="moda" data-target="#myModal">
+                          <button type="button" class="btn btn-info delete" data-toggle="modal" data-target="#myModal">
                             删除
                           </button>&emsp;
                           <a href="{:url('BookAdd/bookAdd')}">
@@ -174,7 +169,6 @@
                             </button>&emsp;
                           </a>
                         </div>
-                        
                       </table>
                     </div>
                   </form>
@@ -223,7 +217,7 @@
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                       <h4 class="modal-title" id="myModalLabel">提示信息</h4>
                   </div>
-                  <div class="modal-body">您确定要下架吗？</div>
+                  <div class="modal-body">您确定要删除吗？</div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                       <button type="button" class="btn btn-danger" id="del" data-dismiss="modal">确认</button>
@@ -310,45 +304,22 @@
       $("input[name='test']:checked").each(function(){
          n = $(this).parents("tr").index();  // 获取checkbox所在行的顺序
          $("table#test_table").find("tr:eq("+n+")").remove();
-       
+       }
      })
     }) 
-    //下架
-    $('.del').on('click',function(){
-        var order_num = $('.order_num').text();
-        console.log(order_num);
-        var obj = $(this);
-        $.ajax({
-                type: "post",
-                url:"changeRefundStatus",
-                data: {order_num:order_num},
-                dataType: "json",
-                success: function(data) {
-                  if (data == 1) {
-                    obj.parent().parent().find('.td-status').html('已退款');
-                    obj.remove();
-                    layer.msg('退款成功', {icon: 1});
-                  }else{
-                    layer.msg('退款失败',{icon:5});
-                  }
-                }
-             });
-    })
     //修改
     $('.update').each(function(i,obj){
       $(this).on('click',function(){
-        console.log(111);
-        var c      = $('.bookid').eq(i).attr('value');
-        var id     = $('.id').text($('.bookid').eq(i).attr('value'));
-        var hid    = $('.hiddenID').val($('.bookid').eq(i).attr('value'));
-        var name   = $('.bname').val($('.bookname').eq(i).text());
-        var author = $('.bauthor').val($('.bookauthor').eq(i).text());
-        var time   = $('.btime').val($('.booktime').eq(i).text());
+        var c = $('.bookid').eq(i).attr('value');
+        $('.id').text($('.bookid').eq(i).attr('value'));
+        $('.hiddenID').val($('.bookid').eq(i).attr('value'));
+        $('.bname').val($('.bookname').eq(i).text());
+        $('.bauthor').val($('.bookauthor').eq(i).text());
+        $('.btime').val($('.booktime').eq(i).text());
         //提交
         $('.mupdate').on('click',function(){
-
           var data = $('#mform').serializeArray();
-          
+          var data = {}
             $.ajax({
             url:"{:url('BookAdd/bookUpload')}",
             type:'post',
@@ -360,21 +331,22 @@
             dataType:'json',
             async:true,
             success:function(data){
-
              // grid.reload();
-             if (data == 1) {
-              parent.location.reload();
-              // $('.bookauthor').eq(i).text(author);
-              // $('.booktime').eq(i).text(time);
-             }   
+              window.location.reload();
+              
+              $('.bookauthor').eq(i).text(data.good_author);
+              $('.booktime').eq(i).text(data.good_time);
             }
           });
-
+          // $.get("{:url('BookAdd/bookUpload')}",{data},function(data){
+            
+          // },'json');
         });         
       });   
     })
   
-
+</script>
+<script type="text/javascript">
 
         var data = [{
             label: "文艺书籍",
