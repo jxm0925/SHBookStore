@@ -292,32 +292,35 @@
                 <li class="list-item active">
                     <div class="mycolle-info mb-20">
                         <h3 class="list-item-title bb-1-e8 mb-20">我的收藏</h3>
+                        {foreach $collect as $value}
                         <div class="goodlist">
-                                                        <div class="goodlist-box mt-16 mr-10">
+                                <div class="goodlist-box mt-16 mr-10">
 
                                 <a class="icon-delete-line" href="javascript:void(0);" data-id="100930872">&#xe91d;</a>
 
-                                <a href="http://www.bookuu.com/detail.php?id=100930872">
+                                <a href="">
                                     <div class="goodlist-cont">
-                                        <div class="goodlist-pic" data-src="http://bnmppic.bookuu.com/goods/19/26/10/3806021-fm.jpg" data-height="194" data-width="194">
+                                        <div class="goodlist-pic" data-src="/uploads/{$value['good_pic']}" data-height="194" data-width="194">
                                         </div>
                                     </div>
                                     <div class="goodlist-buy-box ta-ct pt-10">
                                         <div class="goodlist-title ml-19 mr-19 fs-16">
-                                            <p>芳华(精)</p>
+                                            <p>{$value['good_name']}</p>
                                         </div>
-                                        <p class="mt-10"><span class="cl-rd-d fs-16">¥28.86</span>&nbsp;<span class="cl-e8">|</span>&nbsp;<span class="price-init">¥39.00</span></p>
+                                        <p class="mt-10"><span class="cl-rd-d fs-16">¥{$value['good_showprice']}</span>&nbsp;<span class="cl-e8">|</span>&nbsp;<span class="price-init">¥{$value['good_price']}</span></p>
                                         <div class="cb"></div>
                                     </div>
                                 </a>
-                            </div>
-                                                        <div class="cb"></div>
+                                </div>
+                               <div class="cb"></div>
                         </div>
+                        {/foreach}
                         <div class="mt-10">
                             <div class="page-number-group tcdPageCode fr">
                                                             </div>
                             <div class="cb"></div>
                         </div>
+
                     </div>
                 </li>
             </ul>

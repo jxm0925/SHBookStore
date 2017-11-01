@@ -5,6 +5,7 @@ use app\admin\controller\Index;
 use \think\Session;
 use think\Paginator;
 use think\DB;
+use app\admin\model\Comment;
 class Article extends Index
 {
 	public function article_list()
